@@ -51,7 +51,9 @@ export default function FirstNavBar() {
             <div> 
             'your width is ' :  {Width}
             </div>
-
+            <div>
+                img
+                </div> 
             
         </div>
     )
