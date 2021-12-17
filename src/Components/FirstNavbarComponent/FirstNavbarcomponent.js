@@ -3,6 +3,7 @@ import './FirstNavbarcomponentstyle.scss';
 import data from './../../Assets/jsonFile/data.json';
 import UseMapingdatafromJson from './../../Hooks/CustomHookmapingData';
 import Getwidth from './../../Hooks/GetwidthHook' ; 
+import  carwash  from './../../Assets/images/mail.png' ; 
 
 
 
@@ -50,6 +51,10 @@ export default function FirstNavBar() {
             <div> 
             'your width is ' :  {Width}
             </div>
+
+            <div >
+                <img src='./images/mail.png' alt ='image' /> 
+            </div> 
         </div>
     )
 }
