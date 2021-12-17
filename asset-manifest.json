@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/AutoWash/static/css/main.0bd4ea88.chunk.css",
-    "main.js": "/AutoWash/static/js/main.b669343c.chunk.js",
-    "main.js.map": "/AutoWash/static/js/main.b669343c.chunk.js.map",
+    "main.js": "/AutoWash/static/js/main.12e2a316.chunk.js",
+    "main.js.map": "/AutoWash/static/js/main.12e2a316.chunk.js.map",
     "runtime-main.js": "/AutoWash/static/js/runtime-main.6a04c7dd.js",
     "runtime-main.js.map": "/AutoWash/static/js/runtime-main.6a04c7dd.js.map",
     "static/css/2.8c0e6b67.chunk.css": "/AutoWash/static/css/2.8c0e6b67.chunk.css",
@@ -20,6 +20,6 @@
     "static/css/2.8c0e6b67.chunk.css",
     "static/js/2.388cd506.chunk.js",
     "static/css/main.0bd4ea88.chunk.css",
-    "static/js/main.b669343c.chunk.js"
+    "static/js/main.12e2a316.chunk.js"
   ]
 }
