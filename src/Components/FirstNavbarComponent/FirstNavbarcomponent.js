@@ -54,6 +54,9 @@ export default function FirstNavBar() {
 
             <div >
                 <img src='./images/mail.png' alt ='image' /> 
+                <div> 
+                    my image 
+                    </div>
             </div> 
         </div>
     )
