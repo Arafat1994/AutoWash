@@ -16,7 +16,7 @@ export default function MenuNavbarcomponent(props) {
         <div className='MainNavcomponent'>
             <nav className='menunavbar '>
 
-                <div><NavLink to='/' className='menunavbarlink activelink'> Home  </NavLink></div>
+                <div><NavLink to='/AutoWash' className='menunavbarlink activelink'> Home  </NavLink></div>
                 <div> <Link to='/About' className='menunavbarlink'> About </Link> </div>
                 <div> <Link to='/Service' className='menunavbarlink'> Service  </Link> </div>
                 <div> <Link to='/Price' className='menunavbarlink'> Price  </Link> </div>

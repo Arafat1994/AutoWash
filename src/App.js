@@ -23,7 +23,7 @@ function App() {
       <BrowserRouter>
         <Layout />
         <Routes>
-          <Route exact path='' element={<HomePage />} />
+          <Route exact path='/AutoWash' element={<HomePage />} />
           <Route path='/Contact' element={<ContactPageComponent />} />
           <Route path='/About' element={<AboutPageComponent />} />
           <Route path='/Price' element={<PricepageComponent />} />
