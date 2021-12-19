@@ -1,12 +1,15 @@
 import React from 'react' ; 
-import FirstNavBar from '../../Components/FirstNavbarComponent/FirstNavbarcomponent';
 
+import Getwidth from './../../Hooks/GetwidthHook' ; 
 export default function HomePage()
 {
 
+    const {Width}=Getwidth();
     return(
         <div> 
-            <FirstNavBar /> 
+            
+            <div> home page  {Width} </div>
+
         </div>
     )
 }

@@ -2,7 +2,8 @@ import React from 'react';
 import './FirstNavbarcomponentstyle.scss';
 import data from './../../Assets/jsonFile/data.json';
 import UseMapingdatafromJson from './../../Hooks/CustomHookmapingData';
-import Getwidth from './../../Hooks/GetwidthHook' ; 
+
+
 
 
 
@@ -13,9 +14,10 @@ export default function FirstNavBar() {
 
     //`${ response.imagesrc }` {`${ response.imagesrc }`}
 
-    const {Width}=Getwidth();
-    console.log( 'your width is ' + Width) ; 
+    
+    
     let Data = data[0].Fnavdata;
+    
     const { fnavdata } = UseMapingdatafromJson(Data);
     const returneddiv = fnavdata.map((result) => {
         return (
@@ -36,7 +38,7 @@ export default function FirstNavBar() {
 
     return (
 
-        <div >
+        <div className='FNavcomponent '>
 
             <nav className='firstnavcontainer'>
 
@@ -48,9 +50,7 @@ export default function FirstNavBar() {
 
             </nav>
 
-            <div> 
-            'your width is ' :  {Width}
-            </div>
+            
             
         </div>
     )
