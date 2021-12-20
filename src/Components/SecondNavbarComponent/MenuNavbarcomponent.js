@@ -19,7 +19,7 @@ export default function MenuNavbarcomponent(props) {
     return (
 
         <div className='MainNavcomponent' style={{height:Width>820 ? '80px' : AvailHeight+'px' , 
-                                                  display : props.viewMenu ? 'grid' : 'none'    }} >
+                                                  display : (props.viewMenu || Width>820 ) ? 'grid' : 'none'     }} >
 
             <nav className='menunavbar '>
 
