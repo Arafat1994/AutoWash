@@ -7,8 +7,8 @@
     display: inline-grid;
     grid-template-columns: auto auto auto auto auto ; 
     text-align: center;
-    grid-gap:20px;
-    width: 100%;
+    grid-gap:20px ;
+    width: 100% ;
     color: $mainblackcolor;
     padding: 10px; 
     border-top: 1px solid $mainredcolor;
@@ -27,7 +27,6 @@
         span{
             color: $mainredcolor;
             font-size: 35px;
-
         }
         a{
             text-decoration: none;

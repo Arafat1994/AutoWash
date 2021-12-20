@@ -4,6 +4,7 @@ import { useLayoutEffect, useState } from "react";
 export default function Getwidth ()
 {
     const [Width , setwidth] = useState (window.innerWidth) ; 
+    const [AvailHeight , setAvailHeight]= useState(window.innerHeight) ; 
     
     
     useLayoutEffect(()=>{
@@ -11,6 +12,7 @@ export default function Getwidth ()
         function updateSize(){
 
             setwidth(window.innerWidth) ;
+            setAvailHeight(window.innerHeight); 
         }
 
         updateSize() ;
@@ -19,5 +21,5 @@ export default function Getwidth ()
     }  , []) ; 
     
 
-    return {Width} 
+    return {Width , AvailHeight} 
 }

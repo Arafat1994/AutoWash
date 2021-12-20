@@ -4,16 +4,20 @@ import './MenuNavbarcomponent.scss';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import DropDownComponent from '../dropDownmenuComponent/Dropdowncomponent';
+import Getwidth from '../../Hooks/GetwidthHook';
 //import  {} from './../dropDownmenuComponent/Dropdowncomponent' ;
 
 export default function MenuNavbarcomponent(props) {
 
     var [view, setview] = useState(false);
+    const{Width , AvailHeight} =Getwidth(); 
 
     function viewfunction() {!view ? setview(true) : setview(false) ; }
+    console.log(Width , AvailHeight) ;
     return (
 
-        <div className='MainNavcomponent'>
+        <div className='MainNavcomponent' style={{height:Width>820 ? '80px' : AvailHeight+'px'  }}>
+
             <nav className='menunavbar '>
 
                 <div><NavLink to='/AutoWash' className='menunavbarlink activelink'> Home  </NavLink></div>
@@ -28,9 +32,6 @@ export default function MenuNavbarcomponent(props) {
                     </div>  
 
                 </div>
-
-
-
                 <div> <Link to='/Contact' className='menunavbarlink'> Contact  </Link> </div>
             </nav>
             <div className='takeappointment'>
