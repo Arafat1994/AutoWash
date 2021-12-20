@@ -1,0 +1,30 @@
+@import './../../index.scss' ; 
+
+.BarComponent{
+    background-color: $mainblackcolor;
+    color: white;
+    display: none;
+    grid-template-columns: auto auto auto ;
+    height: 60px;
+    align-content: center;
+    grid-gap: 20px;
+    padding:20px ;
+    font-size:35px;
+    .MenuSide{
+        grid-column: 1/3;
+        text-align: left;
+    }
+    .BarSide{
+        text-align: right;
+        &:hover{
+            color: $mainredcolor;
+            cursor: pointer;
+        }
+    }
+
+    @media screen and (max-width: $mediumscreen) {
+        display: grid;
+    }
+
+
+}

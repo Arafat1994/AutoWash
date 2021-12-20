@@ -1,12 +1,16 @@
 import React from 'react';
+import BarComponent from '../Components/BarsComponent/BarComponent';
 import FirstNavBar from '../Components/FirstNavbarComponent/FirstNavbarcomponent';
-import MenuNavbarcomponent from '../Components/SecondNavbarComponent/MenuNavbarcomponent';
+
 export default function Layout()
 {
     return(
         <React.Fragment> 
             <FirstNavBar />
-            <MenuNavbarcomponent /> 
+            <BarComponent />
+            
+        
+            
         </React.Fragment>
     )
 }

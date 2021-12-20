@@ -14,7 +14,7 @@ import DetailPageComponent from './Pages/DetailPagePage/DetailPageComponent';
 import BlogGridComponent from './Pages/BlogGridPage/BlogGridComponent';
 import TeamMemberComponent from './Pages/TeamMemberPage/TeamMemberComponent';
 import SchduleBookingComponent from './Pages/SchduleBookingPage/SchduleBookingComponent';
-//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 function App() {
   return (

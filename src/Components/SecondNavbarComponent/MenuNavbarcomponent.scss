@@ -9,8 +9,7 @@
     grid-gap : 20px ; 
     overflow: hidden;
     @media screen and (max-width: $mediumscreen) {
-
-        display: grid;
+        display: none;
         text-align: left;
         grid-template-columns :250px   ;
         width: 250px;
@@ -24,11 +23,13 @@
         grid-template-columns:auto auto auto auto auto auto auto ;
         @media screen and (max-width: $mediumscreen) 
           {
+            align-self:flex-start ; 
             display: grid;
-            grid-column: auto;
+            grid-column:auto;
             text-align: left;
             grid-gap: 20px;
-            grid-template-columns: auto ;
+            grid-template-columns: auto  ;
+            //padding :20px 10px ;
           }
         .menunavbarlink{
             position: relative;
@@ -44,6 +45,10 @@
     .takeappointment{
         align-self: center;
         text-align: center;
+        @media screen and (max-width: $mediumscreen) {
+            align-self: flex-start;
+            text-align:left;
+        }
     }
     
 
