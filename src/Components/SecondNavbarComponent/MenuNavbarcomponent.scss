@@ -9,11 +9,14 @@
     grid-gap : 20px ; 
     overflow: hidden;
     @media screen and (max-width: $mediumscreen) {
+        position: fixed;
+        z-index:10;
         display: none;
         text-align: left;
         grid-template-columns :250px   ;
         width: 250px;
         padding :20px 10px ;
+        
     }
     .menunavbar{
         grid-column: 1/4 ;
