@@ -2,15 +2,13 @@
 
 .BarComponent{
     background-color: $mainblackcolor;
-    color: white;
+    color: $WhiteColor;
     display: none;
     grid-template-columns: auto auto auto ;
     height: 50px;
     align-content: center;
-    justify-content: space-around;
-    grid-gap: 20px;
-    padding:0px 20px;
-    font-size:35px;
+    padding:0px 5px;
+    font-size:25px;
     .MenuSide{
         grid-column: 1/3;
         text-align: left;
@@ -20,11 +18,20 @@
     }
     .BarSide{
         text-align: right;
-        &:hover{
-            color: $mainredcolor;
-            cursor: pointer;
+        svg
+        {
+            border: 1px solid $WhiteColor;
+            padding: 3px 7px;
+            font-size: 40px;
+            border-radius: 2px;
+            &:hover{
+                color: $mainredcolor;
+                cursor: pointer;
+                border-color:$mainredcolor;
+            }
         }
     }
+        
 
     @media screen and (max-width: $mediumscreen) {display: grid;}
 

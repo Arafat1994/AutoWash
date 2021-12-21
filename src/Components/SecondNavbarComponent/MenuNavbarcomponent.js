@@ -20,9 +20,9 @@ export default function MenuNavbarcomponent(props) {
 
     return (
 
-        <div className='MainNavcomponent' style={MainNavcomponentCondition} >
+        <div className='MainNavcomponent ' style={MainNavcomponentCondition} >
 
-            <nav className='menunavbar '>
+            <nav className='menunavbar  '>
 
                 <div><NavLink to='/AutoWash' className='menunavbarlink activelink'> Home  </NavLink></div>
                 <div> <Link to='/About' className='menunavbarlink'> About </Link> </div>
@@ -35,7 +35,7 @@ export default function MenuNavbarcomponent(props) {
                 </div>
                 <div> <Link to='/Contact' className='menunavbarlink'> Contact  </Link> </div>
             </nav>
-            <div className='takeappointment'>
+            <div className='takeappointment '>
                 <MainButtonComponent child='Get Appointment' >   </MainButtonComponent> 
             </div>
 

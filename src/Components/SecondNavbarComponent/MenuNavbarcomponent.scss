@@ -8,6 +8,7 @@
     grid-template-columns: auto auto auto auto auto  ;
     grid-gap : 20px ; 
     overflow: hidden;
+    
     @media screen and (max-width: $mediumscreen) {
         position: fixed;
         z-index:10;
