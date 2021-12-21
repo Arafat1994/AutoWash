@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default  function  ViewFunctionHook ()
+export default  function  UseViewFunctionHook ()
 {
 
     const [view , setview] = useState(false) ; 

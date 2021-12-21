@@ -5,14 +5,18 @@
     color: white;
     display: none;
     grid-template-columns: auto auto auto ;
-    height: 60px;
+    height: 50px;
     align-content: center;
+    justify-content: space-around;
     grid-gap: 20px;
-    padding:20px ;
+    padding:0px 20px;
     font-size:35px;
     .MenuSide{
         grid-column: 1/3;
         text-align: left;
+        p{
+            margin: 0px;
+        }
     }
     .BarSide{
         text-align: right;
@@ -22,9 +26,7 @@
         }
     }
 
-    @media screen and (max-width: $mediumscreen) {
-        display: grid;
-    }
+    @media screen and (max-width: $mediumscreen) {display: grid;}
 
 
 }

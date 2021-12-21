@@ -1,23 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './MenuNavbarcomponent.scss';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import DropDownComponent from '../dropDownmenuComponent/Dropdowncomponent';
 import Getwidth from '../../Hooks/GetwidthHook';
-import ViewFunctionHook from '../../Hooks/ViewHook';
+import UseViewFunctionHook from '../../Hooks/ViewHook';
+import MainButtonComponent from '../AppointmentButtonComponent/MainButtonComponent';
 //import  {} from './../dropDownmenuComponent/Dropdowncomponent' ;
 
 export default function MenuNavbarcomponent(props) {
 
-    //var [view, setview] = useState(false);
-    const {view , viewfunction} = ViewFunctionHook() ;
+    const {view , viewfunction} = UseViewFunctionHook() ;
+    
     const { Width, AvailHeight } = Getwidth();
 
-    //function viewfunction() { !view ? setview(true) : setview(false); }
     const MainNavcomponentCondition ={ height: Width > 820 ? '80px' : AvailHeight + 'px', display: (props.viewMenu || Width > 820) ? 'grid' : 'none'}  ; 
-    
-    //console.log(Width, AvailHeight);
 
 
     return (
@@ -38,7 +36,7 @@ export default function MenuNavbarcomponent(props) {
                 <div> <Link to='/Contact' className='menunavbarlink'> Contact  </Link> </div>
             </nav>
             <div className='takeappointment'>
-                <p> left bar   </p>
+                <MainButtonComponent child='Get Appointment' >   </MainButtonComponent> 
             </div>
 
         </div>

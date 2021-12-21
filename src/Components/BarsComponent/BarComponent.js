@@ -1,30 +1,26 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './BarComponent.scss'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import MenuNavbarcomponent from '../SecondNavbarComponent/MenuNavbarcomponent';
+import UseViewFunctionHook from "./../../Hooks/ViewHook"
 export default function BarComponent(props) {
 
-    const [viewMenu, setviewMenu] = useState(false);
+    const { view: viewMenu, viewfunction: ViewMenufunction } = UseViewFunctionHook();
+    console.log(' ele ' + viewMenu);
 
-    function ViewMenufunction() {
-        (!viewMenu) ? setviewMenu(true) : setviewMenu(false)
-    }
-
-
-    console.log(' ele ' +  viewMenu ) ; 
-return (
-    <React.Fragment>
-        <div className='BarComponent'>
-            <div className='MenuSide'>
-                <p> Menu </p>
+    return (
+        <React.Fragment>
+            <div className='BarComponent'>
+                <div className='MenuSide  '>
+                    <p className=''> Menu </p>
+                </div>
+                <div className='BarSide ' onClick={ViewMenufunction} >
+                    <FontAwesomeIcon icon={faBars} className='icon ' />
+                </div>
             </div>
-            <div className='BarSide' onClick={ViewMenufunction} >
-                <FontAwesomeIcon icon={faBars} className='icon' />
-            </div>
-        </div>
 
-        <MenuNavbarcomponent viewMenu={viewMenu}  />
-    </React.Fragment>
-)
-    }
+            <MenuNavbarcomponent viewMenu={viewMenu} />
+        </React.Fragment>
+    )
+}
