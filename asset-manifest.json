@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/AutoWash/static/css/main.263deb4a.chunk.css",
+    "main.css": "/AutoWash/static/css/main.c4a9d0c1.chunk.css",
     "main.js": "/AutoWash/static/js/main.40d53bf2.chunk.js",
     "main.js.map": "/AutoWash/static/js/main.40d53bf2.chunk.js.map",
     "runtime-main.js": "/AutoWash/static/js/runtime-main.88583988.js",
@@ -12,14 +12,14 @@
     "static/js/3.892ad712.chunk.js.map": "/AutoWash/static/js/3.892ad712.chunk.js.map",
     "index.html": "/AutoWash/index.html",
     "static/css/2.8c0e6b67.chunk.css.map": "/AutoWash/static/css/2.8c0e6b67.chunk.css.map",
-    "static/css/main.263deb4a.chunk.css.map": "/AutoWash/static/css/main.263deb4a.chunk.css.map",
+    "static/css/main.c4a9d0c1.chunk.css.map": "/AutoWash/static/css/main.c4a9d0c1.chunk.css.map",
     "static/js/2.88392683.chunk.js.LICENSE.txt": "/AutoWash/static/js/2.88392683.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.88583988.js",
     "static/css/2.8c0e6b67.chunk.css",
     "static/js/2.88392683.chunk.js",
-    "static/css/main.263deb4a.chunk.css",
+    "static/css/main.c4a9d0c1.chunk.css",
     "static/js/main.40d53bf2.chunk.js"
   ]
 }
