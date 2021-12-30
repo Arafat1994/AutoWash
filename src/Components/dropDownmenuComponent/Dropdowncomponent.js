@@ -3,21 +3,29 @@ import React from "react";
 import { Link } from "react-router-dom";
 import './DropDownComponent.scss'
 
-export default function DropDownComponent(props)
+export default function DropDownComponent(props) {
 
-{
-  
+
     console.log(props.view)
-   
+    console.log(props.dropdownele);
 
-    return( 
-        
-        <div className="dropdowncomponentcontainer"  style={{display : props.view ? 'block' : 'none'}} > 
-            <Link to='/BlogGrid'  className="DropDownlink" > Blog Grid  </Link>
-            <Link to='/DetailPage' className="DropDownlink"> Detail Page  </Link>
-            <Link to='/TeamMember' className="DropDownlink"> Team Member  </Link>
-            <Link to='/SchduleBooking' className="DropDownlink"> Schdule Booking </Link>
+    const ReturnedDropdownMenu = (props.dropdownele).map((result) => {
+        return (<Link  key={result.id} to={result.path} className={result.class} > {result.content}  </Link>)
+    }
+    );
+
+
+    return (
+
+        <div className="dropdowncomponentcontainer"  >
+            {
+                ReturnedDropdownMenu
+            }
+           
         </div>
+
+
+
     )
 }
 

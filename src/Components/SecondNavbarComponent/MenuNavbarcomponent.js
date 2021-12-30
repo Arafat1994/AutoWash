@@ -1,42 +1,72 @@
-import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import React  from 'react';
+import { Link } from 'react-router-dom';
 import './MenuNavbarcomponent.scss';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
-import DropDownComponent from '../dropDownmenuComponent/Dropdowncomponent';
+//import DropDownComponent from '../dropDownmenuComponent/Dropdowncomponent';
 import Getwidth from '../../Hooks/GetwidthHook';
-import UseViewFunctionHook from '../../Hooks/ViewHook';
+//import UseViewFunctionHook from '../../Hooks/ViewHook';
 import MainButtonComponent from '../AppointmentButtonComponent/MainButtonComponent';
-//import  {} from './../dropDownmenuComponent/Dropdowncomponent' ;
+
+import data from './../../Assets/jsonFile/data.json'
+import UseMapingdatafromJson from '../../Hooks/CustomHookmapingData';
+
+
 
 export default function MenuNavbarcomponent(props) {
 
-    const {view , viewfunction} = UseViewFunctionHook() ;
-    
+    //const { view, viewfunction } = UseViewFunctionHook();
+
     const { Width, AvailHeight } = Getwidth();
 
-    const MainNavcomponentCondition ={ height: Width > 820 ? '80px' : AvailHeight + 'px', display: (props.viewMenu || Width > 820) ? 'grid' : 'none'}  ; 
+    const MainNavcomponentCondition = { height: Width > 820 ? '80px' : AvailHeight + 'px', display: (props.viewMenu || Width > 820) ? 'grid' : 'none' };
+
+    let Mainnavdata = data[0].MainNavbardata;
+    const { dataFromJson } = UseMapingdatafromJson(Mainnavdata);
+
+    /*
+    console.log(dataFromJson[0].DropdownView);
+
+    const [active, setActive] = useState();
+
+    function gettingid(event) {
+        event.stopPropagation();
+        let id = event.target.id;
+    }
+     
+    */
+    const returneddiv = dataFromJson.map((result) => {
+        return (
+            <div key={result.id} >
+                <Link to={result.to} className={result.linkclass}  > {result.content}
+                    <FontAwesomeIcon icon={faChevronDown} className="icon" style={{ display: result.iconView ? "inline-block" : "none" }} />
+                    <div id={result.id} style={{ display: "none" }}  >
+                        {
+                            // <DropDownComponent view={view} dropdownele={result.DropdownmenuElement} />
+                        }
+                    </div>
+
+                </Link>
+            </div>
+        )
+    });
+
 
 
     return (
 
-        <div className='MainNavcomponent ' style={MainNavcomponentCondition} >
+        <div className='MainNavcomponent ' style={MainNavcomponentCondition}  >
 
             <nav className='menunavbar  '>
+                {
+                    returneddiv
+                }
 
-                <div><NavLink to='/AutoWash' className='menunavbarlink activelink'> Home  </NavLink></div>
-                <div> <Link to='/About' className='menunavbarlink'> About </Link> </div>
-                <div> <Link to='/Service' className='menunavbarlink'> Service  </Link> </div>
-                <div> <Link to='/Price' className='menunavbarlink'> Price  </Link> </div>
-                <div> <Link to='/WashingPoints' className='menunavbarlink' > Washing Point  </Link></div>
-                <div >
-                    <Link to='/Pages' className='menunavbarlink ' onMouseOver={viewfunction} onMouseOut={viewfunction} > Pages <FontAwesomeIcon icon={faChevronDown} className='icon' /> </Link>
-                    <div onMouseOver={viewfunction} onMouseOut={viewfunction}><DropDownComponent view={view} />   </div>
-                </div>
-                <div> <Link to='/Contact' className='menunavbarlink'> Contact  </Link> </div>
+
+
             </nav>
             <div className='takeappointment '>
-                <MainButtonComponent child='Get Appointment' >   </MainButtonComponent> 
+                <MainButtonComponent child='Get Appointment' >   </MainButtonComponent>
             </div>
 
         </div>

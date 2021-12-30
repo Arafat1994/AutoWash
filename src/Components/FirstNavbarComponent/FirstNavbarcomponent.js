@@ -16,10 +16,10 @@ export default function FirstNavBar() {
 
     
     
-    let Data = data[0].Fnavdata;
+    let Fnavdata = data[0].FNavbardata;
     
-    const { fnavdata } = UseMapingdatafromJson(Data);
-    const returneddiv = fnavdata.map((result) => {
+    const { dataFromJson } = UseMapingdatafromJson(Fnavdata);
+    const returneddiv = dataFromJson.map((result) => {
         return (
 
             < div key={result.id} className={result.mainclassname} >
@@ -49,9 +49,6 @@ export default function FirstNavBar() {
                 }
 
             </nav>
-
-            
-            
         </div>
     )
 }

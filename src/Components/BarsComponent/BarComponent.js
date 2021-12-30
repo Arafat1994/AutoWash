@@ -7,7 +7,7 @@ import UseViewFunctionHook from "./../../Hooks/ViewHook"
 export default function BarComponent(props) {
 
     const { view: viewMenu, viewfunction: ViewMenufunction } = UseViewFunctionHook();
-    console.log(' ele ' + viewMenu);
+    //console.log(' ele ' + viewMenu);
 
     return (
         <React.Fragment>
@@ -16,7 +16,7 @@ export default function BarComponent(props) {
                     <p className=''> Menu </p>
                 </div>
                 <div className='BarSide ' onClick={ViewMenufunction} >
-                    <FontAwesomeIcon icon={faBars} className='icon ' />
+                    <FontAwesomeIcon icon={faBars} className='icon' />
                 </div>
             </div>
 

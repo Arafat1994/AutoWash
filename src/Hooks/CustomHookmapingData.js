@@ -1,15 +1,15 @@
 
 
+function UseMapingdatafromJson(data) {
 
-function UseMapingdatafromJson( data ) {
         
-        const fnavdata = (data).map((result) => {
-             
-             return result  ; 
-            }) ; 
 
-    //console.log(fnavdata)
-    return{fnavdata}
+        const dataFromJson = (data).map((result) => {
+
+                return result;
+        });
+
+        return { dataFromJson }
 }
 
 export default UseMapingdatafromJson;

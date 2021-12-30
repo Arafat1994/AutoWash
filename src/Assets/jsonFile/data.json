@@ -1,6 +1,6 @@
 [
     {
-        "Fnavdata": [
+        "FNavbardata": [
             {
                 "id": 0,
                 "mainclassname": "ele2",
@@ -24,6 +24,142 @@
                 "headercontent": "Email Us",
                 "spancontent": " info@autowash.com ",
                 "altimage": "emailimage"
+            }
+        ],
+        "MainNavbardata": [
+            {
+                "id": 0,
+                "to": "/AutoWash",
+                "linkclass": "menunavbarlink activelink",
+                "content": "Home",
+                "type": "Home",
+                "linkFunction": "viewfunction",
+                "iconFunction": "viewfunction",
+                "iconClass": "",
+                "iconName": "",
+                "iconView": false,
+                "DropdownView": false,
+                "DropdownmenuElement": []
+            },
+            {
+                "id": 1,
+                "to": "/About",
+                "linkclass": "menunavbarlink",
+                "content": "About",
+                "type": "About",
+                "linkFunction": "viewfunction",
+                "iconFunction": "viewfunction",
+                "iconClass": "",
+                "iconName": "",
+                "iconView": false,
+                "DropdownView": false,
+                "DropdownmenuElement": []
+            },
+            {
+                "id": 2,
+                "to": "/Service",
+                "linkclass": "menunavbarlink",
+                "content": "Service",
+                "type": "Service",
+                "linkFunction": "viewfunction",
+                "iconFunction": "viewfunction",
+                "iconClass": "",
+                "iconName": "",
+                "iconView": true,
+                "DropdownView": false,
+                "DropdownmenuElement": [
+                    { "id": 0, "content": " Car Washing ", "class": "DropDownlink", "path": "/BlogGrid"
+                    },
+                    { "id": 1, "content": " Chaning Oil ", "class": "DropDownlink", "path": "/DetailPage"
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "to": "/Price",
+                "linkclass": "menunavbarlink",
+                "content": "Price",
+                "type": "Price",
+                "linkFunction": "viewfunction",
+                "iconFunction": "viewfunction",
+                "iconClass": "",
+                "iconName": "",
+                "iconView": false,
+                "DropdownView": false,
+                "DropdownmenuElement": []
+            },
+            {
+                "id": 4,
+                "to": "/WashingPoints",
+                "linkclass": "menunavbarlink",
+                "content": "Washing Point",
+                "type": "Washing Point",
+                "linkFunction": "viewfunction",
+                "iconFunction": "viewfunction",
+                "iconClass": "",
+                "iconName": "",
+                "iconView": true,
+                "DropdownView": false,
+                "DropdownmenuElement": [
+                    { "id": 0, "content": "yarmook distinct", "class": "DropDownlink", "path": "/" },
+                    { "id": 1, "content": "Mounsia distinct", "class": "DropDownlink", "path": "/" },
+                    { "id": 2, "content": "Kalij distinct", "class": "DropDownlink", "path": "/" },
+                    { "id": 3, "content": "Remal distinct", "class": "DropDownlink", "path": "/" }
+                    
+                ]
+            },
+            {
+                "id": 5,
+                "to": "/Pages",
+                "linkclass": "menunavbarlink",
+                "content": "Pages",
+                "type": "Pages",
+                "linkFunction": "viewfunction",
+                "iconFunction": "viewfunction",
+                "iconClass": "icon",
+                "iconName": "faChevronDown",
+                "iconView": true,
+                "DropdownView":false,
+                "DropdownmenuElement": [
+                    {
+                        "id": 0,
+                        "content": "Blog Grid",
+                        "class": "DropDownlink",
+                        "path": "/BlogGrid"
+                    },
+                    {
+                        "id": 1,
+                        "content": "Detail Page",
+                        "class": "DropDownlink",
+                        "path": "/DetailPage"
+                    },
+                    {
+                        "id": 2,
+                        "content": "Team Member",
+                        "class": "DropDownlink",
+                        "path": "/TeamMember"
+                    },
+                    {
+                        "id": 3,
+                        "content": "Schdule Booking",
+                        "class": "DropDownlink",
+                        "path": "/SchduleBooking"
+                    }
+                ]
+            },
+            {
+                "id": 6,
+                "to": "/Contact",
+                "linkclass": "menunavbarlink",
+                "content": "Contact",
+                "type": "Contact",
+                "linkFunction": "viewfunction",
+                "iconFunction": "viewfunction",
+                "iconClass": "",
+                "iconName": "",
+                "iconView": false,
+                "DropdownView": false,
+                "DropdownmenuElement": []
             }
         ]
     }
