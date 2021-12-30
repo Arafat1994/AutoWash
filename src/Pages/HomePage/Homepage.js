@@ -1,4 +1,5 @@
 import React from 'react' ; 
+import CarouselComponent from '../../Components/CarouselComponent/CarouselComponent';
 
 import Getwidth from './../../Hooks/GetwidthHook' ; 
 export default function HomePage()
@@ -8,6 +9,7 @@ export default function HomePage()
     return(
         <div> 
             
+            <CarouselComponent /> 
             <div> home page  {Width} </div>
 
         </div>
