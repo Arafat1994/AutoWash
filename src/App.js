@@ -27,8 +27,7 @@ function App() {
           <Route path='/Contact' element={<ContactPageComponent />} />
           <Route path='/About' element={<AboutPageComponent />} />
           <Route path='/Price' element={<PricepageComponent />} />
-          <Route path='/Pages' element={<PagesPagecomponent/> } />
-          
+          <Route path='/Pages' element={<PagesPagecomponent/> } /> 
           <Route path='/Service' element={<ServicePageComponent />} />
           <Route path='/WashingPoints' element={<WashingPointsPageComponent />} />
           <Route path='/DetailPage' element={<DetailPageComponent />} />

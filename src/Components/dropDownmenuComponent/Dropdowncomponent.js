@@ -1,27 +1,33 @@
 
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useLayoutEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import './DropDownComponent.scss'
 
 export default function DropDownComponent(props) {
 
+    const navigate = useNavigate(); 
+    const [elemet, setelement] = useState(null);
 
-    console.log(props.view)
-    console.log(props.dropdownele);
-
-    const ReturnedDropdownMenu = (props.dropdownele).map((result) => {
-        return (<Link  key={result.id} to={result.path} className={result.class} > {result.content}  </Link>)
-    }
-    );
-
+    useLayoutEffect(()=>{
+        if (props.dropdownele) {
+            setelement((props.dropdownele).map((result) => {
+                return (<div key={result.id} onClick={()=>navigate(result.path)} to={result.path} className={result.class} > {result.content}  </div>)
+            }
+            ))
+        }
+        else {
+            setelement(null)
+        }
+    
+    } ,[props.dropdownele , navigate])
 
     return (
 
-        <div className="dropdowncomponentcontainer"  >
+        <div className="dropdowncomponentcontainer"   >
             {
-                ReturnedDropdownMenu
+                elemet
             }
-           
+
         </div>
 
 

@@ -8,7 +8,8 @@ export default function HomePage()
     return(
         <div> 
             
-            <CarouselComponent /> 
+            {//<CarouselComponent /> 
+            }
             <div> home page  {Width} </div>
 
         </div>
