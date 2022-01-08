@@ -1,28 +1,25 @@
 {
   "files": {
-    "main.css": "/AutoWash/static/css/main.4cbf4d10.chunk.css",
-    "main.js": "/AutoWash/static/js/main.8efd680a.chunk.js",
-    "main.js.map": "/AutoWash/static/js/main.8efd680a.chunk.js.map",
-    "runtime-main.js": "/AutoWash/static/js/runtime-main.d2189591.js",
-    "runtime-main.js.map": "/AutoWash/static/js/runtime-main.d2189591.js.map",
+    "main.css": "/AutoWash/static/css/main.932a9c93.chunk.css",
+    "main.js": "/AutoWash/static/js/main.baff93ba.chunk.js",
+    "main.js.map": "/AutoWash/static/js/main.baff93ba.chunk.js.map",
+    "runtime-main.js": "/AutoWash/static/js/runtime-main.9fd47b0e.js",
+    "runtime-main.js.map": "/AutoWash/static/js/runtime-main.9fd47b0e.js.map",
     "static/css/2.8c0e6b67.chunk.css": "/AutoWash/static/css/2.8c0e6b67.chunk.css",
-    "static/js/2.8ebf887f.chunk.js": "/AutoWash/static/js/2.8ebf887f.chunk.js",
-    "static/js/2.8ebf887f.chunk.js.map": "/AutoWash/static/js/2.8ebf887f.chunk.js.map",
-    "static/js/3.5a670780.chunk.js": "/AutoWash/static/js/3.5a670780.chunk.js",
-    "static/js/3.5a670780.chunk.js.map": "/AutoWash/static/js/3.5a670780.chunk.js.map",
+    "static/js/2.9c3b310d.chunk.js": "/AutoWash/static/js/2.9c3b310d.chunk.js",
+    "static/js/2.9c3b310d.chunk.js.map": "/AutoWash/static/js/2.9c3b310d.chunk.js.map",
+    "static/js/3.494c19ff.chunk.js": "/AutoWash/static/js/3.494c19ff.chunk.js",
+    "static/js/3.494c19ff.chunk.js.map": "/AutoWash/static/js/3.494c19ff.chunk.js.map",
     "index.html": "/AutoWash/index.html",
     "static/css/2.8c0e6b67.chunk.css.map": "/AutoWash/static/css/2.8c0e6b67.chunk.css.map",
-    "static/css/main.4cbf4d10.chunk.css.map": "/AutoWash/static/css/main.4cbf4d10.chunk.css.map",
-    "static/js/2.8ebf887f.chunk.js.LICENSE.txt": "/AutoWash/static/js/2.8ebf887f.chunk.js.LICENSE.txt",
-    "static/media/carousel-1.c0e9b7e2.jpg": "/AutoWash/static/media/carousel-1.c0e9b7e2.jpg",
-    "static/media/carousel-2.3553bff0.jpg": "/AutoWash/static/media/carousel-2.3553bff0.jpg",
-    "static/media/carousel-3.de6e447a.jpg": "/AutoWash/static/media/carousel-3.de6e447a.jpg"
+    "static/css/main.932a9c93.chunk.css.map": "/AutoWash/static/css/main.932a9c93.chunk.css.map",
+    "static/js/2.9c3b310d.chunk.js.LICENSE.txt": "/AutoWash/static/js/2.9c3b310d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.d2189591.js",
+    "static/js/runtime-main.9fd47b0e.js",
     "static/css/2.8c0e6b67.chunk.css",
-    "static/js/2.8ebf887f.chunk.js",
-    "static/css/main.4cbf4d10.chunk.css",
-    "static/js/main.8efd680a.chunk.js"
+    "static/js/2.9c3b310d.chunk.js",
+    "static/css/main.932a9c93.chunk.css",
+    "static/js/main.baff93ba.chunk.js"
   ]
 }
