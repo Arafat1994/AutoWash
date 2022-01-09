@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/AutoWash/static/css/main.932a9c93.chunk.css",
-    "main.js": "/AutoWash/static/js/main.baff93ba.chunk.js",
-    "main.js.map": "/AutoWash/static/js/main.baff93ba.chunk.js.map",
-    "runtime-main.js": "/AutoWash/static/js/runtime-main.9fd47b0e.js",
-    "runtime-main.js.map": "/AutoWash/static/js/runtime-main.9fd47b0e.js.map",
-    "static/css/2.8c0e6b67.chunk.css": "/AutoWash/static/css/2.8c0e6b67.chunk.css",
-    "static/js/2.9c3b310d.chunk.js": "/AutoWash/static/js/2.9c3b310d.chunk.js",
-    "static/js/2.9c3b310d.chunk.js.map": "/AutoWash/static/js/2.9c3b310d.chunk.js.map",
-    "static/js/3.494c19ff.chunk.js": "/AutoWash/static/js/3.494c19ff.chunk.js",
-    "static/js/3.494c19ff.chunk.js.map": "/AutoWash/static/js/3.494c19ff.chunk.js.map",
+    "main.css": "/AutoWash/static/css/main.842881d2.chunk.css",
+    "main.js": "/AutoWash/static/js/main.2bb5b3e0.chunk.js",
+    "main.js.map": "/AutoWash/static/js/main.2bb5b3e0.chunk.js.map",
+    "runtime-main.js": "/AutoWash/static/js/runtime-main.31df5dc9.js",
+    "runtime-main.js.map": "/AutoWash/static/js/runtime-main.31df5dc9.js.map",
+    "static/css/2.4bdb1b80.chunk.css": "/AutoWash/static/css/2.4bdb1b80.chunk.css",
+    "static/js/2.a2710a2b.chunk.js": "/AutoWash/static/js/2.a2710a2b.chunk.js",
+    "static/js/2.a2710a2b.chunk.js.map": "/AutoWash/static/js/2.a2710a2b.chunk.js.map",
+    "static/js/3.828b8f43.chunk.js": "/AutoWash/static/js/3.828b8f43.chunk.js",
+    "static/js/3.828b8f43.chunk.js.map": "/AutoWash/static/js/3.828b8f43.chunk.js.map",
     "index.html": "/AutoWash/index.html",
-    "static/css/2.8c0e6b67.chunk.css.map": "/AutoWash/static/css/2.8c0e6b67.chunk.css.map",
-    "static/css/main.932a9c93.chunk.css.map": "/AutoWash/static/css/main.932a9c93.chunk.css.map",
-    "static/js/2.9c3b310d.chunk.js.LICENSE.txt": "/AutoWash/static/js/2.9c3b310d.chunk.js.LICENSE.txt"
+    "static/css/2.4bdb1b80.chunk.css.map": "/AutoWash/static/css/2.4bdb1b80.chunk.css.map",
+    "static/css/main.842881d2.chunk.css.map": "/AutoWash/static/css/main.842881d2.chunk.css.map",
+    "static/js/2.a2710a2b.chunk.js.LICENSE.txt": "/AutoWash/static/js/2.a2710a2b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.9fd47b0e.js",
-    "static/css/2.8c0e6b67.chunk.css",
-    "static/js/2.9c3b310d.chunk.js",
-    "static/css/main.932a9c93.chunk.css",
-    "static/js/main.baff93ba.chunk.js"
+    "static/js/runtime-main.31df5dc9.js",
+    "static/css/2.4bdb1b80.chunk.css",
+    "static/js/2.a2710a2b.chunk.js",
+    "static/css/main.842881d2.chunk.css",
+    "static/js/main.2bb5b3e0.chunk.js"
   ]
 }
