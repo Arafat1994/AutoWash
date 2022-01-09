@@ -1,177 +1,218 @@
-[
-    {
-        "FNavbardata": [
-            {
-                "id": 0,
-                "mainclassname": "ele2",
-                "imagesrc": "./images/clock.png",
-                "headercontent": "Opening Hours",
-                "spancontent": "Mon - Fri, 8:00 - 9:00",
-                "altimage": "clockimage"
-            },
-            {
-                "id": 1,
-                "mainclassname": "ele3",
-                "imagesrc": "./images/phone.png",
-                "headercontent": "Call Us ",
-                "spancontent": " +966-50-6293772 ",
-                "altimage": "callimage"
-            },
-            {
-                "id": 2,
-                "mainclassname": "ele4",
-                "imagesrc": "./images/mail.png",
-                "headercontent": "Email Us",
-                "spancontent": " info@autowash.com ",
-                "altimage": "emailimage"
-            }
-        ],
-        "MainNavbardata": [
-            {
-                "id": 0,
-                "to": "/AutoWash",
-                "linkclass": "menunavbarlink activelink",
-                "content": "Home",
-                "type": "Home",
-                "linkFunction": "viewfunction",
-                "iconFunction": "viewfunction",
-                "iconClass": "",
-                "iconName": "",
-                "iconView": false,
-                "DropdownView": false,
-                "DropdownmenuElement": []
-            },
-            {
-                "id": 1,
-                "to": "/About",
-                "linkclass": "menunavbarlink",
-                "content": "About",
-                "type": "About",
-                "linkFunction": "viewfunction",
-                "iconFunction": "viewfunction",
-                "iconClass": "",
-                "iconName": "",
-                "iconView": false,
-                "DropdownView": false,
-                "DropdownmenuElement": []
-            },
-            {
-                "id": 2,
-                "to": "/Service",
-                "linkclass": "menunavbarlink",
-                "content": "Service",
-                "type": "Service",
-                "linkFunction": "viewfunction",
-                "iconFunction": "viewfunction",
-                "iconClass": "",
-                "iconName": "",
-                "iconView": true,
-                "DropdownView": false,
-                "DropdownmenuElement": [
-                    { "id":0, "content": " Car Washing ", "class": "DropDownlink", "path": "/BlogGrid"
-                    },
-                    { "id":1, "content": " Chaning Oil ", "class": "DropDownlink", "path": "/DetailPage"
-                    }
-                ]
-            },
-            {
-                "id":3,
-                "to": "/Price",
-                "linkclass": "menunavbarlink",
-                "content": "Price",
-                "type": "Price",
-                "linkFunction": "viewfunction",
-                "iconFunction": "viewfunction",
-                "iconClass": "",
-                "iconName": "",
-                "iconView": false,
-                "DropdownView": false,
-                "DropdownmenuElement": []
-            },
-            {
-                "id":4,
-                "to": "/WashingPoints",
-                "linkclass": "menunavbarlink",
-                "content": "Washing Point",
-                "type": "Washing Point",
-                "linkFunction": "viewfunction",
-                "iconFunction": "viewfunction",
-                "iconClass": "",
-                "iconName": "",
-                "iconView": true,
-                "DropdownView": false,
-                "DropdownmenuElement": [
-                    { "id": 0, "content": "yarmook distinct", "class": "DropDownlink", "path": "/" },
-                    { "id": 1, "content": "Mounsia distinct", "class": "DropDownlink", "path": "/" },
-                    { "id": 2, "content": "Kalij distinct", "class": "DropDownlink", "path": "/" },
-                    { "id": 3, "content": "Remal distinct", "class": "DropDownlink", "path": "/" }
-                    
-                ]
-            },
-            {
-                "id": 5,
-                "to": "/Pages",
-                "linkclass": "menunavbarlink",
-                "content": "Pages",
-                "type": "Pages",
-                "linkFunction": "viewfunction",
-                "iconFunction": "viewfunction",
-                "iconClass": "icon",
-                "iconName": "faChevronDown",
-                "iconView": true,
-                "DropdownView":false,
-                "DropdownmenuElement": [
-                    {
-                        "id": 0,
-                        "content": "Blog Grid",
-                        "class": "DropDownlink",
-                        "path": "/BlogGrid"
-                    },
-                    {
-                        "id": 1,
-                        "content": "Detail Page",
-                        "class": "DropDownlink",
-                        "path": "/DetailPage"
-                    },
-                    {
-                        "id": 2,
-                        "content": "Team Member",
-                        "class": "DropDownlink",
-                        "path": "/TeamMember"
-                    },
-                    {
-                        "id": 3,
-                        "content": "Schdule Booking",
-                        "class": "DropDownlink",
-                        "path": "/SchduleBooking"
-                    }
-                ]
-            },
-            {
-                "id": 6,
-                "to": "/Contact",
-                "linkclass": "menunavbarlink",
-                "content": "Contact",
-                "type": "Contact",
-                "linkFunction": "viewfunction",
-                "iconFunction": "viewfunction",
-                "iconClass": "",
-                "iconName": "",
-                "iconView": false,
-                "DropdownView": false,
-                "DropdownmenuElement": []
-            }
-        ] , 
-        "CarouselData":[
-            {"id":0 , "imgsrc":"./images/carousel-1.jpg" , "header":"Washing and detailing" , "mainheader":"Keep Your Car Newer" , 
-                "firstdetails":"we offer cars washing for all Cars to make " , "seconddtails":" it like new one  "
-            },
-            {"id":2 , "imgsrc":"./images/carousel-3.jpg" , "header":" Car Motor Maitenence" , "mainheader":"Keep Your car Fit " , 
-                "firstdetails":" We make all the necessary motor maitaience for " , "seconddtails":" all king of cars and motors  "
-            },
-            {"id":3 , "imgsrc":"./images/carousel-5.jpg" , "header":"Changing Car Oil" , "mainheader":"Change Your Oil with Gurantee " , 
-                "firstdetails":" we have good prices ang good kind of oils " , "seconddtails":" to make your motor perfect"
-            }
-        ]
-    }
+[{
+    "FNavbardata": [
+        {
+            "id": 0,
+            "mainclassname": "ele2",
+            "imagesrc": "./images/clock.png",
+            "headercontent": "Opening Hours",
+            "spancontent": "Mon - Fri, 8:00 - 9:00",
+            "altimage": "clockimage"
+        },
+        {
+            "id": 1,
+            "mainclassname": "ele3",
+            "imagesrc": "./images/phone.png",
+            "headercontent": "Call Us ",
+            "spancontent": " +966-50-6293772 ",
+            "altimage": "callimage"
+        },
+        {
+            "id": 2,
+            "mainclassname": "ele4",
+            "imagesrc": "./images/mail.png",
+            "headercontent": "Email Us",
+            "spancontent": " info@autowash.com ",
+            "altimage": "emailimage"
+        }
+    ],
+    "MainNavbardata": [
+        {
+            "id": 0,
+            "to": "/AutoWash",
+            "linkclass": "menunavbarlink activelink",
+            "content": "Home",
+            "type": "Home",
+            "linkFunction": "viewfunction",
+            "iconFunction": "viewfunction",
+            "iconClass": "",
+            "iconName": "",
+            "iconView": false,
+            "DropdownView": false,
+            "DropdownmenuElement": []
+        },
+        {
+            "id": 1,
+            "to": "/About",
+            "linkclass": "menunavbarlink",
+            "content": "About",
+            "type": "About",
+            "linkFunction": "viewfunction",
+            "iconFunction": "viewfunction",
+            "iconClass": "",
+            "iconName": "",
+            "iconView": false,
+            "DropdownView": false,
+            "DropdownmenuElement": []
+        },
+        {
+            "id": 2,
+            "to": "/Service",
+            "linkclass": "menunavbarlink",
+            "content": "Service",
+            "type": "Service",
+            "linkFunction": "viewfunction",
+            "iconFunction": "viewfunction",
+            "iconClass": "",
+            "iconName": "",
+            "iconView": true,
+            "DropdownView": false,
+            "DropdownmenuElement": [
+                {
+                    "id": 0,
+                    "content": " Car Washing ",
+                    "class": "DropDownlink",
+                    "path": "/BlogGrid"
+                },
+                {
+                    "id": 1,
+                    "content": " Chaning Oil ",
+                    "class": "DropDownlink",
+                    "path": "/DetailPage"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "to": "/Price",
+            "linkclass": "menunavbarlink",
+            "content": "Price",
+            "type": "Price",
+            "linkFunction": "viewfunction",
+            "iconFunction": "viewfunction",
+            "iconClass": "",
+            "iconName": "",
+            "iconView": false,
+            "DropdownView": false,
+            "DropdownmenuElement": []
+        },
+        {
+            "id": 4,
+            "to": "/WashingPoints",
+            "linkclass": "menunavbarlink",
+            "content": "Washing Point",
+            "type": "Washing Point",
+            "linkFunction": "viewfunction",
+            "iconFunction": "viewfunction",
+            "iconClass": "",
+            "iconName": "",
+            "iconView": true,
+            "DropdownView": false,
+            "DropdownmenuElement": [
+                {
+                    "id": 0,
+                    "content": "yarmook distinct",
+                    "class": "DropDownlink",
+                    "path": "/"
+                },
+                {
+                    "id": 1,
+                    "content": "Mounsia distinct",
+                    "class": "DropDownlink",
+                    "path": "/"
+                },
+                {
+                    "id": 2,
+                    "content": "Kalij distinct",
+                    "class": "DropDownlink",
+                    "path": "/"
+                },
+                {
+                    "id": 3,
+                    "content": "Remal distinct",
+                    "class": "DropDownlink",
+                    "path": "/"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "to": "/Pages",
+            "linkclass": "menunavbarlink",
+            "content": "Pages",
+            "type": "Pages",
+            "linkFunction": "viewfunction",
+            "iconFunction": "viewfunction",
+            "iconClass": "icon",
+            "iconName": "faChevronDown",
+            "iconView": true,
+            "DropdownView": false,
+            "DropdownmenuElement": [
+                {
+                    "id": 0,
+                    "content": "Blog Grid",
+                    "class": "DropDownlink",
+                    "path": "/BlogGrid"
+                },
+                {
+                    "id": 1,
+                    "content": "Detail Page",
+                    "class": "DropDownlink",
+                    "path": "/DetailPage"
+                },
+                {
+                    "id": 2,
+                    "content": "Team Member",
+                    "class": "DropDownlink",
+                    "path": "/TeamMember"
+                },
+                {
+                    "id": 3,
+                    "content": "Schdule Booking",
+                    "class": "DropDownlink",
+                    "path": "/SchduleBooking"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "to": "/Contact",
+            "linkclass": "menunavbarlink",
+            "content": "Contact",
+            "type": "Contact",
+            "linkFunction": "viewfunction",
+            "iconFunction": "viewfunction",
+            "iconClass": "",
+            "iconName": "",
+            "iconView": false,
+            "DropdownView": false,
+            "DropdownmenuElement": []
+        }
+    ],
+    "CarouselData": [
+        {
+            "id": 0,
+            "imgsrc": "./images/carousel-1.jpg",
+            "header": "Washing and detailing",
+            "mainheader": "Keep Your Car Newer",
+            "firstdetails": "we offer cars washing for all Cars to make ",
+            "seconddtails": " it like new one  "
+        },
+        {
+            "id": 2,
+            "imgsrc": "./images/carousel-3.jpg",
+            "header": " Car Motor Maitenence",
+            "mainheader": "Keep Your car Fit ",
+            "firstdetails": " We make all the necessary motor maitaience for ",
+            "seconddtails": " all king of cars and motors  "
+        },
+        {
+            "id": 3,
+            "imgsrc": "./images/carousel-5.jpg",
+            "header": "Changing Car Oil",
+            "mainheader": "Change Your Oil with Gurantee ",
+            "firstdetails": " we have good prices ang good kind of oils ",
+            "seconddtails": " to make your motor perfect"
+        }
+    ]
+}
 ]
