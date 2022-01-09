@@ -161,6 +161,17 @@
                 "DropdownView": false,
                 "DropdownmenuElement": []
             }
+        ] , 
+        "CarouselData":[
+            {"id":0 , "imgsrc":"./images/carousel-1.jpg" , "header":"Washing and detailing" , "mainheader":"Keep Your Car Newer" , 
+                "firstdetails":"we offer cars washing for all Cars to make " , "seconddtails":" it like new one  "
+            },
+            {"id":2 , "imgsrc":"./images/carousel-3.jpg" , "header":" Car Motor Maitenence" , "mainheader":"Keep Your car Fit " , 
+                "firstdetails":" We make all the necessary motor maitaience for " , "seconddtails":" all king of cars and motors  "
+            },
+            {"id":3 , "imgsrc":"./images/carousel-5.jpg" , "header":"Changing Car Oil" , "mainheader":"Change Your Oil with Gurantee " , 
+                "firstdetails":" we have good prices ang good kind of oils " , "seconddtails":" to make your motor perfect"
+            }
         ]
     }
 ]

@@ -1,43 +1,56 @@
-@import './../../index.scss' ; 
+@import './../../index.scss' ;
 
-.CarouselContainer{
-    height:400px;
-    width: 100%;
-    position: relative;
-    .Carousel{
-        display:grid;
-        grid-template-columns: auto;
-        align-items: center;
-        text-align: center;
-        .CarouselImage{
-            
-            .carsoulimage{
-                width: 100%;
-                height:400px;
-            }
+.swiper {
+  width: 100%;
+  height:450px;
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: auto;
+    position:relative ;
+    color: $WhiteColor;
+    background-color:gray;
+    img{
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    .carousel-div{
+      position:absolute;
+      align-self: center;
+      text-align: center;
+      width: 100%;
+      padding: 10px;
+      .header{
+        padding: inherit;
+        font-size: $mediumtext;
+        @media screen and (max-width: $mediumscreen) {
+          font-size: $smalltext;
         }
-        .carouseltext{
-            position: absolute;
-            top: 0;
-            left:12.5%;
-            padding: 75px 10px;
-            width: 75%;
-            height:400px;
-            color:$WhiteColor;
-            border: 1px solid green;
-            @media screen and (max-width: $mediumscreen) 
-            {
-                width: 100%;
-                left: 0px;
-                padding:75px 30px;
-            }
-
-            
-           .header1{color: $mainredcolor; font-size: 25px;  }
-           .mainHeader{ font-size: 40px; }
-           & > *{ margin-bottom:30px;}
-
-
+      }
+      .main-header{
+        padding: inherit;
+        color: $mainredcolor;
+        font-size:$largetext;
+        font-weight: bolder;
+        @media screen and (max-width: $mediumscreen) {
+          font-size: $mediumtext;
         }
+      }
+      .Some-details{
+        padding: inherit;
+        p{
+          line-height: 10px;
+        }
+        
+        }
+
+        
     }
 }
+}
+
+
+
+

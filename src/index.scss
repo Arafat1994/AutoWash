@@ -4,6 +4,10 @@ $mainblackcolor : #202C45 ;
 $WhiteColor : White ; 
 $smallscreen : 500px ; 
 $mediumscreen : 820px ; 
+$largetext: 50px ; 
+$mediumtext:40px ;
+$smalltext:30px ;
+
  span{
     color:gray;
     font-size: small;
@@ -12,6 +16,7 @@ $mediumscreen : 820px ;
 body
 {
     height: 100%;
+    font-family:cursive ;
 }
 
 .Fnavbarele
