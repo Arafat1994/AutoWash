@@ -1,0 +1,47 @@
+@import "./../../index.scss" ; 
+.PlansContainer{
+    padding: 30px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 20px; 
+    justify-content:space-around;
+    text-align: center;
+    .plansdiv{
+        align-self: stretch;
+        border-radius: 10px;
+        padding: 20px ;
+        color:$mainblackcolor;
+          > *{
+             margin-bottom:20px;
+         }
+        .titlePrice{
+            font-size:$verysmalltext;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+        }
+        .planservice{
+            p{
+                svg{
+                    color:$mainredcolor;
+                }
+                span{
+                    font-size: 15px;
+                    color: $mainblackcolor;
+                }
+            }
+            
+        }
+        .active , &:hover{
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            color: $mainredcolor;
+        }
+    }
+    @media screen and (max-width:$largescreen) {
+        grid-template-columns: auto auto  ;        
+    }
+    @media screen and (max-width:$mediumscreen) {
+        grid-template-columns: auto  ;        
+    }
+}

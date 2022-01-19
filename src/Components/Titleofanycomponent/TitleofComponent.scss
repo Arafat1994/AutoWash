@@ -1,0 +1,28 @@
+@import './../../index.scss';
+.componenttitle{
+    padding: 5px;
+    margin:60px 0 20px 0  ;
+    /*$aligntext:var(--textalignele  );
+    text-align: $aligntext;*/
+    .title{
+        
+        
+        color: $mainredcolor;
+        font-size: $verysmalltext;
+        position: relative; 
+        //width:150px; 
+        ::after{
+            border-bottom: 2px solid $mainredcolor; 
+            margin:0 20px;
+        }
+    }
+    .titleHeader{
+        font-size: $smalltext;
+        color:$mainblackcolor;
+        font-weight: bold;
+        
+    }
+   
+    
+
+}

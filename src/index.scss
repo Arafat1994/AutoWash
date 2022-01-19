@@ -2,11 +2,15 @@
 $mainredcolor : #E81C2E ; 
 $mainblackcolor : #202C45 ; 
 $WhiteColor : White ; 
-$smallscreen : 500px ; 
+$graycolor:gray;
+$lightgray :lightgray;
+$smallscreen : 600px ; 
 $mediumscreen : 820px ; 
+$largescreen:1050px;
 $largetext: 50px ; 
 $mediumtext:40px ;
 $smalltext:30px ;
+$verysmalltext:20px ;
 
  span{
     color:gray;
@@ -45,3 +49,23 @@ body
     
 
 }
+
+
+@mixin MainButton ($back:$WhiteColor ,$font:$mainblackcolor ,$hoverback:$mainredcolor , $hoverfont:$WhiteColor) {
+    
+    .appoint{
+        
+        border:1px solid transparent ;
+        padding: 10px 25px;
+        color: $mainblackcolor;
+        border-radius: 30px;
+        background:linear-gradient(to right,  $hoverback 50% , $back 50%);
+        background-size: 210% 110%;
+        background-position:right bottom;
+        transition:all .4s ease;
+        &:hover{  background-position:left bottom;  color:$WhiteColor;  }
+        
+    }
+
+}
+

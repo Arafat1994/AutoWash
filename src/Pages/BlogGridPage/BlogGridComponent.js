@@ -1,10 +1,11 @@
 import React from 'react'; 
+import PagerHeader from '../../Components/pageHeader/pageHeader';
 export default function BlogGridComponent()
 {
 
     return(
-        <div> 
-            BlogGrid component 
+        <div className='MainBlog'> 
+            <PagerHeader/>
         </div>
     )
 }

@@ -1,0 +1,63 @@
+@import './../../index.scss'; 
+
+.Whatwedo{
+    color: $mainblackcolor;
+    width: 100%; 
+    height: auto;
+    margin: 20px 0 ;
+    
+    
+    .whatwedoContainer{
+        margin: 20px 0;
+        width: 100%;
+        display:grid;
+        grid-template-columns: auto auto auto auto;
+        grid-gap: 20px;
+        justify-content: space-around;
+        overflow: hidden;
+        
+       /* 
+        .whatwedoelement{
+            
+           .Whatwedoeledivimg{
+            
+                height:120px;
+                width:100% ;
+                margin-bottom:15px;
+                display: grid;
+                justify-content: center;
+                img{
+                    height: 70px;
+                    width: 70px;
+                    display: block;
+                    margin: auto;
+                    display: block;
+                    margin: auto;
+                }
+            }
+           
+            .whatwedoelementtext{
+                line-height: 15px;
+                padding: 0 10px;
+                text-align: center;
+                p:nth-child(1){
+                    color: $mainblackcolor;
+                    font-size:$smalltext;
+                } 
+                p:nth-child(2){
+                    color:$graycolor ;
+                    font-size:$verysmalltext;
+                } 
+            }
+            
+        }
+        
+        */
+        @media screen and (max-width: $largescreen) {
+            grid-template-columns: auto auto ; 
+        }
+        @media screen and (max-width: $smallscreen) {
+            grid-template-columns: auto  ;  
+        }
+    }
+}

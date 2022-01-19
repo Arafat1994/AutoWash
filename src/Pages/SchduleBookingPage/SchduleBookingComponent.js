@@ -1,10 +1,11 @@
 import React from 'react'; 
+import PagerHeader from '../../Components/pageHeader/pageHeader';
 export default function SchduleBookingComponent()
 {
 
     return(
-        <div> 
-         Schdule booking  component 
+        <div className='MainSchdule'> 
+            <PagerHeader/>
         </div>
     )
 }

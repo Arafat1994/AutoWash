@@ -1,11 +1,12 @@
 import React from 'react';
+import PagerHeader from '../../Components/pageHeader/pageHeader';
 export default function WashingPointsPageComponent()
 {
     return(
-        <div> 
-            <div> 
-                Washing Point   page 
-                </div>
+        <div className='MainWashing'> 
+            
+                <PagerHeader/>
+                
         </div>
     )
 }

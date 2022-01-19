@@ -1,0 +1,8 @@
+@import './index.scss' ; 
+.MainAppcomponent{
+    margin-top: 153.500px;
+    @media screen and (max-width: $mediumscreen) {
+        margin-top:123.500px;
+    }
+    
+}

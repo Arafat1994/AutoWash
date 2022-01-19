@@ -1,0 +1,46 @@
+@import './../../index.scss' ;
+.whatwedoelement{
+    width: 250px;
+    margin:10px 0 ;
+    align-self: stretch;
+    .Whatwedoeledivimg{
+        
+         height:120px;
+         width:100% ;
+         margin-bottom:15px;
+         display: grid;
+         justify-content: center;
+         img{
+             height: 70px;
+             width: 70px;
+             display: block;
+             margin: auto;
+             display: block;
+             margin: auto;
+         }
+     }
+    
+     .whatwedoelementtext{
+         line-height: 25px;
+         padding: 0 10px;
+         text-align: center;
+         p:nth-child(1){
+             color: $mainblackcolor;
+             font-size:$smalltext;
+         } 
+         p:nth-child(2){
+             color:$graycolor ;
+             
+         } 
+     }
+     
+     &:hover{
+         background-color:$lightgray ; 
+         border: 1px solid $lightgray;
+         border-radius:10px;
+         cursor: pointer;
+        transform:scale(1.1);
+        
+        
+     }
+ }

@@ -8,7 +8,6 @@
     background-size: cover;
     display: grid;
     grid-template-columns: auto;
-    position:relative ;
     color: $WhiteColor;
     background-color:gray;
     img{
@@ -43,12 +42,19 @@
         p{
           line-height: 10px;
         }
-        
+        @media screen and (max-width:350px) 
+        {
+         font-size: 10px; 
         }
-
+        }
         
     }
 }
+/*
+@media screen and (max-width: $mediumscreen) {
+  margin-top: 123.500px;
+  
+}*/
 }
 
 

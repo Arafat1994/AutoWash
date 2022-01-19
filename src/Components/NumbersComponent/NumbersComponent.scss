@@ -1,0 +1,40 @@
+@import './../../index.scss';
+
+.NumberContainer{
+    color:$WhiteColor;
+    background-color: $mainblackcolor; 
+    padding: 100px 0;
+    height: auto;
+    display: grid;
+    grid-template-columns: auto auto auto auto   ;
+    grid-gap: 20px;
+    justify-content:space-around;
+    overflow: hidden;
+    .numberdiv{  
+        width: 250px;
+        text-align: left;
+        align-self: stretch;
+        display:flex;
+        padding: 10px;
+        margin: 10px;
+        .icondiv{
+            width:25%;
+            color:$mainredcolor;
+            text-align: center;
+            font-size:$mediumtext;
+        }
+        .details{
+            width: 75%;
+            p:nth-child(1){font-size:$mediumtext;}
+            font-size:$verysmalltext;
+            text-align: left;
+        }
+        
+    }
+    @media screen and (max-width:$largescreen) {
+        grid-template-columns: auto auto;   
+    }
+    @media screen and (max-width:$smallscreen) {
+        grid-template-columns: auto ;
+    }
+}

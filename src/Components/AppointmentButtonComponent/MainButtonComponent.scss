@@ -3,16 +3,56 @@
 .MainButton{
     
     .appoint{
+        
         border:1px solid transparent ;
-        padding: 5px 25px;
-        color: $mainblackcolor;
+        padding: 10px 25px;
         border-radius: 30px;
-        background:linear-gradient(to right,  $mainredcolor 50% , $WhiteColor  50%);
+        //background:linear-gradient(to right,  $hoverback 50% , $back 50%);
         background-size: 210% 110%;
         background-position:right bottom;
         transition:all .4s ease;
-        &:hover{  background-position:left bottom;  color:$WhiteColor;  }
+        
         
     }
 
 }
+
+
+
+
+/*
+
+.MainButton{
+    
+    @include MainButton
+}
+
+$back:white ; $font:#202C45 ;   ; $hoverback:#E81C2E ;  $hoverfont:white ; 
+
+    /*
+    background: var(--back , $back);
+    color: var(--font , $font);
+    background: var(--hoverback , $hoverback);
+    color: var(--hoverfont , $hoverfont);
+
+.MainButton{
+
+    .appoint{
+        border:1px solid transparent ;
+        padding: 10px 25px;
+        color:var(--font , $font);
+        border-radius: 30px;
+        background:linear-gradient(to right,  var(--hoverback , $hoverback) 50% , var(--back , $back) 50%);
+        background-size: 210% 110%;
+        background-position:right bottom;
+        transition:all .4s ease;
+        &:hover{  background-position:left bottom;  color:var(--hoverfont , $hoverfont)  }
+        
+    }
+
+}
+*/
+
+
+
+//@include MainButton 

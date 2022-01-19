@@ -1,11 +1,12 @@
 import React from 'react';
+import PagerHeader from '../../Components/pageHeader/pageHeader';
 export default function PricepageComponent()
 {
     return(
-        <div> 
-            <div> 
-                price page 
-                </div>
+        <div className='MainPrices'> 
+            
+                <PagerHeader/>
+                
         </div>
     )
 }

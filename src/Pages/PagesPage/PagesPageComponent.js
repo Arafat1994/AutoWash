@@ -1,11 +1,12 @@
 import React from 'react';
+import PagerHeader from '../../Components/pageHeader/pageHeader';
 export default function PagesPagecomponent()
 {
     return(
-        <div> 
-            <div> 
-                pages page 
-                </div>
+        <div className='MainPages'> 
+            
+                <PagerHeader/>
+                
         </div>
     )
 }

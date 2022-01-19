@@ -1,11 +1,14 @@
 import React from 'react';
+import PagerHeader from '../../Components/pageHeader/pageHeader';
+
 export default function ServicePageComponent()
 {
     return(
-        <div> 
-            <div> 
-                service  page 
-                </div>
+        <div className='MainServices'> 
+            
+                <PagerHeader/>
+               
+               
         </div>
     )
 }

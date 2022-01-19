@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './MenuNavbarcomponent.scss';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import DropDownComponent from '../dropDownmenuComponent/Dropdowncomponent';
 import Getwidth from '../../Hooks/GetwidthHook';
 import MainButtonComponent from '../AppointmentButtonComponent/MainButtonComponent';
@@ -10,6 +9,7 @@ import MainButtonComponent from '../AppointmentButtonComponent/MainButtonCompone
 import data from './../../Assets/jsonFile/data.json'
 import UseMapingdatafromJson from '../../Hooks/CustomHookmapingData';
 import UseViewFunctionHook from '../../Hooks/ViewHook';
+
 
 
 
@@ -24,25 +24,17 @@ export default function MenuNavbarcomponent(props) {
     let Mainnavdata = data[0].MainNavbardata;
     const { dataFromJson } = UseMapingdatafromJson(Mainnavdata);
 
-
-   
     const gethoveredfunction = (event) => {
         if(!view) { viewfunction() ; sethoveredele(event.target.id)}
-        else{ viewfunction()} 
+        else{ viewfunction()  ; sethoveredele(0) ;} 
     }
-
-   
 
     const returneddiv = dataFromJson.map((result) => {
         return (
             <div key={result.id}  >
-                <Link id={result.id} to={result.to} className={result.linkclass} onMouseEnter={ gethoveredfunction} onMouseLeave={gethoveredfunction}  > {result.content}
-                    <FontAwesomeIcon icon={faChevronDown} className="icon" style={{ display: result.iconView ? "inline-block" : "none" }} />
-                    <div style={{display:view ? 'block' : 'none' }}>
+                <Link id={result.id} to={{pathname:result.to}}  state={result.content} className={result.linkclass} onMouseEnter={ gethoveredfunction} onMouseLeave={gethoveredfunction}    > {result.content}
+                    <FontAwesomeIcon icon="chevron-down" className="icon" style={{ display: result.iconView ? "inline-block" : "none" }} />
                         <DropDownComponent  dropdownele={result.id === Number(hoverelmet) ? result.DropdownmenuElement : null} />
-                    </div>
-                    
-
                 </Link>
             </div>
         )
@@ -60,10 +52,9 @@ export default function MenuNavbarcomponent(props) {
                 }
 
 
-
             </nav>
             <div className='takeappointment '>
-                <MainButtonComponent child='Get Appointment' >   </MainButtonComponent>
+                <MainButtonComponent child="Get Appointment" font='#202C45' back='White' hoverfont='white' hoverback='#E81C2E'  >   </MainButtonComponent>
             </div>
 
         </div>

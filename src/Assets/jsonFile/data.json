@@ -3,7 +3,7 @@
         {
             "id": 0,
             "mainclassname": "ele2",
-            "imagesrc": "./images/clock.png",
+            "imagesrc": "/AutoWash/static/media/clock.e5a119e8.png",
             "headercontent": "Opening Hours",
             "spancontent": "Mon - Fri, 8:00 - 9:00",
             "altimage": "clockimage"
@@ -11,7 +11,7 @@
         {
             "id": 1,
             "mainclassname": "ele3",
-            "imagesrc": "./images/phone.png",
+            "imagesrc": "/AutoWash/static/media/phone.abda9c4c.png",
             "headercontent": "Call Us ",
             "spancontent": " +966-50-6293772 ",
             "altimage": "callimage"
@@ -19,7 +19,7 @@
         {
             "id": 2,
             "mainclassname": "ele4",
-            "imagesrc": "./images/mail.png",
+            "imagesrc": "/AutoWash/static/media/mail.9dbf5259.png",
             "headercontent": "Email Us",
             "spancontent": " info@autowash.com ",
             "altimage": "emailimage"
@@ -42,7 +42,7 @@
         },
         {
             "id": 1,
-            "to": "/About",
+            "to": "/AboutUs ",
             "linkclass": "menunavbarlink",
             "content": "About",
             "type": "About",
@@ -56,10 +56,10 @@
         },
         {
             "id": 2,
-            "to": "/Service",
+            "to": "/OurService",
             "linkclass": "menunavbarlink",
-            "content": "Service",
-            "type": "Service",
+            "content": "Services",
+            "type": "Services",
             "linkFunction": "viewfunction",
             "iconFunction": "viewfunction",
             "iconClass": "",
@@ -83,10 +83,10 @@
         },
         {
             "id": 3,
-            "to": "/Price",
+            "to": "/OurPrices",
             "linkclass": "menunavbarlink",
-            "content": "Price",
-            "type": "Price",
+            "content": "Prices",
+            "type": "Prices",
             "linkFunction": "viewfunction",
             "iconFunction": "viewfunction",
             "iconClass": "",
@@ -191,7 +191,7 @@
     "CarouselData": [
         {
             "id": 0,
-            "imgsrc": "./images/carousel-1.jpg",
+            "imgsrc": "/AutoWash/static/media/carousel-1.3553bff0.jpg",
             "header": "Washing and detailing",
             "mainheader": "Keep Your Car Newer",
             "firstdetails": "we offer cars washing for all Cars to make ",
@@ -199,7 +199,7 @@
         },
         {
             "id": 2,
-            "imgsrc": "./images/carousel-3.jpg",
+            "imgsrc": "/AutoWash/static/media/carousel-2.39687c53.jpg",
             "header": " Car Motor Maitenence",
             "mainheader": "Keep Your car Fit ",
             "firstdetails": " We make all the necessary motor maitaience for ",
@@ -207,12 +207,61 @@
         },
         {
             "id": 3,
-            "imgsrc": "./images/carousel-5.jpg",
+            "imgsrc": "/AutoWash/static/media/carousel-3.4116ca6c.jpg",
             "header": "Changing Car Oil",
             "mainheader": "Change Your Oil with Gurantee ",
             "firstdetails": " we have good prices ang good kind of oils ",
             "seconddtails": " to make your motor perfect"
         }
+    ] , 
+    "AboutBreifComponent":[
+        { 
+            "id":0 , 
+            "imageSrc":"/AutoWash/static/media/about.7869575d.jpg " , 
+            "title": " AboutUs", "header":"Car Washing And Detailing" , 
+            "details":"Lorem ipsum dolor sit amet elit. In vitae turpis. Donec in hendre dui, vel blandit massa. Ut vestibu suscipi cursus. Cras quis porta nulla, ut placerat risus. Aliquam nec magna eget velit luctus dictum",
+            "Aboutservice":[
+                {"id":0 ,  "servicename":"Seats washing" },
+                {"id":1,"servicename":"Vacuum cleaning" },
+                {"id":2 ,"servicename":"Interior wet cleaning" },
+                {"id":3,"servicename":"Window wiping" }
+            ] ,
+            "buttonchild":"learn more" 
+        }
+    ] , 
+    "WhatwedoComponent":[
+        {"id" : 0 , "imgsrc":"/AutoWash/static/media/carwash.03796da6.png" , "header":"Extrior Washing" , "somedetail":"Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor"  },
+        {"id" : 1 , "imgsrc":"AutoWash/static/media/steering-wheel.6cfcc832.png" , "header":"Interior Washing " , "somedetail":"Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor"  },
+        {"id" : 2 , "imgsrc":"/AutoWash/static/media/vacuum.63ba2863.png" , "header":"Vaccume Cleaning " , "somedetail": "Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor" },
+        {"id" : 3 , "imgsrc":"/AutoWash/static/media/car-seat.5b4f76f0.png" , "header":"Seat Washing" , "somedetail": "Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor" },
+        {"id" : 4 , "imgsrc":"/AutoWash/static/media/car-repair.7494a6a0.png", "header":"Car Maintaience " , "somedetail":"Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor"  },
+        {"id" : 5 , "imgsrc":"AutoWash/static/media/oil-change.1b9efa43.png" , "header":"Oil Changing " , "somedetail": "Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor" },
+        {"id" : 6 , "imgsrc":"/AutoWash/static/media/wet-cleaning.4471df5b.png" , "header":"Wet Cleaning" , "somedetail": "Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor" },
+        {"id" : 7 , "imgsrc":"/AutoWash/static/media/window-cleaning.3af5a379.png" , "header":"Window Wiping" , "somedetail": "Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor" }
+    ], 
+    "CustomerNumbers":[
+        {"id":0 , "icon":"map-marker-alt" , "number":500 , "details":"Service Point "},
+        {"id":1 , "icon":"user" , "number":350 , "details":"Enginers and Workers"},
+        {"id":2 , "icon":"users" , "number":1500  , "details":"Happy Client "},
+        {"id":3 , "icon":"check" , "number": 5000 , "details":"Project completed"}
+        
+    ] , 
+    "PlansData":[
+        { "id":0 , "title":"Basic Cleaning" , "price":25.99 , "service":[
+            {"id":0 , "servicename":"Seats Washing" , "availability":true} ,{"id":1 , "servicename":"Vacuum Cleaning" , "availability":true} , {"id":2 , "servicename":"Exterior Cleaning" , "availability":true} , 
+            {"id":3 , "servicename":"Interior Wet Cleaning" , "availability":false} , {"id":4 , "servicename":"Window Wiping" , "availability":false} 
+        ]} , 
+        { "id":1 , "title":"PREMIUM CLEANING" , "price":35.99 , "service":[
+            {"id":0 , "servicename":"Seats Washing" , "availability":true} ,{"id":1 , "servicename":"Vacuum Cleaning" , "availability":true} , {"id":2 , "servicename":"Exterior Cleaning" , "availability":true} , 
+            {"id":3 , "servicename":"Interior Wet Cleaning" , "availability":true} , {"id":4 , "servicename":"Window Wiping" , "availability":false} 
+        ]} , 
+        { "id":2 , "title":"COMPLEX CLEANING" , "price":49.99 , "service":[
+            {"id":0 , "servicename":"Seats Washing" , "availability":true} ,{"id":1 , "servicename":"Vacuum Cleaning" , "availability":true} , {"id":2 , "servicename":"Exterior Cleaning" , "availability":true} , 
+            {"id":3 , "servicename":"Interior Wet Cleaning" , "availability":true} , {"id":4 , "servicename":"Window Wiping" , "availability":true} 
+        ]} 
     ]
 }
 ]
+
+
+

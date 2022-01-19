@@ -1,7 +1,6 @@
 import React from 'react';
 import './BarComponent.scss'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
 import MenuNavbarcomponent from '../SecondNavbarComponent/MenuNavbarcomponent';
 import UseViewFunctionHook from "./../../Hooks/ViewHook"
 export default function BarComponent(props) {
@@ -16,7 +15,7 @@ export default function BarComponent(props) {
                     <p className=''> Menu </p>
                 </div>
                 <div className='BarSide ' onClick={ViewMenufunction} >
-                    <FontAwesomeIcon icon={faBars} className='icon' />
+                    <FontAwesomeIcon icon="bars" className='icon' />
                 </div>
             </div>
 
