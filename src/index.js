@@ -10,14 +10,14 @@ import Spinnerloadingcomponent from './Components/Spinnerloading/Spinnerloading'
 // here ew can use them any time 
 import { library } from '@fortawesome/fontawesome-svg-core' //allows later to just use icon name to render-them
 import { fas } from '@fortawesome/free-solid-svg-icons'
-import { faUser , faUsers , faMapMarker , faCheck , faBars , faCheckCircle ,faChevronDown , faSpinner , faTimesCircle} from '@fortawesome/free-solid-svg-icons'
-library.add(fas,faUser , faUsers , faMapMarker , faCheck , faBars ,faCheckCircle ,faChevronDown , faSpinner , faTimesCircle)
+import { faUser , faUsers , faMapMarker , faCheck , faBars , faCheckCircle ,faChevronDown , faSpinner , faTimesCircle, faMapMarkerAlt} from '@fortawesome/free-solid-svg-icons'
+library.add(fas,faUser , faUsers , faMapMarker , faCheck , faBars ,faCheckCircle ,faChevronDown , faSpinner , faTimesCircle , faMapMarkerAlt)
 
 ReactDOM.render(
   <React.StrictMode>
     <Suspense fallback={<Spinnerloadingcomponent/>} >
 
-      <App />
+      <App  />
     </Suspense>
   </React.StrictMode>,
   document.getElementById('root')

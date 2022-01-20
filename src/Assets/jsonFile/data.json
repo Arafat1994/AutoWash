@@ -259,9 +259,12 @@
             {"id":0 , "servicename":"Seats Washing" , "availability":true} ,{"id":1 , "servicename":"Vacuum Cleaning" , "availability":true} , {"id":2 , "servicename":"Exterior Cleaning" , "availability":true} , 
             {"id":3 , "servicename":"Interior Wet Cleaning" , "availability":true} , {"id":4 , "servicename":"Window Wiping" , "availability":true} 
         ]} 
+    ] , 
+    "WashingPointData":[
+        {"id": 0 , "title":"Car Washing Point" ,"address":" 123 Street , New York , USA " , "phonenumber" :" +012-345-6789" } , 
+        {"id": 1 , "title":"Car Washing Point" ,"address":" 123 Street , New York , USA " , "phonenumber" :" +012-345-6789" } , 
+        {"id": 2 , "title":"Car Washing Point" ,"address":" 123 Street , New York , USA " , "phonenumber" :" +012-345-6789" } ,
+        {"id": 3 , "title":"Car Washing Point" ,"address":" 123 Street , New York , USA " , "phonenumber" :" +012-345-6789" }  
     ]
 }
 ]
-
-
-

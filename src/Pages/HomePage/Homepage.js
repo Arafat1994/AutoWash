@@ -7,6 +7,7 @@ import NumbersComponent from '../../Components/NumbersComponent/NumbersComponent
 import BreifComponent from '../../Components/breifComponent/breifComponent';
 import WhatwedoComponent from '../../Components/WhatwedoComponent/WhatwedoComponent';
 import PlansComponent from '../../Components/PlansComponent/PlansComponent';
+import WashingPointcomponent from '../../Components/washingPointcomponent/washingPointcomponent';
 
 export default function HomePage()
 {
@@ -21,6 +22,7 @@ export default function HomePage()
             <WhatwedoComponent />
             <NumbersComponent />
             <PlansComponent />
+            <WashingPointcomponent /> 
            
             
             <div> home page  {Width} </div>

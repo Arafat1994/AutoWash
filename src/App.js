@@ -19,7 +19,7 @@ const SchduleBookingComponent =lazy(()=>import ('./Pages/SchduleBookingPage/Schd
 
 function App() {
   return (
-    <div>
+    <div >
 
       <BrowserRouter>
         <Layout />

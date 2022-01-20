@@ -29,19 +29,7 @@ export default function NumbersComponent() {
             { threshold: [0] });
         observer.observe(document.querySelector(".NumberContainer"));
 
-
-
-
-
-
-
-
-
     }, [])
-
-
-
-
 
 
     let returndata = data[0].CustomerNumbers;
