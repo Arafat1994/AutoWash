@@ -265,6 +265,23 @@
         {"id": 1 , "title":"Car Washing Point" ,"address":" 123 Street , New York , USA " , "phonenumber" :" +012-345-6789" } , 
         {"id": 2 , "title":"Car Washing Point" ,"address":" 123 Street , New York , USA " , "phonenumber" :" +012-345-6789" } ,
         {"id": 3 , "title":"Car Washing Point" ,"address":" 123 Street , New York , USA " , "phonenumber" :" +012-345-6789" }  
+    ],
+    "workersData":[
+        { "id":0 , "srcimage":"/AutoWash/static/media/team-1.2257b19d.jpg" , "name": "Donald Herfy" , "job":"Engineer"},
+        { "id":1 , "srcimage":"/AutoWash/static/media/team-2.4b31f2cd.jpg" , "name": "Jonhoson Gorge" , "job":"Worker"},
+        { "id":2 , "srcimage":"/AutoWash/static/media/team-3.211203e4.jpg" , "name": "Eden Hazard" , "job":"Worker"},
+        { "id":3 , "srcimage":"/AutoWash/static/media/team-4.9afe8ce7.jpg" , "name": "Jose Moriho " , "job":"Engineer"}
+    ],
+    "clientCarouseldata":[
+        {"id": 0, "srcImage":"/AutoWash/static/media/team-1.2257b19d.jpg" ,"clientName":"Carlo Anslloti", "clienTitle":"Teacher" , "clientComment":"Good group Worker and organized "},
+        {"id": 1, "srcImage":"/AutoWash/static/media/team-2.4b31f2cd.jpg ", "clientName":"Tom Harry" , "clienTitle":"Landaryman" , "clientComment":"Good serrvice "},
+        {"id": 2, "srcImage":"/AutoWash/static/media/team-3.211203e4.jpg", "clientName":"Hardy Cousman" , "clienTitle":"Barber", "clientComment":"People are kind and doing the proper things"},
+        {"id": 3, "srcImage":"/AutoWash/static/media/team-4.9afe8ce7.jpg" , "clientName":"John Intenli" , "clienTitle":"Driver", "clientComment":"Professinals"},
+        {"id": 4, "srcImage":"/AutoWash/static/media/team-1.2257b19d.jpg", "clientName":"kamnt toreet" , "clienTitle":"Programer" , "clientComment":"The materials they used are top "}
+
     ]
 }
 ]
+
+ 
+ 

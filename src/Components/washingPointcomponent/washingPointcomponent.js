@@ -33,6 +33,7 @@ export default function WashingPointcomponent() {
                 </div>
 
                 <div className="washingrightelement">
+                    
                     <CarWashRequestcomponent /> 
                 </div>
             </div>

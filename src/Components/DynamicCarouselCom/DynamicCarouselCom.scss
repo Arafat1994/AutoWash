@@ -1,0 +1,36 @@
+@import './../../index.scss' ; 
+
+.mySwiper{
+    padding: 35px 0 ;
+    border-radius: 5px;
+    .swiperslide{
+        display: grid;
+        justify-content: space-around;
+        .swiperelemet{
+            width: 250px;
+            display: grid;
+            grid-template-columns: auto auto ;
+            grid-gap:10px;
+            overflow: hidden;
+            justify-content: space-around;
+            color:$mainblackcolor;
+            img{
+                margin-right: 10px;
+                width:60px;
+                height:60px;
+                border: 1px solid $mainredcolor;
+                border-radius: 50%;
+                overflow: hidden;
+                object-position: center;
+                object-fit: cover;
+            }
+            .rightdetails{
+                color:$mainblackcolor;
+                font-size: $verysmalltext;
+                .title{font-size:15px; }
+                .comment{font-size:13px;} 
+            }
+        }
+    }
+    
+}

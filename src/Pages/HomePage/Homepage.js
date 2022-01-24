@@ -8,6 +8,8 @@ import BreifComponent from '../../Components/breifComponent/breifComponent';
 import WhatwedoComponent from '../../Components/WhatwedoComponent/WhatwedoComponent';
 import PlansComponent from '../../Components/PlansComponent/PlansComponent';
 import WashingPointcomponent from '../../Components/washingPointcomponent/washingPointcomponent';
+import WorkersComponent from '../../Components/WorkersComponent/WorkersComponent';
+import ClientOpenionComponent from '../../Components/ClientOpenionComponent/ClientOpenionComponent';
 
 export default function HomePage()
 {
@@ -23,6 +25,8 @@ export default function HomePage()
             <NumbersComponent />
             <PlansComponent />
             <WashingPointcomponent /> 
+            <WorkersComponent />
+            <ClientOpenionComponent />
            
             
             <div> home page  {Width} </div>

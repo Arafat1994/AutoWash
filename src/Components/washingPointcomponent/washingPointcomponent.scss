@@ -4,13 +4,15 @@
     width: 100%;
     .washingContainer{
         display: grid ;
-        grid-template-columns: 66% 33%;
+        grid-template-columns: 50% 25%;
         width: 100%;
+        justify-content: space-around;
         overflow:hidden;
         .washingleftelement{
             align-self: stretch;
             display: grid;
             grid-template-columns: auto auto;
+            //justify-content: space-around;
             overflow: hidden;
             padding: 20px 0 ; 
             width: 100%;
@@ -18,20 +20,22 @@
                 display: flex;
                 text-align: center;
                 margin: 5px;
-                justify-content:center;
+                //justify-content:space-around;
                 border: 1px solid transparent;
+                width: 100%;
                 .mapicon{
                     text-align: center;
                     width:10%;
-                    font-size: $smalltext;
+                    font-size: $verysmalltext;
                     color:$mainredcolor;
+                    margin: 0px 5px;
                 }
                 .details{
                     text-align: left;
                     width:80%;
                     color:$graycolor;
                     font-size: 15px;
-                    p:nth-child(1){ color: $mainblackcolor; font-size:$smalltext; font-weight:25px;}  
+                    p:nth-child(1){ color: $mainblackcolor; font-size:$verysmalltext; font-weight:25px;}  
                 }
                 &:hover{
                     transform: scale(1.1);
@@ -40,16 +44,21 @@
                 }
             }
             @media screen and (max-width:$mediumscreen) {
-                grid-template-columns: auto;
+                grid-template-columns: auto auto ;
             }
             
 
         }
         .washingrightelement{
+            border: 1px solid $mainredcolor;
+            border-radius: 5px;
             align-self: stretch;
             width: 100%;
             overflow: hidden;
         }
 
+        @media screen and (max-width :$largescreen) {
+            grid-template-columns: auto;
+        }
     }
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import './MainButtonComponent.scss';
 import styled from 'styled-components';
 
-export default function MainButtonComponent(props) {
+function MainButtonComponent(props) {
    // console.log(props.details)
    // console.log(props.details.font,  props.details.back  , props.details.detailshover.font , props.details.hoverback  )
     //document.documentElement.style.setProperty("--font", props.details.font);
@@ -18,7 +18,9 @@ export default function MainButtonComponent(props) {
 
     return (
         <div className='MainButton'>
-            <MainButton className='appoint'  > {props.child} </MainButton>
+            <MainButton className='appoint' onClick={props.onclick}  disabled={props.disabled}> {props.child} </MainButton>
         </div>
     )
 }
+
+export default React.memo(MainButtonComponent) ;
