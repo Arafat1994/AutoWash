@@ -10,12 +10,14 @@ import PlansComponent from '../../Components/PlansComponent/PlansComponent';
 import WashingPointcomponent from '../../Components/washingPointcomponent/washingPointcomponent';
 import WorkersComponent from '../../Components/WorkersComponent/WorkersComponent';
 import ClientOpenionComponent from '../../Components/ClientOpenionComponent/ClientOpenionComponent';
+import OurArticlesComponent from '../../Components/OurArticlesComponet/OurArticlesComponet';
 
 export default function HomePage()
 {
     let carouseldatafromJson = data[0].CarouselData;
     const carouselview = 1 ;
     const {Width}=Getwidth();
+    console.log(Width) ;
     return(
         <div className='MainHomepage'> 
 
@@ -27,9 +29,12 @@ export default function HomePage()
             <WashingPointcomponent /> 
             <WorkersComponent />
             <ClientOpenionComponent />
+            <OurArticlesComponent />
            
             
-            <div> home page  {Width} </div>
+            {
+            //<div> home page  {Width} </div
+            }
 
         </div>
     )

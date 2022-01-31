@@ -1,0 +1,26 @@
+@import'./../../index.scss' ; 
+
+.socialmediadiv{
+    position: relative;
+    .socialmedialink{
+        text-decoration: none;
+        color: $WhiteColor;
+        font-size: $verysmalltext;
+        .icon{
+            margin-right:7px;
+            width: 40px;
+            height: 40px;
+            background-color:white;
+            color:$mainblackcolor;
+            border-radius: 50%;
+            padding: 10px;
+            border: 1px solid transparent; 
+            &:hover{
+                background-color: $mainredcolor;
+                color: White;
+                transform: scale(1.1);
+                cursor: pointer;
+            }
+        }
+    }
+}

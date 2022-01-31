@@ -1,5 +1,5 @@
 import React from 'react';
-import PagerHeader from '../../Components/pageHeader/pageHeader';
+import PagerHeader from './../../DynmaicComponent/pageHeader/pageHeader';
 export default function PricepageComponent()
 {
     return(

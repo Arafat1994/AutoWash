@@ -1,15 +1,14 @@
 
 import React, { useEffect, useState } from "react";
-import { Swiper, SwiperSlide } from 'swiper/react'
+import { SwiperSlide } from 'swiper/react'
 import 'swiper/swiper.scss'
 import './CarouselComponent.scss';
 import "swiper/components/pagination/pagination.scss";
 import "swiper/components/navigation/navigation.scss";
-import SwiperCore, { EffectFade, Navigation, Pagination, Autoplay } from 'swiper';
-import MainButtonComponent from "../AppointmentButtonComponent/MainButtonComponent";
+import MainButtonComponent from './../../DynmaicComponent/AppointmentButtonComponent/MainButtonComponent.js';
+import DynamicCarouselComponent from './../../DynmaicComponent/DynamicCarouselCom/DynamicCarouselCom.js';
 
 
-SwiperCore.use([EffectFade, Autoplay, Navigation, Pagination]);
 
 export default function CarouselEle(props) {
 
@@ -20,7 +19,7 @@ export default function CarouselEle(props) {
     useEffect(() => {
         setCarouselData(data.map((res) => {
             return (
-                <SwiperSlide className=".swiper-slide" key={res.id}>
+                <SwiperSlide className="swiperslide" key={res.id}>
                     <img src={res.imgsrc} alt="img" />
                     <div className="carousel-div">
                         <p className="header">  {res.header}  </p>
@@ -35,14 +34,28 @@ export default function CarouselEle(props) {
 
     }, [data]);
 
+    const breakpointsview = {
+
+        1400: { width: 600, slidesPerView: 1 }
+    }
+
     return (
-        <>
+        <div className="swiper">
+
+            <DynamicCarouselComponent data={data} breakpointsviewNum={breakpointsview} child={carouseldata} />
+
+            {
+            /*
             <Swiper className="swiper" slidesPerView={props.carouselview} autoplay={{ delay: 3000 }} navigation={true} pagination={true}>
                 {
                     carouseldata
                 }
             </Swiper>
-        </>
+            */
+            }
+
+        </div>
+
     )
 
 }

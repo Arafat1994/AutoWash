@@ -2,6 +2,7 @@
 
 .WashingPointComponent{
     width: 100%;
+    margin: 30px 0;
     .washingContainer{
         display: grid ;
         grid-template-columns: 50% 25%;
@@ -9,39 +10,38 @@
         justify-content: space-around;
         overflow:hidden;
         .washingleftelement{
-            align-self: stretch;
-            display: grid;
-            grid-template-columns: auto auto;
-            //justify-content: space-around;
+            //align-self: flex-start;
             overflow: hidden;
-            padding: 20px 0 ; 
             width: 100%;
-            .washingpoint{
-                display: flex;
-                text-align: center;
-                margin: 5px;
-                //justify-content:space-around;
-                border: 1px solid transparent;
-                width: 100%;
-                .mapicon{
+            .washingpointelement{
+                display: grid;
+                grid-template-columns: auto auto;
+                .washingpoint{
+                    display: flex;
                     text-align: center;
-                    width:10%;
-                    font-size: $verysmalltext;
-                    color:$mainredcolor;
-                    margin: 0px 5px;
+                    margin: 5px;
+                    justify-content:space-around;
+                    border: 1px solid transparent;
+                    width: 100%;
+                    .mapicon{
+                        text-align: center;
+                        width:10%;
+                        font-size: $verysmalltext;
+                        color:$mainredcolor;
+                        margin: 0px 5px;
+                    }
+                    .details{
+                        text-align: left;
+                        width:80%;
+                        color:$graycolor;
+                        font-size: 15px;
+                        p:nth-child(1){ color: $mainblackcolor; font-size:$verysmalltext; font-weight:25px;}  
+                    }
                 }
-                .details{
-                    text-align: left;
-                    width:80%;
-                    color:$graycolor;
-                    font-size: 15px;
-                    p:nth-child(1){ color: $mainblackcolor; font-size:$verysmalltext; font-weight:25px;}  
+                @media screen and (max-width:$smallscreen) {
+                    grid-template-columns: auto  ;
                 }
-                &:hover{
-                    transform: scale(1.1);
-                    cursor: pointer;
-                    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-                }
+
             }
             @media screen and (max-width:$mediumscreen) {
                 grid-template-columns: auto auto ;
@@ -52,11 +52,10 @@
         .washingrightelement{
             border: 1px solid $mainredcolor;
             border-radius: 5px;
-            align-self: stretch;
+            //align-self: stretch;
             width: 100%;
             overflow: hidden;
         }
-
         @media screen and (max-width :$largescreen) {
             grid-template-columns: auto;
         }

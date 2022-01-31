@@ -4,7 +4,7 @@ import './MenuNavbarcomponent.scss';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import DropDownComponent from '../dropDownmenuComponent/Dropdowncomponent';
 import Getwidth from '../../Hooks/GetwidthHook';
-import MainButtonComponent from '../AppointmentButtonComponent/MainButtonComponent';
+import MainButtonComponent from './../../DynmaicComponent/AppointmentButtonComponent/MainButtonComponent';
 
 import data from './../../Assets/jsonFile/data.json'
 import UseMapingdatafromJson from '../../Hooks/CustomHookmapingData';

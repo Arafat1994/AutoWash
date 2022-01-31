@@ -14,7 +14,7 @@ export default function WashingPointcomponent() {
             <div className="washingpoint " key={res.id}>
                 <div className="mapicon"><FontAwesomeIcon className="icon" icon="map-marker-alt" /></div>
                 <div className="details">
-                    <p> { res.title}</p>
+                    <p> {res.title}</p>
                     <p> {res.address} </p>
                     <p> Call: {res.phonenumber}  </p>
                 </div>
@@ -24,17 +24,19 @@ export default function WashingPointcomponent() {
 
     return (
         <div className="WashingPointComponent">
-            <TitleOfComponent title=' Washing Points  ' header="Car Washing & Car Points " dirction="center" />
             <div className="washingContainer">
                 <div className="washingleftelement">
-                    {
-                    returneddiv
-                    }
+                    <TitleOfComponent title=' Washing Points  ' header="Car Washing & Car Points " dirction="left" margintop='0px' />
+                    <div className="washingpointelement" >
+                        {
+                            returneddiv
+                        }
+                    </div>
+
                 </div>
 
                 <div className="washingrightelement">
-                    
-                    <CarWashRequestcomponent /> 
+                    <CarWashRequestcomponent />
                 </div>
             </div>
         </div>

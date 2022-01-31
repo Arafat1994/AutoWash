@@ -1,5 +1,5 @@
-import React, { useCallback, useEffect, useState } from "react";
-import MainButtonComponent from "../AppointmentButtonComponent/MainButtonComponent";
+import React, {  useEffect , useState } from "react";
+import MainButtonComponent from "./../../DynmaicComponent/AppointmentButtonComponent/MainButtonComponent";
 import './CarWashRequestcomponent.scss';
 import axios from 'axios';
 
@@ -11,7 +11,7 @@ export default function CarWashRequestcomponent() {
     const Description = React.useRef();
 
 
-    const requestData ={ id: Math.floor(Math.random() * 10000), fullname: "", email: "", description: "" }
+    const requestData ={ id: Math.floor(Math.random() * 10000), fullname: "", email: "", description: "" } ;
     const [formValues, setFormValues] = useState(requestData);
     const [formErrors, setFormError] = useState({});
     const [submit, setsubmit] = useState(false);
@@ -35,7 +35,11 @@ export default function CarWashRequestcomponent() {
 
     const Validate = (values) => {
         const errors = {};
-        var regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        var regex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+        //before editing by removing the \ char 
+        //var regex = /^\w+([\.-]?\w+)*@\w+([/.-]?\w+)*(\.\w{2,3})+$/;
+
+        
         if (!values.fullname) { errors.fullname = "fullname is required " }
 
         if (!values.email) { errors.email = "email is requied " }
@@ -63,7 +67,7 @@ export default function CarWashRequestcomponent() {
                 setFormValues(requestData)
             })
     }
-    const callbackfunc = useCallback(senddata, [formValues , requestData]);
+   
 
     return (
         <div className="carWashRequest">
@@ -89,7 +93,7 @@ export default function CarWashRequestcomponent() {
                 <span className="label textarealabel"> Description </span>
                <p className="validateText">  {formErrors.description} </p>
             </div>
-            <MainButtonComponent onclick={callbackfunc} disabled={!submit} child=' Send Request ' font="#E81C2E" back="white" hoverfont="white" hoverback="#202C45" />
+            <MainButtonComponent onclick={senddata} disabled={!submit} child=' Send Request ' font="#E81C2E" back="white" hoverfont="white" hoverback="#202C45" />
 
         </div>
     )

@@ -1,0 +1,69 @@
+@import "./../../index.scss" ; 
+
+.footercontainer{
+    margin-top:20px;
+    display: grid;
+    grid-template-columns: auto auto auto auto ;
+    grid-gap: 20px;
+    width: 100%;
+    background-color:$mainblackcolor;
+    color: $WhiteColor;
+    justify-content: space-around;
+    padding: 45px 10px 0px 10px;
+    .footerelement{
+        width: 250px;
+        align-self: stretch;
+        border-radius: 5px;
+        padding: 5px;
+        .headerofelement{
+            color: $mainredcolor;
+            font-size:$smalltext;
+        }
+        .linkelement{
+            display: block;
+            text-decoration: none;
+            color:$WhiteColor;
+            font-size:15px; 
+            height: 40px;
+
+            span{
+                color:$WhiteColor;
+                font-size: 15px ; 
+                margin-left: 10px; 
+            }
+            .linkspan{
+                margin-left:0;
+            }
+            &:hover  {
+                .iconlink , .linkspan{
+                    color: $mainredcolor;
+                    font-size:16px;
+                }
+                
+                
+                
+            }
+        }
+        
+        
+    }
+    @media screen and(max-width:$largescreen) {
+        grid-template-columns:  auto auto auto ;
+        
+    }
+    @media screen and(max-width:$mediumscreen) {
+        grid-template-columns:  auto auto  ;
+        
+    }
+    @media screen and(max-width:$smallscreen) {
+        grid-template-columns:  100%;
+        justify-content:flex-start;
+        .footerelement{
+            width:100% ;
+        }
+        
+    }
+}
+
+
+

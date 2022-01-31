@@ -3,6 +3,8 @@ import './App.scss';
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
 import Layout from './Layout/Layout';
 import { lazy } from 'react';
+import Footercomponent from './Components/FooterComponent/Footercomponent';
+import FooterEndComponent from './Components/FooterEndComponent/FooterEndComponent';
 const HomePage =lazy(()=>import ('./Pages/HomePage/Homepage'));
 const AboutPageComponent =lazy(()=>import('./Pages/AboutPage/AboutPageComponent') )  ;
 const ContactPageComponent = lazy(()=> import('./Pages/ContactPage/ContactPageComponent')) ;
@@ -19,10 +21,11 @@ const SchduleBookingComponent =lazy(()=>import ('./Pages/SchduleBookingPage/Schd
 
 function App() {
   return (
-    <div >
+    <div>
 
       <BrowserRouter>
         <Layout />
+        
         <div className='MainAppcomponent' >
           <Routes>
             <Route exact path='/AutoWash' element={<HomePage />} />
@@ -39,6 +42,8 @@ function App() {
             <Route path='*' element={<Page404Component />} />            
           </Routes>
         </div>
+        <Footercomponent />
+        <FooterEndComponent />
       </BrowserRouter>
     </div>
 

@@ -1,0 +1,35 @@
+@import './../../index.scss' ;
+
+.Formdiv{
+    width: 100%;
+    margin:10px 0 ; 
+
+    .forminput{
+        color:$WhiteColor;
+        height:40px;
+        width: 100%;
+        background-color: transparent;
+        border:1px solid $WhiteColor ;
+        border-radius: 5px;
+        padding: 5px 0px;
+        outline: 0px;
+        &:focus-within{
+            outline: 0px solid transparent  ;
+            border : 1px solid $mainredcolor  ;
+            color: $WhiteColor;
+        }
+        &::placeholder{
+            color:$WhiteColor;
+        }
+    }
+    span{
+        display: block;
+        color: red;
+    }
+    /*.forminput:invalid[focused="true"]{
+        border: 1px solid red;
+    }*/
+    .forminput:invalid[focused="false"]  ~ span{
+        display:none;
+    }
+}

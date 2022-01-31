@@ -2,7 +2,7 @@ import React from 'react';
 import TitleOfComponent from '../Titleofanycomponent/TitleofComponent';
 import './PlansComponent.scss';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import MainButtonComponent from '../AppointmentButtonComponent/MainButtonComponent';
+import MainButtonComponent from './../../DynmaicComponent/AppointmentButtonComponent/MainButtonComponent';
 import data from './../../Assets/jsonFile/data.json'
 
 export default function PlansComponent() {

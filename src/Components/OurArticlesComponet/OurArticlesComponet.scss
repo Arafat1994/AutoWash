@@ -1,0 +1,85 @@
+@import './../../index.scss';
+
+
+.articleContainer{
+    .articleDiv{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-gap:10px ;
+        justify-content: space-around;
+        padding: 35px 0 ;
+        .articleelement{
+            align-self: center;
+            width: 300px;
+            text-decoration: none;
+            margin-bottom: 20px;
+            border: 1px solid transparent;
+            border-radius: 5px;
+            position: relative;
+            img{
+                width:300px;
+                height:200px;
+                object-fit: cover;
+                object-position: center;
+                border: 1px solid transparent;
+                border-radius: 5px;
+            }
+            .header{
+                font-size: $verysmalltext;
+                color: $mainblackcolor;
+                width:100%;
+                padding:5px ;
+            }
+            .details{
+                color:$graycolor;
+                font-size: 15px;
+                width:100%;
+                padding: 5px;
+            }
+            .footer{
+                display: grid;
+                grid-template-columns: auto auto auto ;
+                justify-content: space-around;  
+            }
+            .date{
+                position: absolute;
+                top:12.5%;
+                left:33%;
+                text-align: center;
+                width: 70px;
+                display: none;
+                animation-name:dateanimation;
+                animation-duration: .5s;
+                p{
+                    overflow: hidden;
+                    color:$WhiteColor;
+                    background-color: $mainblackcolor;
+                    border-radius: 50%;
+                    padding: 15px;
+                }  
+            }
+            
+            &:hover{
+                .header{color: $mainredcolor;}
+                cursor: pointer;
+                border: 1px solid $mainblackcolor;
+                transform: scale(1.05);
+                .date{
+                    display: block;
+                    @keyframes dateanimation {
+                       from{ top:25%;}
+                       to{ top: 12.5% }
+                        
+                    }
+                }
+            }
+
+        }
+        @media screen and (max-width:$largescreen) {
+            grid-template-columns: auto auto;
+        }
+        @media screen and (max-width:$smallscreen) {
+            grid-template-columns: auto;
+        }
+    }
+}

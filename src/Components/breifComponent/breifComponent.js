@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 //import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 import data from './../../Assets/jsonFile/data.json';
 import { useLayoutEffect } from 'react';
-import MainButtonComponent from '../AppointmentButtonComponent/MainButtonComponent';
+import MainButtonComponent from './../../DynmaicComponent/AppointmentButtonComponent/MainButtonComponent';
 
 
 export default function BreifComponent(props) {
