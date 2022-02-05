@@ -1,9 +1,6 @@
 
 
-here i use => Reactjs( hooks + redux ) , styled Component 
-
-
-
+here i use => Reactjs( hooks + redux ) , styled Components , Dynamic Compnents , form  Validation , Swipper  
 
 
 # Getting Started with Create React App
