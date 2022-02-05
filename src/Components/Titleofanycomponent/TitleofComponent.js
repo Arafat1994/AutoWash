@@ -14,9 +14,6 @@ export default function TitleOfComponent(props){
             <div className="titleHeader">
                 {props.header}
             </div>
-                
-            
-            
         </div>
     )
 }

@@ -3,6 +3,6 @@ import './AutoWashComp.scss'
 
 export default function AutoWashComp(){
     return(
-        <div className='ele1'> <a href='/'> <span> Auto </span> Wash </a></div>
+        <div className='ele1'> <a href='/AutoWash'> <span> Auto </span> Wash </a></div>
     )
 }

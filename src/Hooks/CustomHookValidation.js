@@ -1,6 +1,6 @@
 import axios from "axios";
 import {  useState } from "react";
-export default function UseValiationHook(sentValues) {
+export default function UseValiationHook(sentValues , url ) {
 
     const [Values, setValues] = useState(sentValues);
     const [Formerrors, setFormErrors] = useState({});
@@ -9,26 +9,33 @@ export default function UseValiationHook(sentValues) {
     const ValidationFun = (values) => {
         const errors = {};
         const fullnameRegex = new RegExp("^[A-zA-Z0-9_ ]{3,16}$");
+        const subjectRegex = new RegExp("^[A-zA-Z0-9_ ]{10,40}$");
+
         const emailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
         if (!values.fullname) { errors.fullname = " Fullname required " }
         else if (!fullnameRegex.test(values.fullname)) { errors.fullname = "fullname must have at least 3 chars and max 16 chars  " }
+
         if (!values.email) { errors.email = " Email required " }
         else if (!emailRegex.test(values.email)) { errors.email = "Please enter A valid email " }
 
-        return errors;
+        if(!values.subject){errors.subject =" Subject is required " }
+        else if(!subjectRegex.test(values.subject) ) { errors.subject=" subject must be at least 10 chars and maximum 40  chars " }
 
+        if(!values.message) { errors.message=" Message  is required "}
+
+        return errors;
 
     }
 
     const handlechange = (e) => {
         setValues({ ...Values, [e.target.name]: e.target.value }) ;            
     }
-    
+
     const SendData = () => {
-        axios({ baseURL: "http://localhost:3001/", url: "newsletterRequests", method: "post", data: { id: Math.floor(Math.random() * 10000), data: Values } })
+        axios({ baseURL: "http://localhost:3001/", url: url , method: "post", data: { id: Math.floor(Math.random() * 10000), data: Values } })
             .then((res) => {
                 setIssubmit(false);
-                setValues({ fullname: "", email: "" });
+                setValues(sentValues);
                 alert("data sent successfully");
             })
 

@@ -10,10 +10,12 @@ import data from './../../Assets/jsonFile/data.json' ;
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
-export default function OurArticlesComponent(){
+export default function OurArticlesComponent(props){
     //console.log(image1 , image2 , image3 ); 
     const returneddata=data[0].ArticlesData; 
-    const returneddiv = returneddata.map((res)=>{
+    const eleNum = props.eleNum ? props.eleNum : returneddata.length ;
+    //console.log(eleNum)
+    const returneddiv = returneddata.slice(0 , eleNum ).map((res)=>{
         return(
             <a className="articleelement" href={res.to} key={res.id}>
                     <img src={res.srcimage} alt="article" />
@@ -25,7 +27,7 @@ export default function OurArticlesComponent(){
                         <span> <FontAwesomeIcon className="icon" icon="folder" /> <i> {res.field} </i>  </span>
                     </p>
                     <div className="date">  <p> 1 Jan 2015  </p>   </div> 
-                </a> 
+            </a> 
         )
 
     })

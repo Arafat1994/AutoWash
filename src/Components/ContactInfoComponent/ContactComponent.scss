@@ -1,0 +1,47 @@
+@import "./../../index.scss" ;
+
+.ContactContainer{
+    color:$WhiteColor;
+    .ContactDiv{
+        display: grid;
+        grid-template-columns: 25% 50%;
+        grid-gap:20px;
+        justify-content: space-around;
+        .leftContactSide{
+            padding: 20px 0 ;
+            background-color: $mainblackcolor;
+            border-radius: 5px;
+            .header{
+                padding:5px 20px;
+                font-size: $smalltext;
+            }
+           .contactelement{
+            display: grid;
+            grid-template-columns: 15% 75% ;
+            grid-gap:10px;
+            text-align: right;
+            padding:10px 20px;
+            .icon{
+                font-size:$verysmalltext;
+                color: $mainblackcolor;
+                border-radius: 50%;
+                padding: 13px;
+                width: 45px;
+                height: 45px;
+                background-color: white;
+                }
+            
+            
+            .text{
+                width: 100%;
+                text-align: left;
+                line-height:17px;
+                font-size:15px;
+            }
+           }
+        }
+
+        @media screen and (max-width:$mediumscreen) { grid-template-columns: 75% ;}
+        @media screen and (max-width:$mediumscreen) {grid-template-columns: 90% ;  }
+    }
+}

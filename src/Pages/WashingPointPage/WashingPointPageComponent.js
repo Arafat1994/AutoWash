@@ -1,4 +1,5 @@
 import React from 'react';
+import WashingPointcomponent from '../../Components/washingPointcomponent/washingPointcomponent';
 import PagerHeader from './../../DynmaicComponent/pageHeader/pageHeader';
 export default function WashingPointsPageComponent()
 {
@@ -6,6 +7,7 @@ export default function WashingPointsPageComponent()
         <div className='MainWashing'> 
             
                 <PagerHeader/>
+                <WashingPointcomponent />
                 
         </div>
     )

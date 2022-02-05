@@ -36,13 +36,13 @@ export default function Footercomponent(props) {
     })
     
     const inputs =[
-        { id:0 , name:"fullname" , type:"text" , placeholder:'FullName' ,required:true   },
-        { id:1 , name:"email" , type:"email" , placeholder:' Email ' ,required:true  }
+        { id:0 , name:"fullname" , type:"text" , placeholder:'FullName' ,required:true , inputtype:"textbox"  },
+        { id:1 , name:"email" , type:"email" , placeholder:' Email ' ,required:true  , inputtype:"textbox" }
     ];
 
     const sentValues ={fullname:"" , email:""} ;
-
-    const { Values ,Formerrors ,Issubmit, ErrorCatch ,  SendData , handlechange  }=UseValiationHook(sentValues) ;
+    const url="newsletterRequests"
+    const { Values ,Formerrors ,Issubmit, ErrorCatch ,  SendData , handlechange  }=UseValiationHook(sentValues , url ) ;
 
     useEffect(()=>{
         ErrorCatch() ;
