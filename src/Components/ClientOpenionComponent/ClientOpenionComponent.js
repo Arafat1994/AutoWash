@@ -9,14 +9,15 @@ export default function ClientOpenionComponent() {
 
     const carouselData = data[0].clientCarouseldata;
     const returneddiv = carouselData.map((res) => {
+        const { id , srcImage , clientName , clienTitle , clientComment} = res ; 
         return (
-            <SwiperSlide className="swiperslide" key={res.id} >
+            <SwiperSlide className="swiperslide" key={id} >
                 <div className='swiperelemet'  >
-                    <img src={res.srcImage} alt='testi' />
+                    <img src={srcImage} alt='testi' />
                     <div className='rightdetails'>
-                        <p className='name'> {res.clientName}   </p>
-                        <p className='title'> {res.clienTitle}  </p>
-                        <p className='comment'>{res.clientComment}  </p>
+                        <p className='name'> {clientName}   </p>
+                        <p className='title'> {clienTitle}  </p>
+                        <p className='comment'>{clientComment}  </p>
                     </div>
                 </div>
             </SwiperSlide>

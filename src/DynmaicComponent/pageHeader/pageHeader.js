@@ -4,7 +4,7 @@ import './PageHeader.scss'
 export default function PagerHeader(props){
     const location= useLocation();
     const PathName =location.pathname.slice(1) 
-    console.log(location)
+    //console.log(location)
 
     //console.log(typeof(location.pathname))
     return(

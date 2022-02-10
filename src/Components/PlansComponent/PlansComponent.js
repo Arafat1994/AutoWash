@@ -10,18 +10,20 @@ export default function PlansComponent() {
 
     const returneddata = data[0].PlansData;
     const returneddiv = returneddata.map((res) => {
+        const { id , title , price }= res; 
         return (
-            <div className='plansdiv' key={res.id}>
+            <div className='plansdiv' key={id}>
                 <div className='titlePrice'>
-                    <p className='title'> {res.title}  </p>
-                    <p className='price'> {res.price} $  </p>
+                    <p className='title'> {title}  </p>
+                    <p className='price'> {price} $  </p>
                 </div>
                 <div className='planservice' >
                     {res.service.map((res) => {
+                        const {id  , availability , servicename } = res ; 
                         return (
-                            <p key={res.id}>
-                                <FontAwesomeIcon className='icon' icon={res.availability ? "check-circle" : "times-circle"} style={{ color: !res.availability ? "gray" : "#E81C2E" }} />
-                                <span> {res.servicename} </span>
+                            <p key={id}>
+                                <FontAwesomeIcon className='icon' icon={availability ? "check-circle" : "times-circle"} style={{ color: !availability ? "gray" : "#E81C2E" }} />
+                                <span> {servicename} </span>
                             </p>
                         )
                     })}

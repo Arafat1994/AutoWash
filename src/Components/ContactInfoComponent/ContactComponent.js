@@ -1,5 +1,5 @@
 import "./ContactComponent.scss";
-import React, { useEffect } from "react";
+import React, { useEffect, useLayoutEffect } from "react";
 import TitleOfComponent from "../Titleofanycomponent/TitleofComponent";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import FormInputComponent from "../../DynmaicComponent/FormInputComponent/FormInputComponent";
@@ -12,37 +12,45 @@ export default function ContactComponent(props) {
 
 
     const inputs = [
-        { id: 0, name: "fullname", type: "text", placeholder: 'FullName', required: true, inputtype: "textbox" },
-        { id: 1, name: "email", type: "email", placeholder: ' Email ', required: true, inputtype: "textbox" },
-        { id: 2, name: "subject", type: "text", placeholder: "Subject", required: true, inputtype: "textbox" },
-        { id: 3, name: "message", type: "text", placeholder: "Message", required: true, inputtype: "textarea" },
+        { id: 0, name: "Contactfullname", type: "text", placeholder: 'FullName', required: true, inputtype: "textbox" },
+        { id: 1, name: "ContactEmail", type: "email", placeholder: ' Email ', required: true, inputtype: "textbox" },
+        { id: 2, name: "ContactSubject", type: "text", placeholder: "Subject", required: true, inputtype: "textbox" },
+        { id: 3, name: "ContactMessage", type: "text", placeholder: "Message", required: true, inputtype: "textarea" },
 
     ];
 
-    const sentValues = { fullname: "", email: "", subject: "", message: "" };
-    const url = "messagesRequests"
-    const { Values, Formerrors, Issubmit, ErrorCatch, SendData, handlechange } = UseValiationHook(sentValues, url);
+    const sentValues = { Contactfullname: "", ContactEmail:"", ContactSubject: "", ContactMessage: "" };
+    const url = "messagesRequests" ;
+    const { Values, Formerrors, Issubmit, setIssubmit ,  ErrorCatch, SendData, handlechange } = UseValiationHook(sentValues , url);
+    
 
-    useEffect(() => {
-        ErrorCatch()
+    useLayoutEffect(() => {
+        ErrorCatch() ; 
         //eslint-disable-next-line
-    }, [Values])
+    }, [Values.Contactfullname, Values.ContactEmail, Values.ContactSubject, Values.ContactMessage])
 
+    useEffect(()=>{
+        //console.log(Formerrors.NewsErr);
+        if(Object.keys(Formerrors.ContactErr).length === 0 ) { setIssubmit(true) }
+        else{ setIssubmit(false) }
+    })
 
 
     const returneddata = data[0].ContactData;
 
     const returneddiv = returneddata.map((res) => {
+        const { id, icon, header, details } = res;
         return (
-            <div key={res.id} className="contactelement">
-                <FontAwesomeIcon className="icon" icon={res.icon} />
+            <div key={id} className="contactelement">
+                <FontAwesomeIcon className="icon" icon={icon} />
                 <div className="text">
-                    <p>  {res.header}   </p>
-                    <p> {res.details}   </p>
+                    <p>  {header}   </p>
+                    <p> {details}   </p>
                 </div>
             </div>
         )
     });
+
 
     return (
         <div className="ContactContainer">
@@ -58,9 +66,13 @@ export default function ContactComponent(props) {
                     {
                         inputs.map((res) => {
                             return (
-                                <FormInputComponent key={res.id} {...res} value={Values[res.name]} onChange={handlechange} errormessage={Formerrors[res.name]} border="#202C45" />
+                                <FormInputComponent key={res.id} {...res} value={Values[res.name]} onChange={handlechange} errormessage={Formerrors.ContactErr[res.name]} border="#202C45" />
                             )
                         })
+                    }
+                    {
+                        //console.log(Issubmit)
+                        //
                     }
 
                     <MainButtonComponent onclick={SendData} disabled={!Issubmit} child='Send Message ' font='white' back='#E81C2E' hoverfont="#E81C2E" hoverback="#202C45" />

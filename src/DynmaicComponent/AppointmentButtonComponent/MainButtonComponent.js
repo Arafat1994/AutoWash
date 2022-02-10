@@ -1,8 +1,9 @@
 import React from 'react';
 import './MainButtonComponent.scss';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-const MainButton = styled.button`
+const MainButton = styled(Link)`
 color:${props => props.font}  ; 
 background:linear-gradient(to right,  ${props => props.hoverback} 50% , ${props => props.back} 50%);
 &:hover  {background-position:left bottom;  color:${props => props.hoverfont}  }
@@ -22,11 +23,12 @@ function MainButtonComponent(props) {
    -pass the values as props when you call button  
    */
 
+   const {onclick , disabled , font , back , hoverfont , hoverback , to ,  child } = props ;
 return (
     <div className='MainButton'>
-        <MainButton className='appoint' onClick={props.onclick} disabled={props.disabled}
-            font={props.font} back={props.back} hoverfont={props.hoverfont} hoverback={props.hoverback}>
-            {props.child}
+        <MainButton className='appoint' to={to ? to :"/"} onClick={onclick} disabled={disabled}
+            font={font} back={back} hoverfont={hoverfont} hoverback={hoverback}>
+            {child}
         </MainButton>
     </div>
 )

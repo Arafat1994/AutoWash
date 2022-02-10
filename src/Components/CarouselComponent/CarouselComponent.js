@@ -18,13 +18,14 @@ export default function CarouselEle(props) {
 
     useEffect(() => {
         setCarouselData(data.map((res) => {
+            const {id , imgsrc , header , mainheader , firstdetails , seconddtails } = res ; 
             return (
-                <SwiperSlide className="swiperslide" key={res.id}>
-                    <img src={res.imgsrc} alt="img" />
+                <SwiperSlide className="swiperslide" key={id}>
+                    <img src={imgsrc} alt="img" />
                     <div className="carousel-div">
-                        <p className="header">  {res.header}  </p>
-                        <p className="main-header"> {res.mainheader} </p>
-                        <div className="Some-details" > <p>{res.firstdetails}</p> <p>{res.seconddtails}</p></div>
+                        <p className="header">  {header}  </p>
+                        <p className="main-header"> {mainheader} </p>
+                        <div className="Some-details" > <p>{firstdetails}</p> <p>{seconddtails}</p></div>
                         <MainButtonComponent child='Explore More' font='#202C45' back='#E81C2E' hoverback='#202C45' hoverfont='white' />
                     </div>
                 </SwiperSlide>

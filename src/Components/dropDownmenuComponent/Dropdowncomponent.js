@@ -11,7 +11,8 @@ export default function DropDownComponent(props) {
     useLayoutEffect(()=>{
         if (props.dropdownele) {
             setelement((props.dropdownele).map((result) => {
-                return (<div key={result.id} onClick={()=>navigate(result.path)} to={result.path} className={result.class} > {result.content}  </div>)
+                const { id  , path ,  content } = result ; 
+                return (<div key={id} onClick={()=>navigate(path)} to={path} className={result.class} > {content}  </div>)
             }
             ))
         }

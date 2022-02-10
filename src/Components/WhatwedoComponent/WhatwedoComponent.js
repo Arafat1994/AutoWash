@@ -23,9 +23,10 @@ export default function WhatwedoComponent() {
     //console.log(dataFromJson)
     useLayoutEffect(() => {
         const returneddiv = dataFromJson.map((res) => {
+            const { id  , imgsrc , header , somedetail}= res ; 
             return (
                 <React.Fragment key={res.id}>
-                    <WhatwedoComponentSingleelemet id={res.id} imgsrc={res.imgsrc} header={res.header} somedetail={res.somedetail} />
+                    <WhatwedoComponentSingleelemet id={id} imgsrc={imgsrc} header={header} somedetail={somedetail} />
                 </React.Fragment>
             )
         });

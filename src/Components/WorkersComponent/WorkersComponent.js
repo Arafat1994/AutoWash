@@ -17,13 +17,14 @@ export default function WorkersComponent(props) {
     const top='-30px' ; 
     const returneddata = data[0].workersData;
     const returneddiv = returneddata.map((res) => {
+        const {id , srcimage , socialmedialinks , name , job }=res ; 
         return (
-            <div className='workerelement' key={res.id}>
-                <img src={res.srcimage} alt='workerimage' />
-                <SocialmedialinksComponent  socialmediaLinks={res.socialmedialinks}  top={top} />
+            <div className='workerelement' key={id}>
+                <img src={srcimage} alt='workerimage' />
+                <SocialmedialinksComponent  socialmediaLinks={socialmedialinks}  top={top} />
                 <div className='detailsdiv'> 
-                    <p> {res.name}  </p>
-                    <p> {res.job}  </p>
+                    <p> {name}  </p>
+                    <p> {job}  </p>
                 </div>
             </div>
         )

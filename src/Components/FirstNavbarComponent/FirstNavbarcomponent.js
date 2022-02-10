@@ -11,14 +11,15 @@ export default function FirstNavBar() {
     const { dataFromJson } = UseMapingdatafromJson(Fnavdata);
 
     const returneddiv = dataFromJson.map((result) => {
+        const { id  , mainclassname , imagesrc , altimage , headercontent , spancontent} = result ; 
         return (
-            <div key={result.id} className={result.mainclassname} >
+            <div key={id} className={mainclassname} >
                 <div className='imagepart'>
-                    <img src={result.imagesrc} alt={result.altimage} />
+                    <img src={imagesrc} alt={altimage} />
                 </div>
                 <div className='textpart'>
-                    <p>   {result.headercontent}  </p>
-                    <span>{result.spancontent} </span>
+                    <p>   {headercontent}  </p>
+                    <span>{spancontent} </span>
                 </div>
             </div >
         )

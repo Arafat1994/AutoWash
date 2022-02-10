@@ -3,16 +3,17 @@ import './TitleofComponent.scss'
 
 export default function TitleOfComponent(props){
 
+    const {dirction , margintop , title , header } = props ; 
 
     //document.documentElement.style.setProperty("--textalignele" , props.dirction) ; 
     //console.log(props.dirction)
     return(
-        <div className="componenttitle" style={{textAlign:props.dirction , marginTop:props.margintop}}>
+        <div className="componenttitle" style={{textAlign:dirction , marginTop:margintop}}>
             <div className="title">
-               {props.title}
+               {title}
             </div>  
             <div className="titleHeader">
-                {props.header}
+                {header}
             </div>
         </div>
     )

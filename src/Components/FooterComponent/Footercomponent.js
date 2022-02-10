@@ -1,5 +1,5 @@
 import './Footercomponent.scss';
-import React, { useEffect } from 'react';
+import React, { useEffect, useLayoutEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import SocialmedialinksComponent from '../../DynmaicComponent/SocialmediaLinksComponent/SocialmedialinksComponent';
 import data from './../../Assets/jsonFile/data.json';
@@ -10,6 +10,13 @@ import UseValiationHook from '../../Hooks/CustomHookValidation';
 
 
 export default function Footercomponent(props) {
+
+
+    
+    const footerdata = { NewsFullname:"", NewsEmail:"" };
+    const url = "newsletterRequests" ; 
+    const { Values, Formerrors , Issubmit,setIssubmit , ErrorCatch, SendData, handlechange } = UseValiationHook(footerdata, url);
+
     const socialmediadata = data[0].SocialmediaData;
     const top = "0"
     const returneddata = data[0].FooterData;
@@ -34,23 +41,28 @@ export default function Footercomponent(props) {
 
         )
     })
-    
-    const inputs =[
-        { id:0 , name:"fullname" , type:"text" , placeholder:'FullName' ,required:true , inputtype:"textbox"  },
-        { id:1 , name:"email" , type:"email" , placeholder:' Email ' ,required:true  , inputtype:"textbox" }
+
+    const inputs = [
+        { id: 0, name:"NewsFullname", type: "text", placeholder: 'FullName', required: true, inputtype: "textbox" },
+        { id: 1, name:"NewsEmail", type: "email", placeholder: ' Email ', required: true, inputtype: "textbox" }
     ];
-
-    const sentValues ={fullname:"" , email:""} ;
-    const url="newsletterRequests"
-    const { Values ,Formerrors ,Issubmit, ErrorCatch ,  SendData , handlechange  }=UseValiationHook(sentValues , url ) ;
-
-    useEffect(()=>{
-        ErrorCatch() ;
+    
+    
+    
+    
+    
+    useLayoutEffect(() => {
+        ErrorCatch()
         //eslint-disable-next-line
-    } ,[Values])
-
-    //console.log(Values) ; 
-
+    }, [ Values.NewsFullname, Values.NewsEmail ])
+    
+   
+    useEffect(()=>{
+        //console.log(Formerrors.NewsErr);
+        if(Object.keys(Formerrors.NewsErr).length === 0 ) { setIssubmit(true)}
+        else{ setIssubmit(false)  }
+    })
+    
     /*
     const inputs =[
         { id:0 , name:"fullname" , type:"text" , placeholder:'FullName' ,required:true   },
@@ -110,19 +122,18 @@ export default function Footercomponent(props) {
     */
     return (
         <div className='footercontainer'>
-            {  returneddiv  }
+            {returneddiv}
             <div className='footerelement'>
                 <p className='headerofelement'> Newsletter  </p>
-                
-                    {
-                        inputs.map((res)=>{
-                            return( <FormInputComponent key={res.id} {...res} value={Values[res.name]}  onChange={handlechange} errormessage={Formerrors[res.name]}  /> )
-                        })
-                    }
-                    <MainButtonComponent onclick={SendData}  disabled={!Issubmit} child='Submit' font='#202C45' back='white' hoverfont="white" hoverback="#E81C2E" /> 
-                
+                {
+                    inputs.map((res) => {
+                        return (<FormInputComponent key={res.id} {...res} value={Values[res.name]} onChange={handlechange} errormessage={Formerrors.NewsErr[res.name]} />) })
+                }
+                <MainButtonComponent onclick={SendData} disabled={!Issubmit} child='Submit' font='#202C45' back='white' hoverfont="white" hoverback="#E81C2E" />
+
             </div>
         </div>
     )
+
 }
 

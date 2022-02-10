@@ -14,9 +14,10 @@ export default function SocialmedialinksComponent(props) {
    // console.log(props.socialmediaLinks)
 
     const returneddiv = returneddata?.map((res) => {
+        const {id  , icon , link } = res ; 
         return (
-            <a href={res.link} className='socialmedialink' key={res.id}>
-                <FontAwesomeIcon className='icon icon2' icon={["fab", res.icon]} />
+            <a href={link} className='socialmedialink' key={id}>
+                <FontAwesomeIcon className='icon icon2' icon={["fab", icon]} />
             </a>
         )
     })

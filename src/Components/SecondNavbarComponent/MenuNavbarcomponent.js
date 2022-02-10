@@ -30,11 +30,12 @@ export default function MenuNavbarcomponent(props) {
     }
 
     const returneddiv = dataFromJson.map((result) => {
+        const { id , to ,  content , linkclass , iconView ,DropdownmenuElement  } = result ; 
         return (
-            <div key={result.id}  >
-                <Link id={result.id} to={{pathname:result.to}}  state={result.content} className={result.linkclass} onMouseEnter={ gethoveredfunction} onMouseLeave={gethoveredfunction}    > {result.content}
-                    <FontAwesomeIcon icon="chevron-down" className="icon" style={{ display: result.iconView ? "inline-block" : "none" }} />
-                        <DropDownComponent  dropdownele={result.id === Number(hoverelmet) ? result.DropdownmenuElement : null} />
+            <div key={id}  >
+                <Link id={id} to={{pathname:to}}  state={content} className={linkclass} onMouseEnter={ gethoveredfunction} onMouseLeave={gethoveredfunction}    > {content}
+                    <FontAwesomeIcon icon="chevron-down" className="icon" style={{ display: iconView ? "inline-block" : "none" }} />
+                        <DropDownComponent  dropdownele={id === Number(hoverelmet) ? DropdownmenuElement : null} />
                 </Link>
             </div>
         )
@@ -54,7 +55,7 @@ export default function MenuNavbarcomponent(props) {
 
             </nav>
             <div className='takeappointment '>
-                <MainButtonComponent child="Get Appointment" font='#202C45' back='White' hoverfont='white' hoverback='#E81C2E'  >   </MainButtonComponent>
+                <MainButtonComponent to="/CarWashReq" child="Get Appointment" font='#202C45' back='White' hoverfont='white' hoverback='#E81C2E'  >   </MainButtonComponent>
             </div>
 
         </div>

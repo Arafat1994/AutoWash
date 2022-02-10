@@ -29,6 +29,7 @@ function App() {
         <div className='MainAppcomponent' >
           <Routes>
             <Route exact path='/AutoWash' element={<HomePage />} />
+            <Route path="/CarWashReq" element={<WashingPointsPageComponent/>}  />
             <Route path='/Contact' element={<ContactPageComponent />} />
             <Route path='/AboutUs' element={<AboutPageComponent />} />
             <Route path='/OurPrices' element={<PricepageComponent />} />

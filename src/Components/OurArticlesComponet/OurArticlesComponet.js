@@ -16,15 +16,16 @@ export default function OurArticlesComponent(props){
     const eleNum = props.eleNum ? props.eleNum : returneddata.length ;
     //console.log(eleNum)
     const returneddiv = returneddata.slice(0 , eleNum ).map((res)=>{
+        const {id , to , srcimage , header , details , commentNum , owner , field } =res ; 
         return(
-            <a className="articleelement" href={res.to} key={res.id}>
-                    <img src={res.srcimage} alt="article" />
-                    <p className="header"> { res.header} </p>
-                    <p className="details"> {res.details} </p>
+            <a className="articleelement" href={to} key={id}>
+                    <img src={srcimage} alt="article" />
+                    <p className="header"> { header} </p>
+                    <p className="details"> {details} </p>
                     <p className="footer">
-                        <span> <FontAwesomeIcon className="icon" icon="comment-alt" /> <i> {res.commentNum} </i> </span>
-                        <span> <FontAwesomeIcon className="icon" icon="user-alt" /> <i>{res.owner} </i> </span>
-                        <span> <FontAwesomeIcon className="icon" icon="folder" /> <i> {res.field} </i>  </span>
+                        <span> <FontAwesomeIcon className="icon" icon="comment-alt" /> <i> {commentNum} </i> </span>
+                        <span> <FontAwesomeIcon className="icon" icon="user-alt" /> <i>{owner} </i> </span>
+                        <span> <FontAwesomeIcon className="icon" icon="folder" /> <i> {field} </i>  </span>
                     </p>
                     <div className="date">  <p> 1 Jan 2015  </p>   </div> 
             </a> 

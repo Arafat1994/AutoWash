@@ -35,7 +35,6 @@ export default function FormInputComponent(props) {
                 <Textarea className='forminput' onChange={onChnage} onFocus={handlefocus} {...inputprops}    border={props.border}  focused={focused.toString()} />
             }
             <span className='errormessage'> {errormessage} </span>
-
         </div>
 
     )

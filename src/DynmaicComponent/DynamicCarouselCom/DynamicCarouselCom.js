@@ -33,10 +33,11 @@ export default function DynamicCarouselComponent(props) {
 
     //console.log(image1, image2, image3, image4)
 
+    const { child ,breakpointsviewNum } =props ; 
     return (
-        <Swiper autoplay={{ delay: 3000 }} navigation={true} pagination={true} breakpoints={props.breakpointsviewNum} loop={true} >
+        <Swiper autoplay={{ delay: 3000 }} navigation={true} pagination={true} breakpoints={breakpointsviewNum} loop={true} >
            {
-               props.child
+               child
            }
         </Swiper>
     )

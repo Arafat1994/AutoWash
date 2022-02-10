@@ -15,19 +15,21 @@ export default function BreifComponent(props) {
     const dataFromJson = data[0].AboutBreifComponent;
     useLayoutEffect(() => {
         const div = dataFromJson.map((res) => {
+            const {id , imageSrc ,title , header ,details  }= res ; 
             return (
-                <div className="BreifComponent" key={res.id}>
+                <div className="BreifComponent" key={id}>
                     <div className='Beifimage'>
-                        <img src={res.imageSrc} alt="beifimage" />
+                        <img src={imageSrc} alt="beifimage" />
                     </div>
                     <div className='breiftext'>
-                        <TitleOfComponent title={res.title} header={res.header} dirction="left" />
-                        <div className='Details'> <p>{res.details}</p> </div>
+                        <TitleOfComponent title={title} header={header} dirction="left" />
+                        <div className='Details'> <p>{details}</p> </div>
                         <div className='AboutService'>
                             {
                                 (res.Aboutservice).map((res) => {
+                                    const {id , servicename } = res ; 
                                     return (
-                                        <div key={res.id} className='Aboutserviceelement'> <FontAwesomeIcon icon='check-circle' className="icon" /> <p> {res.servicename} </p></div>
+                                        <div key={id} className='Aboutserviceelement'> <FontAwesomeIcon icon='check-circle' className="icon" /> <p> {servicename} </p></div>
                                     )
                                 })
                             }
@@ -40,6 +42,7 @@ export default function BreifComponent(props) {
                 </div>
             )
         })
+        
         SetdivAbout(div);
 
     }, [dataFromJson])

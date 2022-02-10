@@ -35,13 +35,13 @@ export default function NumbersComponent() {
     let returndata = data[0].CustomerNumbers;
 
     const returneddiv = returndata.map((res) => {
-
+        const { id , icon , number , details } = res ; 
         return (
-            <div key={res.id} className='numberdiv'>
-                <div className='icondiv'> <FontAwesomeIcon className='icon' icon={res.icon} />  </div>
+            <div key={id} className='numberdiv'>
+                <div className='icondiv'> <FontAwesomeIcon className='icon' icon={icon} />  </div>
                 <div className='details'>
-                    <p> {randomNum ? randomNum : res.number}  +  </p>
-                    <p> {res.details}  </p>
+                    <p> {randomNum ? randomNum : number}  +  </p>
+                    <p> {details}  </p>
                 </div>
             </div>
         )
