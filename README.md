@@ -1,3 +1,8 @@
+
+
+here i use => Reactjs( hooks + redux ) , styled Components , Dynamic Compnents , form  Validation , Swipper  
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
