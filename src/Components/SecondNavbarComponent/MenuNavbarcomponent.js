@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './MenuNavbarcomponent.scss';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import DropDownComponent from '../dropDownmenuComponent/Dropdowncomponent';
@@ -18,6 +18,7 @@ export default function MenuNavbarcomponent(props) {
     const [hoverelmet, sethoveredele] = useState(0);
     const {view , viewfunction } =UseViewFunctionHook()
     const { Width, AvailHeight } = Getwidth();
+    const navigate = useNavigate(); 
 
     const MainNavcomponentCondition = { height: Width > 820 ? '80px' : AvailHeight + 'px', display: (props.viewMenu || Width > 820) ? 'grid' : 'none' };
 
@@ -41,7 +42,9 @@ export default function MenuNavbarcomponent(props) {
         )
     });
 
-
+    const NavigateFun =()=>{
+        navigate("/CarWashReq"); 
+    }
 
     return (
 
@@ -55,7 +58,7 @@ export default function MenuNavbarcomponent(props) {
 
             </nav>
             <div className='takeappointment '>
-                <MainButtonComponent to="/CarWashReq" child="Get Appointment" font='#202C45' back='White' hoverfont='white' hoverback='#E81C2E'  >   </MainButtonComponent>
+                <MainButtonComponent onclick={NavigateFun}  child="Get Appointment" font='#202C45' back='White' hoverfont='white' hoverback='#E81C2E' >   </MainButtonComponent>
             </div>
 
         </div>

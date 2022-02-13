@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 export default function UseValiationHook( sentValues ,  url) {
 
 
@@ -43,20 +43,27 @@ export default function UseValiationHook( sentValues ,  url) {
         setValues({ ...Values, [e.target.name]: e.target.value });
     }
 
-    const idLastElement = (url) => {
+    const FindidLastElement = (url) => {
         axios.get(`http://localhost:3001/${url}`)
-            .then((res) => { setLastId(res.data.length) })
+            .then((res) => { setLastId(res.data.length + 1  ) })
     }
 
-    idLastElement(url);
+    useEffect(()=>{
+        FindidLastElement(url) ;
+    }, )
+
 
     const SendData = () => {
-        console.log(lastid)
+        console.log(lastid);
+        console.log(url)
         axios({ baseURL: "http://localhost:3001/", url: url, method: "post", data: { id: lastid , data: Values } })
             .then((res) => {
                 setIssubmit(false);
                 setValues(sentValues);
                 alert("data sent successfully");
+            }).catch((err)=>{
+                err="error when data sending  "  ;
+                alert(" Error " + err )
             })
 
     }
