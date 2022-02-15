@@ -4,9 +4,10 @@ import FirstNavBar from '../Components/FirstNavbarComponent/FirstNavbarcomponent
 
 export default function Layout()
 {
+    
     return(
         <>
-        <div className='Navbars' style={{position:'fixed', top:0 , zIndex:'20' , width:'100%'}}> 
+        <div  className='Navbars' style={{position:'fixed', top:0 , zIndex:'20' , width:'100%'}}> 
             <FirstNavBar />
             <BarComponent />    
         </div>

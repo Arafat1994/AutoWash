@@ -1,4 +1,4 @@
-import React from 'react' ; 
+import React  from 'react' ; 
 import CarouselEle from '../../Components/CarouselComponent/CarouselComponent';
 import Getwidth from './../../Hooks/GetwidthHook' ; 
 import data from './../../Assets/jsonFile/data.json';
@@ -14,12 +14,15 @@ import OurArticlesComponent from '../../Components/OurArticlesComponet/OurArticl
 
 export default function HomePage()
 {
+
+    
+
     let carouseldatafromJson = data[0].CarouselData;
     const carouselview = 1 ;
     const {Width}=Getwidth();
     console.log(Width) ;
     return(
-        <div className='MainHomepage'> 
+        <div className='MainHomepage'  > 
 
             <CarouselEle carouselview={carouselview}  carouseldata={carouseldatafromJson}/>
             <BreifComponent />

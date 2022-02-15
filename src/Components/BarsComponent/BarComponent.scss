@@ -11,12 +11,15 @@
     font-size:25px;
     .MenuSide{
         grid-column: 1/3;
+        align-self: center;
         text-align: left;
         p{
             margin: 0px;
         }
     }
     .BarSide{
+        margin-top: 7px;
+        align-self: center;
         text-align: right;
         svg
         {
@@ -35,5 +38,25 @@
 
     @media screen and (max-width: $mediumscreen) {display: grid;}
 
+
+}
+.close{
+    width: 30px;
+    height:30px;
+    position: absolute;
+    top:140px;
+    left:200px;
+    z-index: 20;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 50%;
+    font-size: $verysmalltext;
+    color: white;
+   &:hover{
+       background-color: white;
+       color:$mainredcolor;
+       transform: scale(1.1);
+   } 
+    
 
 }

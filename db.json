@@ -74,55 +74,6 @@
     {
       "id": 11,
       "data": {
-        "NewsFullname": "sadasdasd",
-        "NewsEmail": "cxvcxvcxv@dss.com"
-      }
-    },
-    {
-      "id": 12,
-      "data": {
-        "NewsFullname": "wwwwd",
-        "NewsEmail": "cxvcxvcxv@dss.com"
-      }
-    },
-    {
-      "id": 13,
-      "data": {
-        "NewsFullname": "dddddddddddd",
-        "NewsEmail": "cxvcxvcxv@dss.com"
-      }
-    },
-    {
-      "id": 14,
-      "data": {
-        "NewsFullname": "wwwwv",
-        "NewsEmail": "cxvcxvcxv@dss.com"
-      }
-    },
-    {
-      "id": 15,
-      "data": {
-        "NewsFullname": "ggjghjg",
-        "NewsEmail": "cxvcxvcxv@dss.com"
-      }
-    },
-    {
-      "id": 16,
-      "data": {
-        "NewsFullname": "ggjghjg",
-        "NewsEmail": "cxvcxvcxv@dss.com"
-      }
-    },
-    {
-      "id": 17,
-      "data": {
-        "NewsFullname": "xxx",
-        "NewsEmail": "cxvcxvcxv@dss.com"
-      }
-    },
-    {
-      "id": 18,
-      "data": {
         "NewsFullname": "ggjghjg",
         "NewsEmail": "cxvcxvcxv@dss.com"
       }

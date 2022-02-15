@@ -2,10 +2,13 @@ import React from 'react';
 import './BarComponent.scss'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import MenuNavbarcomponent from '../SecondNavbarComponent/MenuNavbarcomponent';
-import UseViewFunctionHook from "./../../Hooks/ViewHook"
+import UseViewFunctionHook from "./../../Hooks/ViewHook";
+import Getwidth from '../../Hooks/GetwidthHook';
+
 export default function BarComponent(props) {
 
     const { view: viewMenu, viewfunction: ViewMenufunction } = UseViewFunctionHook();
+    const { Width } = Getwidth();
     //console.log(' ele ' + viewMenu);
 
     return (
@@ -20,6 +23,14 @@ export default function BarComponent(props) {
             </div>
 
             <MenuNavbarcomponent viewMenu={viewMenu} />
+
+            {
+                viewMenu && Width < 820 ?
+                    <button className='close' onClick={ViewMenufunction} > <FontAwesomeIcon icon={{ prefix: "fab", iconName: "xing" }} className='icon' /> </button> :
+                    <></>
+            }
+
+
         </React.Fragment>
     )
 }

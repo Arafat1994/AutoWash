@@ -3,6 +3,8 @@
 .dropdowncomponentcontainer
 {
     background-color: $WhiteColor;
+    border-width: 1px;
+    border-radius: 5px ;
     width: 180px;
     position: absolute;
     left: 0px;
@@ -10,6 +12,7 @@
     margin-top: 10px;
     .DropDownlink{
         padding: 5px 10px ;
+        border-radius: 5px ;
         text-align: left; 
         display:block;
         text-decoration:none;

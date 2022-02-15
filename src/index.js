@@ -11,10 +11,10 @@ import Spinnerloadingcomponent from './Components/Spinnerloading/Spinnerloading'
 import { library } from '@fortawesome/fontawesome-svg-core' //allows later to just use icon name to render-them
 import { fas } from '@fortawesome/free-solid-svg-icons' ; 
 import { fab} from '@fortawesome/free-brands-svg-icons' ; 
-import { faUser , faUsers , faMapMarker , faCheck , faBars , faCheckCircle ,faChevronDown , faSpinner , faTimesCircle, faMapMarkerAlt , faCommentAlt , faUserAlt ,faFolder , faChevronCircleRight  , faPhoneAlt  , faClock, faEnvelopeOpen} from '@fortawesome/free-solid-svg-icons'
-import {faTwitter,faLinkedinIn , faFacebook , faInstagram  , faYoutube  } from '@fortawesome/free-brands-svg-icons'
-library.add(fab , faTwitter , faLinkedinIn , faFacebook , faInstagram , faYoutube  ) 
-library.add(fas  ,faUser , faUsers , faMapMarker , faCheck , faBars ,faCheckCircle ,faChevronDown , faSpinner , faTimesCircle , faMapMarkerAlt , faCommentAlt , faClock ,  faUserAlt , faFolder , faChevronCircleRight , faPhoneAlt  ,faEnvelopeOpen)
+import { faUser , faUsers , faMapMarker , faCheck , faBars , faCheckCircle ,  faChevronDown , faSpinner , faTimesCircle, faMapMarkerAlt , faCommentAlt , faUserAlt ,faFolder , faChevronCircleRight  , faPhoneAlt  , faClock, faEnvelopeOpen} from '@fortawesome/free-solid-svg-icons'
+import {faTwitter,faLinkedinIn , faFacebook , faInstagram  , faYoutube, faXing } from '@fortawesome/free-brands-svg-icons'
+library.add(fab , faTwitter , faLinkedinIn , faFacebook , faInstagram , faYoutube , faXing ) 
+library.add(fas  ,faUser , faUsers , faMapMarker , faCheck , faBars ,faCheckCircle  ,faChevronDown , faSpinner , faTimesCircle , faMapMarkerAlt , faCommentAlt , faClock ,  faUserAlt , faFolder , faChevronCircleRight , faPhoneAlt  ,faEnvelopeOpen)
 
 ReactDOM.render(
   <React.StrictMode>
