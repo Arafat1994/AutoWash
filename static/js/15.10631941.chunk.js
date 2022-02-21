@@ -1,2 +1,0 @@
-(this.webpackJsonpautowash=this.webpackJsonpautowash||[]).push([[15],{141:function(n,e,t){"use strict";t.r(e),t.d(e,"default",(function(){return s}));t(0);var i=t(1);function r(){return Object(i.jsx)("div",{children:"Login Component"})}function c(){return Object(i.jsx)("div",{children:"register Component here"})}function s(){return Object(i.jsxs)("div",{children:[Object(i.jsx)("p",{children:" Login Register Component "}),Object(i.jsx)(r,{}),Object(i.jsx)(c,{})]})}}}]);
-//# sourceMappingURL=15.10631941.chunk.js.map
