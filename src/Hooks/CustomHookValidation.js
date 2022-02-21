@@ -4,19 +4,19 @@ export default function UseValiationHook( sentValues ,  url) {
 
 
     const [Values, setValues] = useState(sentValues);
-    const [Formerrors, setFormErrors] = useState({ContactErr:{},NewsErr:{}});
+    const [Formerrors, setFormErrors] = useState({ContactErr:{},NewsErr:{} ,SigninErr:{} , RegisterErr:{}  });
     const [Issubmit, setIssubmit] = useState(false);
     const [lastid, setLastId] = useState();
 
 
     const ValidationFun = (values) => {
-        const  errors = {ContactErr:{},NewsErr:{} };
+        const  errors = {ContactErr:{},NewsErr:{} , SigninErr:{} , RegisterErr:{} };
         const fullnameRegex = new RegExp("^[A-zA-Z0-9_ ]{3,16}$");
         const subjectRegex = new RegExp("^[A-zA-Z0-9_ ]{10,40}$");
         const emailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
+        const passwordRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");;
 
         
-
         if (!values.Contactfullname ) { errors.ContactErr.Contactfullname = " Fullname required " }
         else if (!fullnameRegex.test(values.Contactfullname)) { errors.ContactErr.Contactfullname = "fullname must have at least 3 chars and max 16 chars  " }
 
@@ -33,6 +33,31 @@ export default function UseValiationHook( sentValues ,  url) {
 
         if(!values.NewsEmail){errors.NewsErr.NewsEmail="Email Required "}
         else if(!emailRegex.test(values.NewsEmail)){ errors.NewsErr.NewsEmail=" please Enter A valid Email "}
+       // LoginEmail:"" ,LoginPassword:""
+       if(!values.LoginEmail){ errors.SigninErr.LoginEmail = " Email Required "}
+       else if (!emailRegex.test(values.LoginEmail)) { errors.SigninErr.LoginEmail = "Please enter A valid email " }
+
+       if(!values.LoginPassword){ errors.SigninErr.LoginPassword = " Password Required "}
+       else if (!passwordRegex.test(values.LoginPassword)) { errors.SigninErr.LoginPassword = "Please Enter a valid Password  " }
+
+       
+       //{RegFName:"" , RegLName:"" , RegEmail :"" ,RegPassword:"", RegConfirmPass:"" ,RegPhoneNumber:"" , RegBirthday:"" , RegNationality:"" , RegAdress:"" , RegCity:"" } ; 
+       if(!values.RegFName){errors.RegisterErr.RegFName =" Fullname required "}
+       if(!values.RegLName){errors.RegisterErr.RegLName =" Lastname required "}
+
+       if(!values.RegEmail){errors.RegisterErr.RegEmail =" Email required "}
+       else if(!emailRegex.test(values.RegEmail)){ errors.RegisterErr.RegEmail=" Enter a valid Email " }
+
+       if(!values.RegPassword){errors.RegisterErr.RegPassword ="Password required "}
+       else if(!passwordRegex.test(values.RegPassword)){ errors.RegisterErr.RegPassword=" Enter a valid password " }
+       else if(values.RegPassword !== values.RegConfirmPass){ errors.RegisterErr.RegConfirmPass ="Passwords not matched "}
+    
+       if(!values.RegConfirmPass){errors.RegisterErr.RegConfirmPass =" Confirm Pass required "}
+       if(!values.RegPhoneNumber){errors.RegisterErr.RegPhoneNumber =" Phone Number required "}
+       if(!values.RegBirthday){errors.RegisterErr.RegBirthday =" Birthday required "}
+       if(!values.RegNationality){errors.RegisterErr.RegNationality =" Nationality required "}
+       if(!values.RegAdress){errors.RegisterErr.RegAdress =" Address  required "}
+       if(!values.RegCity){errors.RegisterErr.RegCity =" City required "}
        
 
         return errors;

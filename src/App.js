@@ -7,7 +7,8 @@ import Layout from './Layout/Layout';
 import React ,  { lazy} from 'react';
 import Footercomponent from './Components/FooterComponent/Footercomponent';
 import FooterEndComponent from './Components/FooterEndComponent/FooterEndComponent';
-const LoginRegisterComponent = lazy(()=> import('./Components/LoginRegesterComponent/LoginRegisterComponent'))  ;
+
+const LoginRegisterPageComponent = lazy(()=> import('./Pages/loginRegiestPage/LoginRegisterPage'))  ;
 const HomePage = lazy(() => import('./Pages/HomePage/Homepage'));
 const AboutPageComponent = lazy(() => import('./Pages/AboutPage/AboutPageComponent'));
 const ContactPageComponent = lazy(() => import('./Pages/ContactPage/ContactPageComponent'));
@@ -24,7 +25,9 @@ const SchduleBookingComponent = lazy(() => import('./Pages/SchduleBookingPage/Sc
 
 function App() {
 
+  
  
+  
  
   return (
     <div >
@@ -45,7 +48,7 @@ function App() {
             <Route path='/BlogGrid' element={<BlogGridComponent />} />
             <Route path="/TeamMember" element={<TeamMemberComponent />} />
             <Route path="/SchduleBooking" element={<SchduleBookingComponent />} />
-            <Route path="/loginReg" element={<LoginRegisterComponent />} />
+            <Route path="/login/*" element={<LoginRegisterPageComponent />} />
             <Route path='*' element={<Page404Component />} />
           </Routes>
         </div>

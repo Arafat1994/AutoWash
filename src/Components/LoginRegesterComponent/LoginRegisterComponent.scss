@@ -1,0 +1,24 @@
+@import './../../index.scss' ;
+
+.log_regs{
+    padding :20px 0 ;
+    text-align: center;
+    .log_reg_buttons{
+        .button{
+            background-color: $WhiteColor;
+            border: 1px solid $mainredcolor;
+            margin:0px 10px;
+            color: $mainredcolor;
+            font-size:$verysmalltext;
+            padding:0px 30px;
+            border-radius: 5px ;
+        }
+        .activelink, .button:hover{
+            color:$WhiteColor ; 
+            background-color:$mainredcolor;
+            border:1px solid  transparent;
+        }
+        
+    }
+}
+

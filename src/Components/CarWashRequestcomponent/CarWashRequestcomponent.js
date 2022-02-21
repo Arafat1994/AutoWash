@@ -93,7 +93,7 @@ export default function CarWashRequestcomponent() {
                 <span className="label textarealabel"> Description </span>
                <p className="validateText">  {formErrors.description} </p>
             </div>
-            <MainButtonComponent onclick={senddata} disabled={!submit} child=' Send Request ' font="#E81C2E" back="white" hoverfont="white" hoverback="#202C45" />
+            <MainButtonComponent onclick={senddata} disabled={!submit} child=' Send Request ' font="#E81C2E" back="white" hoverfont="white" hoverback="#202C45"  width="100%" />
 
         </div>
     )

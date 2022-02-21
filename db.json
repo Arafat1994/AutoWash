@@ -107,5 +107,37 @@
         "ContactMessage": "dgdgskdgfkjs yfgsfi "
       }
     }
+  ],
+  "RegisterData": [
+    {
+      "id": 1,
+      "data": {
+        "RegFName": "Arafat",
+        "RegLName": "younes",
+        "RegEmail": "arafat1994@outlook.sa",
+        "RegPassword": "19941994Aa@",
+        "RegConfirmPass": "19941994Aa@",
+        "RegPhoneNumber": "0506293772",
+        "RegBirthday": "2022-02-22",
+        "RegNationality": "Egyption",
+        "RegAdress": "Saudi",
+        "RegCity": "Riyadh "
+      }
+    },
+    {
+      "id": 2,
+      "data": {
+        "RegFName": "Arafat",
+        "RegLName": "younes",
+        "RegEmail": "arafat@outlook.sa",
+        "RegPassword": "19941994Aa@",
+        "RegConfirmPass": "19941994Aa@",
+        "RegPhoneNumber": "0506293772",
+        "RegBirthday": "2022-02-22",
+        "RegNationality": "Egyption",
+        "RegAdress": "Saudi",
+        "RegCity": "Riyadh "
+      }
+    }
   ]
 }

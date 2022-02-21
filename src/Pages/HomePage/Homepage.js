@@ -21,6 +21,8 @@ export default function HomePage()
     const carouselview = 1 ;
     const {Width}=Getwidth();
     console.log(Width) ;
+
+
     return(
         <div className='MainHomepage'  > 
 

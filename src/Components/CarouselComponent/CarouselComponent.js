@@ -1,5 +1,6 @@
 
 import React, { useEffect, useState } from "react";
+import {  useSelector} from "react-redux"
 import { SwiperSlide } from 'swiper/react'
 import 'swiper/swiper.scss'
 import './CarouselComponent.scss';
@@ -13,11 +14,15 @@ import DynamicCarouselComponent from './../../DynmaicComponent/DynamicCarouselCo
 export default function CarouselEle(props) {
 
 
-    let data = props.carouseldata;
+    const data =useSelector((state)=>state.datareducer.data.CarouselData ) ;
     const [carouseldata, setCarouselData] = useState(null);
+    const breakpointsview = { 1400: { width: 600, slidesPerView: 1 } }
 
-    useEffect(() => {
-        setCarouselData(data.map((res) => {
+    
+
+    useEffect(()=>{
+        //take data com from redux 
+        setCarouselData(data?.map((res) => {
             const {id , imgsrc , header , mainheader , firstdetails , seconddtails } = res ; 
             return (
                 <SwiperSlide className="swiperslide" key={id}>
@@ -32,14 +37,9 @@ export default function CarouselEle(props) {
             )
         })
         )
+    } , [data]);
 
-    }, [data]);
-
-    const breakpointsview = {
-
-        1400: { width: 600, slidesPerView: 1 }
-    }
-
+  
     return (
         <div className="swiper">
 

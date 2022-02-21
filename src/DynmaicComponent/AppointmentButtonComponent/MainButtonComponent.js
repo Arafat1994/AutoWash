@@ -3,7 +3,8 @@ import './MainButtonComponent.scss';
 import styled from 'styled-components';
 
 const MainButton = styled.button`
-color:${props => props.font}  ; 
+color:${props => props.font}  ;
+width:${props => props.width ? props.width : "auto"  }  ; 
 background:linear-gradient(to right,  ${props => props.hoverback} 50% , ${props => props.back} 50%);
 &:hover  {background-position:left bottom;  color:${props => props.hoverfont}  }
 `
@@ -22,12 +23,16 @@ function MainButtonComponent(props) {
    -pass the values as props when you call button  
    */
 
-   const {onclick , disabled , font , back , hoverfont , hoverback  ,  child } = props ;
+   const {onclick , disabled , font , back , hoverfont , hoverback  ,  width , child } = props ;
 return (
     <div className='MainButton'>
-        <MainButton className='appoint'  onClick={onclick} disabled={disabled}  font={font} back={back} hoverfont={hoverfont} hoverback={hoverback}>
+        <MainButton className='appoint'  onClick={onclick} disabled={disabled}  font={font} back={back} hoverfont={hoverfont} hoverback={hoverback} width={width}>
             {child}
         </MainButton>
+        {
+            //div> <input type={text} placeholder="enter your data here plleasre" /> </div>
+        }
+        
     </div>
 )
 }

@@ -1,28 +1,37 @@
 import './ClientOpenionComponent.scss';
-import React from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import TitleOfComponent from '../Titleofanycomponent/TitleofComponent';
 import DynamicCarouselComponent from './../../DynmaicComponent/DynamicCarouselCom/DynamicCarouselCom';
-import data from './../../Assets/jsonFile/data.json';
 import { SwiperSlide } from 'swiper/react';
+import { useSelector } from 'react-redux';
 
 export default function ClientOpenionComponent() {
 
-    const carouselData = data[0].clientCarouseldata;
-    const returneddiv = carouselData.map((res) => {
-        const { id , srcImage , clientName , clienTitle , clientComment} = res ; 
-        return (
-            <SwiperSlide className="swiperslide" key={id} >
-                <div className='swiperelemet'  >
-                    <img src={srcImage} alt='testi' />
-                    <div className='rightdetails'>
-                        <p className='name'> {clientName}   </p>
-                        <p className='title'> {clienTitle}  </p>
-                        <p className='comment'>{clientComment}  </p>
-                    </div>
-                </div>
-            </SwiperSlide>
+    ///const carouselData = data[0].clientCarouseldata;
+    const data = useSelector((state) => state.datareducer.data.clientCarouseldata);
+    const [ClientOpenionData, SetClientOpenionData] = useState(null);
+
+    useLayoutEffect(()=>{
+        SetClientOpenionData(
+            data?.map((res) => {
+                const { id , srcImage , clientName , clienTitle , clientComment} = res ; 
+                return (
+                    <SwiperSlide className="swiperslide" key={id} >
+                        <div className='swiperelemet'  >
+                            <img src={srcImage} alt='testi' />
+                            <div className='rightdetails'>
+                                <p className='name'> {clientName}   </p>
+                                <p className='title'> {clienTitle}  </p>
+                                <p className='comment'>{clientComment}  </p>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                )
+            })
+
         )
-    })
+    },[data])
+
 
     const breakpointsview = {
         1200: { width: 1200, slidesPerView: 3 },
@@ -36,7 +45,7 @@ export default function ClientOpenionComponent() {
         <div className='Clientopenioncontainer'>
             <TitleOfComponent title='Clients Openion ' header="What Does Our Clients Says ? " dirction="center" />
             <div className='Clientopeniondiv'>
-                <DynamicCarouselComponent data={carouselData} breakpointsviewNum={breakpointsview} child={returneddiv} />
+                <DynamicCarouselComponent data={data} breakpointsviewNum={breakpointsview} child={ClientOpenionData} />
             </div>
         </div>
     )

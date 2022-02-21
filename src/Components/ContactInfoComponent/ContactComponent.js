@@ -1,11 +1,11 @@
 import "./ContactComponent.scss";
-import React, { useEffect, useLayoutEffect } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import TitleOfComponent from "../Titleofanycomponent/TitleofComponent";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import FormInputComponent from "../../DynmaicComponent/FormInputComponent/FormInputComponent";
 import MainButtonComponent from "../../DynmaicComponent/AppointmentButtonComponent/MainButtonComponent";
-import data from './../../Assets/jsonFile/data.json'
 import UseValiationHook from "../../Hooks/CustomHookValidation";
+import { useSelector } from "react-redux";
 
 
 export default function ContactComponent(props) {
@@ -19,38 +19,42 @@ export default function ContactComponent(props) {
 
     ];
 
-    const sentValues = { Contactfullname: "", ContactEmail:"", ContactSubject: "", ContactMessage: "" };
-    const url = "messagesRequests" ;
-    const { Values, Formerrors, Issubmit, setIssubmit ,  ErrorCatch, SendData, handlechange } = UseValiationHook(sentValues , url);
-    
+    const sentValues = { Contactfullname: "", ContactEmail: "", ContactSubject: "", ContactMessage: "" };
+    const url = "messagesRequests";
+    const { Values, Formerrors, Issubmit, setIssubmit, ErrorCatch, SendData, handlechange } = UseValiationHook(sentValues, url);
+
 
     useLayoutEffect(() => {
-        ErrorCatch() ; 
+        ErrorCatch();
         //eslint-disable-next-line
     }, [Values.Contactfullname, Values.ContactEmail, Values.ContactSubject, Values.ContactMessage])
 
-    useEffect(()=>{
+    useEffect(() => {
         //console.log(Formerrors.NewsErr);
-        if(Object.keys(Formerrors.ContactErr).length === 0 ) { setIssubmit(true) }
-        else{ setIssubmit(false) }
+        if (Object.keys(Formerrors.ContactErr).length === 0) { setIssubmit(true) }
+        else { setIssubmit(false) }
     })
 
 
-    const returneddata = data[0].ContactData;
+    // const returneddata = data[0].ContactData;
+    const data = useSelector((state) => state.datareducer.data.ContactData);
+    const [ContactData, SetContactData] = useState(null);
 
-    const returneddiv = returneddata.map((res) => {
-        const { id, icon, header, details } = res;
-        return (
-            <div key={id} className="contactelement">
-                <FontAwesomeIcon className="icon" icon={icon} />
-                <div className="text">
-                    <p>  {header}   </p>
-                    <p> {details}   </p>
-                </div>
-            </div>
+    useLayoutEffect(() => {
+        SetContactData(
+            data?.map((res) => {
+                const { id, icon, header, details } = res;
+                return (
+                    <div key={id} className="contactelement">
+                        <FontAwesomeIcon className="icon" icon={icon} />
+                        <div className="text">
+                            <p>  {header}   </p> <p> {details}   </p>
+                        </div>
+                    </div>
+                )
+            })
         )
-    });
-
+    }, [data])
 
     return (
         <div className="ContactContainer">
@@ -58,9 +62,7 @@ export default function ContactComponent(props) {
             <div className="ContactDiv">
                 <div className="leftContactSide">
                     <div className="header"> <p> Quick Contact Info  </p>  </div>
-                    {
-                        returneddiv
-                    }
+                    { ContactData }
                 </div>
                 <div className="RightContactSide">
                     {
@@ -70,12 +72,7 @@ export default function ContactComponent(props) {
                             )
                         })
                     }
-                    {
-                        //console.log(Issubmit)
-                        //
-                    }
-
-                    <MainButtonComponent onclick={SendData} disabled={!Issubmit} child='Send Message ' font='white' back='#E81C2E' hoverfont="#E81C2E" hoverback="#202C45" />
+                    <MainButtonComponent onclick={SendData} disabled={!Issubmit} child='Send Message ' font='white' back='#E81C2E' hoverfont="#E81C2E" hoverback="#202C45" width="100%" />
 
                 </div>
             </div>

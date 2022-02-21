@@ -1,0 +1,20 @@
+@import './../../index.scss' ;
+
+.login_form{
+    display: grid;
+    grid-template-columns: 33% ;
+    justify-content: space-around;
+    //border: 1px solid green;
+    padding: 45px 10px 45px 10px;
+    text-align:$leftalign;
+    
+    .form{
+        border-radius: 5px;
+        padding: 40px 20px;
+        background-color:$lightgray;
+    }
+    @media screen and (max-width :$mediumscreen ) {
+        grid-template-columns: 100% ;
+    }
+    
+}
