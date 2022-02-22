@@ -1,5 +1,12 @@
 {
-  "carWashRequests": [],
+  "carWashRequests": [
+    {
+      "id": 3424,
+      "fullname": "Arafata",
+      "email": "arafat1994@outlook.sa",
+      "description": "aaaaaaaaaaaaaaaaaaaaaaaa "
+    }
+  ],
   "newsletterRequests": [
     {
       "id": 1,
@@ -105,6 +112,24 @@
         "ContactEmail": "ryrtyrQ@sgf.cim",
         "ContactSubject": "gdfg  dgdg d g",
         "ContactMessage": "dgdgskdgfkjs yfgsfi "
+      }
+    },
+    {
+      "id": 4,
+      "data": {
+        "Contactfullname": "xcvxcvxcv",
+        "ContactEmail": "aradfafjd@cvv.cld",
+        "ContactSubject": "vdf fsfg skdjbf",
+        "ContactMessage": "zvxcvxcvxcvc"
+      }
+    },
+    {
+      "id": 5,
+      "data": {
+        "Contactfullname": "arafaat",
+        "ContactEmail": "younes@ffkjg.com",
+        "ContactSubject": "website come on ",
+        "ContactMessage": "dsfksdfjkshdfkf fsdfjvdfsdfsdf"
       }
     }
   ],

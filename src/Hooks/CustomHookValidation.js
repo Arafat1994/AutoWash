@@ -81,7 +81,7 @@ export default function UseValiationHook( sentValues ,  url) {
     const SendData = () => {
         console.log(lastid);
         console.log(url)
-        axios({ baseURL: "http://localhost:3001/", url: url, method: "post", data: { id: lastid , data: Values } })
+        axios({ baseURL: "https://autowash-api.herokuapp.com/", url: url, method: "post", data: { id: lastid , data: Values } })
             .then((res) => {
                 setIssubmit(false);
                 setValues(sentValues);

@@ -61,7 +61,7 @@ export default function CarWashRequestcomponent() {
     }, [formErrors , formValues])
 
     const senddata = () => {
-        axios({ baseURL: "http://localhost:3001/", url: "/carWashRequests", method: 'post', data: formValues })
+        axios({ baseURL: "http://autowash-api.herokuapp.com/", url: "/carWashRequests", method: 'post', data: formValues })
             .then(() => {
                 setsubmit(false);
                 setFormValues(requestData)
