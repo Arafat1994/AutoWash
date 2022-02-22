@@ -192,7 +192,7 @@
         "CarouselData": [
             {
                 "id": 0,
-                "imgsrc": "/AutoWash/static/media/carousel-1.3553bff0.jpg",
+                "imgsrc": "../../../Assets/images/carousel-1.jpg",
                 "header": "Washing and detailing",
                 "mainheader": "Keep Your Car Newer",
                 "firstdetails": "we offer cars washing for all Cars to make ",
@@ -200,7 +200,7 @@
             },
             {
                 "id": 2,
-                "imgsrc": "/AutoWash/static/media/carousel-2.39687c53.jpg",
+                "imgsrc": "../../../Assets/images/carousel-2.jpg",
                 "header": " Car Motor Maitenence",
                 "mainheader": "Keep Your car Fit ",
                 "firstdetails": " We make all the necessary motor maitaience for ",
@@ -208,7 +208,7 @@
             },
             {
                 "id": 3,
-                "imgsrc": "/AutoWash/static/media/carousel-3.4116ca6c.jpg",
+                "imgsrc": "../../../Assets/images/carousel-3.jpg",
                 "header": "Changing Car Oil",
                 "mainheader": "Change Your Oil with Gurantee ",
                 "firstdetails": " we have good prices ang good kind of oils ",
