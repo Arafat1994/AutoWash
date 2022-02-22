@@ -10,6 +10,7 @@ import MainButtonComponent from './../../DynmaicComponent/AppointmentButtonCompo
 import DynamicCarouselComponent from './../../DynmaicComponent/DynamicCarouselCom/DynamicCarouselCom.js';
 import data from './../../Assets/jsonFile/data.json'
 import UseMapingdatafromJson from './../../Hooks/CustomHookmapingData';
+
 export default function CarouselEle(props) {
 
 
