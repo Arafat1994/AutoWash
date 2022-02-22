@@ -23,7 +23,7 @@ export default function OurArticlesComponent(props) {
                 const { id, to, srcimage, header, details, commentNum, owner, field } = res;
                 return (
                     <a className="articleelement" href={to} key={id}>
-                        <img src={srcimage} alt="article" />
+                        <img src={require('./../../Assets/images'+srcimage).default} alt="article" />
                         <p className="header"> {header} </p>
                         <p className="details"> {details} </p>
                         <p className="footer">

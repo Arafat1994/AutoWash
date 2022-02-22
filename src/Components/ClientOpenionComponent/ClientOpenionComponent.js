@@ -18,7 +18,7 @@ export default function ClientOpenionComponent() {
                 return (
                     <SwiperSlide className="swiperslide" key={id} >
                         <div className='swiperelemet'  >
-                            <img src={srcImage} alt='testi' />
+                            <img src={require('./../../Assets/images'+srcImage).default} alt='testi' />
                             <div className='rightdetails'>
                                 <p className='name'> {clientName}   </p>
                                 <p className='title'> {clienTitle}  </p>

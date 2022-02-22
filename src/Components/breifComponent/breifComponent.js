@@ -14,13 +14,15 @@ export default function BreifComponent(props) {
     const data = useSelector((state) => state.datareducer.data.AboutBreifComponent)
     const [divAbout, SetdivAbout] = useState();
     useLayoutEffect(() => {
+        
         SetdivAbout(
             data?.map((res) => {
+                
                 const { id, imageSrc, title, header, details } = res;
                 return (
                     <div className="BreifComponent" key={id}>
                         <div className='Beifimage'>
-                            <img src={imageSrc} alt="beifimage" />
+                            <img src={require('./../../Assets/images'+imageSrc).default} alt="beifimage" />
                         </div>
                         <div className='breiftext'>
                             <TitleOfComponent title={title} header={header} dirction="left" />

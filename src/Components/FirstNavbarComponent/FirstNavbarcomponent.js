@@ -4,19 +4,19 @@ import data from "./../../Assets/jsonFile/data.json";
 import UseMapingdatafromJson from './../../Hooks/CustomHookmapingData';
 import AutoWashComp from '../AutoWashComponent/AutoWashComp';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-//import image from './../../Assets/images/mail.png' ; 
+import { useSelector } from 'react-redux';
 
 export default function FirstNavBar() {
-    
 
-    let Fnavdata = data[0].FNavbardata;
-    const { dataFromJson } = UseMapingdatafromJson(Fnavdata);
+    //let Fnavdata = data[0].FNavbardata;
+    //const { dataFromJson } = UseMapingdatafromJson(Fnavdata);
+    const data =useSelector((state)=>state.datareducer.data.FNavbardata)
     const [ FavNavData , SetFnavdata] = useState(null)
   useEffect(()=>{
       SetFnavdata(
        
-        dataFromJson?.map((result) => {
-            const { id  , mainclassname , imagesrc , altimage , headercontent , spancontent} = result ; 
+        data?.map((result) => {
+            const { id  , mainclassname , imagesrc , headercontent , spancontent} = result ; 
             return (
                 <div key={id} className={mainclassname} >
                     <div className='imagepart'>
@@ -31,7 +31,7 @@ export default function FirstNavBar() {
         })
 
       )
-  } , [])
+  } , [data])
 
 
     return (

@@ -4,7 +4,7 @@ const WhatwedoComponentSingleelemet = (props) => {
     const { id , imgsrc , header , somedetail} = props ; 
     return (
         <div className="whatwedoelement" key={id}>
-            <div className="Whatwedoeledivimg">  <img src={imgsrc} alt="carwash" /> </div>
+            <div className="Whatwedoeledivimg">  <img src={require('./../../Assets/images'+imgsrc).default} alt="carwash" /> </div>
             <div className="whatwedoelementtext">
                 <p> {header} </p>
                 <p> {somedetail} </p>

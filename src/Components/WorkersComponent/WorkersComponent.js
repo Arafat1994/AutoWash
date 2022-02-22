@@ -23,7 +23,7 @@ export default function WorkersComponent(props) {
                 const { id, srcimage, socialmedialinks, name, job } = res;
                 return (
                     <div className='workerelement' key={id}>
-                        <img src={srcimage} alt='workerimage' />
+                        <img src={require('./../../Assets/images'+srcimage).default} alt='workerimage' />
                         <SocialmedialinksComponent socialmediaLinks={socialmedialinks} top={top} />
                         <div className='detailsdiv'>
                             <p> {name}  </p>

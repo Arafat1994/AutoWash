@@ -8,27 +8,26 @@ import "swiper/components/pagination/pagination.scss";
 import "swiper/components/navigation/navigation.scss";
 import MainButtonComponent from './../../DynmaicComponent/AppointmentButtonComponent/MainButtonComponent.js';
 import DynamicCarouselComponent from './../../DynmaicComponent/DynamicCarouselCom/DynamicCarouselCom.js';
-import data from './../../Assets/jsonFile/data.json'
-import UseMapingdatafromJson from './../../Hooks/CustomHookmapingData';
+
 
 export default function CarouselEle(props) {
 
 
-   // const data =useSelector((state)=>state.datareducer.data.CarouselData ) ;
+    const data =useSelector((state)=>state.datareducer.data.CarouselData ) ;
     const [carouseldata, setCarouselData] = useState(null);
     const breakpointsview = { 1400: { width: 600, slidesPerView: 1 } }
 
 
-    let Fnavdata = data[0].CarouselData;
-    const { dataFromJson } = UseMapingdatafromJson(Fnavdata);
+    //let Fnavdata = data[0].CarouselData;
+    //const { dataFromJson } = UseMapingdatafromJson(Fnavdata);
 
     useEffect(()=>{
         //take data com from redux 
-        setCarouselData(dataFromJson?.map((res) => {
+        setCarouselData(data?.map((res) => {
             const {id , imgsrc , header , mainheader , firstdetails , seconddtails } = res ; 
             return (
                 <SwiperSlide className="swiperslide" key={id}>
-                    <img src={imgsrc} alt="img" />
+                    <img src={require('./../../Assets/images'+imgsrc).default} alt="img" />
                     <div className="carousel-div">
                         <p className="header">  {header}  </p>
                         <p className="main-header"> {mainheader} </p>
@@ -39,7 +38,7 @@ export default function CarouselEle(props) {
             )
         })
         )
-    } , []);
+    } , [data]);
 
   
     return (
