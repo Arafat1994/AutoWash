@@ -6,8 +6,9 @@ import DropDownComponent from '../dropDownmenuComponent/Dropdowncomponent';
 import Getwidth from '../../Hooks/GetwidthHook';
 import MainButtonComponent from './../../DynmaicComponent/AppointmentButtonComponent/MainButtonComponent';
 import UseViewFunctionHook from '../../Hooks/ViewHook';
-import { useSelector } from 'react-redux';
-
+//import { useSelector } from 'react-redux';
+import data from "./../../Assets/jsonFile/data.json";
+import UseMapingdatafromJson from './../../Hooks/CustomHookmapingData';
 
 
 export default function MenuNavbarcomponent(props) {
@@ -19,16 +20,16 @@ export default function MenuNavbarcomponent(props) {
     const [styleOfMainNavBar, setStyleMainNavBar] = useState({})
     const { viewMenu } = props;
    
-    //let Mainnavdata = data[0].MainNavbardata;
-    //const { dataFromJson } = UseMapingdatafromJson(Mainnavdata);
+    let Mainnavdata = data[0].MainNavbardata;
+    const { dataFromJson } = UseMapingdatafromJson(Mainnavdata);
 
-    const data = useSelector((state) => state.datareducer.data.MainNavbardata);
+    //const data = useSelector((state) => state.datareducer.data.MainNavbardata);
     const [MainNavbar, SetMainNavbar] = useState(null);
 
     
     useEffect(() => {
         SetMainNavbar(
-            data?.map((result) => {
+            dataFromJson?.map((result) => {
                 const { id, to, content, linkclass, iconView, DropdownmenuElement } = result;
                 return (
                     <div key={id}  >
@@ -41,7 +42,7 @@ export default function MenuNavbarcomponent(props) {
             })
         )
         // eslint-disable-next-line react-hooks/exhaustive-deps 
-    }, [data])
+    }, [])
 
     useLayoutEffect(() => {
         setStyleMainNavBar({ height: Width > 820 ? '80px' : AvailHeight + 'px', display: (viewMenu || Width > 820) ? 'grid' : 'none' })

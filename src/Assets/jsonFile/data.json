@@ -4,7 +4,7 @@
             {
                 "id": 0,
                 "mainclassname": "ele2",
-                "imagesrc": "/AutoWash/static/media/clock.e5a119e8.png",
+                "imagesrc":"clock",
                 "headercontent": "Opening Hours",
                 "spancontent": "Mon - Fri, 8:00 - 9:00",
                 "altimage": "clockimage"
@@ -12,7 +12,7 @@
             {
                 "id": 1,
                 "mainclassname": "ele3",
-                "imagesrc": "/AutoWash/static/media/phone.abda9c4c.png",
+                "imagesrc": "phone-alt",
                 "headercontent": "Call Us ",
                 "spancontent": " +966-50-6293772 ",
                 "altimage": "callimage"
@@ -20,7 +20,7 @@
             {
                 "id": 2,
                 "mainclassname": "ele4",
-                "imagesrc": "/AutoWash/static/media/mail.9dbf5259.png",
+                "imagesrc": "envelope-open",
                 "headercontent": "Email Us",
                 "spancontent": " info@autowash.com ",
                 "altimage": "emailimage"

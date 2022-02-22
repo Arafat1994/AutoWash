@@ -10,7 +10,6 @@ import MainButtonComponent from './../../DynmaicComponent/AppointmentButtonCompo
 import DynamicCarouselComponent from './../../DynmaicComponent/DynamicCarouselCom/DynamicCarouselCom.js';
 
 
-
 export default function CarouselEle(props) {
 
 
