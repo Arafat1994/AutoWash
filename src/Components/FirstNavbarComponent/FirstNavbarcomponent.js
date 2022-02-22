@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import './FirstNavbarcomponentstyle.scss';
-import data from "./../../Assets/jsonFile/data.json";
-import UseMapingdatafromJson from './../../Hooks/CustomHookmapingData';
 import AutoWashComp from '../AutoWashComponent/AutoWashComp';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useSelector } from 'react-redux';

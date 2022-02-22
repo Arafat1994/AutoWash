@@ -25,7 +25,7 @@ export default function BreifComponent(props) {
                             <img src={require('./../../Assets/images' + imageSrc).default} alt="beifimage" />
                         </div>
                         <div className='breiftext'>
-                            <TitleOfComponent title={title} header={header} dirction="left" margintop="0px"/>
+                            <TitleOfComponent title={title} header={header} dirction="left" margintop="0px" />
                             <div className='Details'> <p>{details}</p> </div>
                             <div className='AboutService'>
                                 {

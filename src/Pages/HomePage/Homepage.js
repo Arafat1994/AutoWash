@@ -20,7 +20,7 @@ export default function HomePage()
     let carouseldatafromJson = data[0].CarouselData;
     const carouselview = 1 ;
     const {Width}=Getwidth();
-    console.log(Width) ;
+    //console.log(Width) ;
 
 
     return(
