@@ -1,0 +1,38 @@
+@import './../../index.scss';
+
+.whatwecandodetailsDiv{
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: space-around;
+    margin: 65px 0 ;
+    padding: 50px 20px;
+    div{
+        margin-bottom: 30px;
+    }
+    .images{
+        
+        .image{
+            margin: auto;
+            display: block;
+            width: 50%;
+            height: 300px;
+            border: 1px solid transparent;
+            border-radius: 5px;
+            @media screen and (max-width:$mediumscreen) {
+                width: 90%;
+            }
+        }
+
+    }
+    .header{
+        p{
+            font-size:$mediumtext
+        }
+    }
+    .details{
+        p{
+            font-size:$smalltext;
+        }
+    }
+
+}

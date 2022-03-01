@@ -14,3 +14,23 @@ export const SetData =(data)=>{
         data 
     }
 }
+
+export const FetchService =(data)=>{
+    return{
+        type : ActionTypes.Fetch_service , 
+        data
+    }
+}
+
+export const SelectedService = (data)=>{
+    return{
+        type:ActionTypes.Select_Fetched_service , 
+        data 
+    }
+}
+
+export const RemoveSelectedFetchedService = ()=>{
+    return{
+        type:ActionTypes.Remove_Selected_Fetched_service , 
+    }
+}

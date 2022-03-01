@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from "react";
+import React, {  useLayoutEffect, useState } from "react";
 import TitleOfComponent from "../Titleofanycomponent/TitleofComponent";
 /*
 import image from "./../../Assets/images/carwash.png";
@@ -12,16 +12,17 @@ import image8 from "./../../Assets/images/window-cleaning.png";
 */
 import './WhatwedoComponent.scss'
 import WhatwedoComponentSingleelemet from "../WhatwedoComponentSingleElemet/WhatwedoComponentSingleelemet";
-import { useSelector } from "react-redux";
+import {  useSelector } from "react-redux";
+
 
 
 export default function WhatwedoComponent() {
 
-    //console.log(image, image2, image3, image4, image5, image6, image7, image8);
     const [Whatwedocompo, setWhatwedocomp] = useState(null);
-    //let dataFromJson = data[0].WhatwedoComponent;
-    //console.log(dataFromJson)
     const data = useSelector((state) => state.datareducer.data.WhatwedoComponent);
+   
+
+
     useLayoutEffect(() => {
         setWhatwedocomp(
             data?.map((res) => {
