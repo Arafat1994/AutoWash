@@ -5,10 +5,10 @@ import { Route, BrowserRouter, Routes   } from 'react-router-dom';
 
 import Layout from './Layout/Layout';
 import React ,  { lazy} from 'react';
-import Footercomponent from './Components/FooterComponent/Footercomponent';
-import FooterEndComponent from './Components/FooterEndComponent/FooterEndComponent';
-import WhatwedoComponentdetails from './Components/WhatwedoComponentdetails/WhatwedoComponentdetails';
-
+const OurArticleDetailsComponent = lazy(()=> import('./Components/OurArticleDetailsComponent/OurArticleDetailsComponent')) ;
+const  Footercomponent = lazy(()=> import('./Components/FooterComponent/Footercomponent')) ;
+const  FooterEndComponent =lazy(()=> import('./Components/FooterEndComponent/FooterEndComponent')) ;
+const WhatwedoComponentdetails = lazy(()=> import('./Components/WhatwedoComponentdetails/WhatwedoComponentdetails')) ;
 const LoginRegisterPageComponent = lazy(()=> import('./Pages/loginRegiestPage/LoginRegisterPage'))  ;
 const HomePage = lazy(() => import('./Pages/HomePage/Homepage'));
 const AboutPageComponent = lazy(() => import('./Pages/AboutPage/AboutPageComponent'));
@@ -26,10 +26,6 @@ const SchduleBookingComponent = lazy(() => import('./Pages/SchduleBookingPage/Sc
 
 function App() {
 
-  
- 
-  
- 
   return (
     <div >
 
@@ -44,10 +40,11 @@ function App() {
             <Route path='/OurPrices' element={<PricepageComponent />} />
             <Route path='/Pages' element={<PagesPagecomponent />} />
             <Route path='/OurService' element={<ServicePageComponent />} />
-            <Route path='/Service/id=:id&:service=:Servicename' element={<WhatwedoComponentdetails /> }/> 
+            <Route path='/Service/id=:id&service=:Servicename' element={<WhatwedoComponentdetails /> }/> 
             <Route path='/WashingPoints' element={<WashingPointsPageComponent />} />
             <Route path='/DetailPage' element={<DetailPageComponent />} />
             <Route path='/BlogGrid' element={<BlogGridComponent />} />
+            <Route path='/BlogGrid/Blog_id=:id' element={<OurArticleDetailsComponent/>} />
             <Route path="/TeamMember" element={<TeamMemberComponent />} />
             <Route path="/SchduleBooking" element={<SchduleBookingComponent />} />
             <Route path="/login/*" element={<LoginRegisterPageComponent />} />
