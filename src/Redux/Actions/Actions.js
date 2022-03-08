@@ -1,3 +1,5 @@
+
+import ActionsTypes from "../ActionTypes/ActionTypes"
 import ActionTypes from "../ActionTypes/ActionTypes"
 
 
@@ -34,3 +36,33 @@ export const RemoveSelectedFetchedService = ()=>{
         type:ActionTypes.Remove_Selected_Fetched_service , 
     }
 }
+
+
+export const GetUser=()=>{
+    return{
+        type:ActionTypes.Get_Users
+    }
+
+}
+export const SetUsers=(users)=>{
+    return{
+        type:ActionTypes.Set_Users , 
+        users
+    }
+    
+}
+
+
+export const GetFetchedUser =(user)=>{
+    return{
+        type : ActionsTypes.Get_Fetched_user , 
+        user
+    }
+}
+export const  SetFetchedUser = (user)=>{
+    return{
+        type:ActionsTypes.Set_Fetched_User , 
+        user
+    }
+}
+

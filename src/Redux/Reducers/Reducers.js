@@ -2,9 +2,13 @@ import ActionsTypes from "../ActionTypes/ActionTypes";
 import ActionTypes from "../ActionTypes/ActionTypes"
 
 const intialstate = {
-    data: []
+    data: [],
 }
 
+const userIntialstate = {
+    users: [] ,
+    user:[]
+}
 
 const dataReducer = (state = intialstate, action) => {
     //console.log("arafat" ) ;
@@ -33,4 +37,16 @@ export const FetchServiceReducer = (state = {}, action) => {
 
 }
 
+export const FetchUsersReducer = (state = userIntialstate , action) => {
+    switch (action.type) {
+        case ActionsTypes.Set_Users:
+            const users = action.users;
+            return { ...state, users }
+        case ActionsTypes.Set_Fetched_User:
+            const user = action.user 
+            return {...state , user}
+        default:
+            return state
+    }
+}
 export default dataReducer; 

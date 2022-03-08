@@ -27,9 +27,8 @@ export default function RegisterComponent() {
         //eslint-disable-next-line
     }, [Values])
 
-    //console.log(Issubmit)
+
     useEffect(() => {
-        console.log(Formerrors.RegisterErr);
         if (Object.keys(Formerrors.RegisterErr).length === 0) { setIssubmit(true) }
         else { setIssubmit(false) }
         // eslint-disable-next-line react-hooks/exhaustive-deps
