@@ -1,2 +1,0 @@
-(this.webpackJsonpautowash=this.webpackJsonpautowash||[]).push([[21],{194:function(t,n,e){"use strict";e.r(n),e.d(n,"default",(function(){return c}));e(0);var s=e(2);function c(){return Object(s.jsx)("div",{children:Object(s.jsx)("div",{children:"404 Compone t"})})}}}]);
-//# sourceMappingURL=21.7e5409c0.chunk.js.map
