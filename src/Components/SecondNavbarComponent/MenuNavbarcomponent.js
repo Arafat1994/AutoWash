@@ -6,9 +6,10 @@ import DropDownComponent from '../dropDownmenuComponent/Dropdowncomponent';
 import Getwidth from '../../Hooks/GetwidthHook';
 import MainButtonComponent from './../../DynmaicComponent/AppointmentButtonComponent/MainButtonComponent';
 import UseViewFunctionHook from '../../Hooks/ViewHook';
-//import { useSelector } from 'react-redux';
 import data from "./../../Assets/jsonFile/data.json";
 import UseMapingdatafromJson from './../../Hooks/CustomHookmapingData';
+import UseGetUserTokenHook from '../../Hooks/UseGetUserToken';
+import DropdownMenuForUser from '../DropdownMenuForUser/DropdownMenuForUser';
 
 
 export default function MenuNavbarcomponent(props) {
@@ -19,14 +20,16 @@ export default function MenuNavbarcomponent(props) {
     const navigate = useNavigate();
     const [styleOfMainNavBar, setStyleMainNavBar] = useState({})
     const { viewMenu } = props;
-   
+
     let Mainnavdata = data[0].MainNavbardata;
     const { dataFromJson } = UseMapingdatafromJson(Mainnavdata);
 
     //const data = useSelector((state) => state.datareducer.data.MainNavbardata);
     const [MainNavbar, SetMainNavbar] = useState(null);
 
-    
+    const { UserName } = UseGetUserTokenHook();
+
+
     useEffect(() => {
         SetMainNavbar(
             dataFromJson?.map((result) => {
@@ -53,7 +56,7 @@ export default function MenuNavbarcomponent(props) {
     }
 
     const gethoveredfunction = (event) => {
-        if (!view) { viewfunction(); sethoveredele(event.target.id) }
+        if (!view) { console.log("hovered") ; viewfunction(); sethoveredele(event.target.id)     }
         else { viewfunction(); sethoveredele(0); }
     }
 
@@ -65,13 +68,10 @@ export default function MenuNavbarcomponent(props) {
             <nav className='menunavbar '>
                 {MainNavbar}
             </nav>
-
-
-
-            <div className='LoginReg'>
-                <Link to="/login"> Login/Register </Link>
-            </div>
-
+            
+            <DropdownMenuForUser UserName={UserName}  />  
+            
+           
             <div className='takeappointment '>
                 <MainButtonComponent onclick={NavigateFun} child="Get Appointment" font='#202C45' back='White' hoverfont='white' hoverback='#E81C2E'>
                 </MainButtonComponent>

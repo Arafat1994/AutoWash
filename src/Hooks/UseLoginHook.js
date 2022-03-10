@@ -20,7 +20,10 @@ export default function UseLoginHook(Values, Users) {
 
         if (User.length !== 0) {
             console.log(User)
+            console.log(User[0].userToken)
+            localStorage.setItem("UserToken", JSON.stringify(User[0].userToken))
             dispatch(GetFetchedUser(User))
+            window.location.replace("/AutoWash");
         } else {
             alert(" The Email or paswword may have error ")
         }
@@ -48,7 +51,7 @@ export default function UseLoginHook(Values, Users) {
 
     }
 
-    return {  LoginService }
+    return { LoginService }
 
 
 }

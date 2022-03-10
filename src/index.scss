@@ -80,3 +80,35 @@ body
         color: $mainredcolor;
     }
 }
+
+
+@mixin DropdownMenu {
+    background-color: $WhiteColor;
+            border-width: 1px;
+            border-radius: 5px ;
+            width: 180px;
+            position: absolute;
+            left: 0px;
+            z-index:  11;;
+            margin-top: 10px;
+            display: none;
+}
+@mixin  DropDownMenuLinks {
+    padding: 5px 10px ;
+    border-radius: 5px ;
+    text-align: left; 
+    display:block;
+    text-decoration:none;
+    color:$mainblackcolor;
+    background-color:transparent;
+    border: 0px;
+    &:hover{
+        color: $mainredcolor;
+        background-color:#efefef;
+    }
+}
+
+@mixin  DropMenuMEdiumSize {
+    margin-top: 5px;
+    z-index: 11;
+}

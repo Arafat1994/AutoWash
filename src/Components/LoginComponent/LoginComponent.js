@@ -4,28 +4,24 @@ import './LoginComponent.scss'
 import MainButtonComponent from "../../DynmaicComponent/AppointmentButtonComponent/MainButtonComponent";
 import FormInputComponent from "../../DynmaicComponent/FormInputComponent/FormInputComponent";
 import UseLoginHook from "../../Hooks/UseLoginHook";
-import { useDispatch, useSelector } from "react-redux";
-import { GetUser } from "../../Redux/Actions/Actions";
-
+import {useSelector } from "react-redux";
 
 export default function LoginComponent() {
+
     const inputs = [
         { id: 0, name: "LoginEmail", type: "email", placeholder: 'Type Your email ', required: true, inputtype: "textbox" },
         { id: 1, name: "LoginPassword", type: "text", placeholder: 'Type your password  ', required: true, inputtype: "textbox" }
     ];
+    
     const url ="RegisterData" ;
     const signinData = {LoginEmail:"" ,LoginPassword:""   }
     const { Values, Formerrors , Issubmit,setIssubmit , ErrorCatch , handlechange  } = UseValiationHook(signinData , url);
      
-
     
-    const dispatch = useDispatch() ; 
     const Users =useSelector((state)=>state.fetchusersreducer.users) ;
     const {  LoginService} = UseLoginHook(Values , Users);
 
-    useEffect(()=>{
-        dispatch(GetUser())
-    }, [dispatch])
+
 
 
     useLayoutEffect(() => {  

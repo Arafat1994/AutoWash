@@ -1,0 +1,42 @@
+
+
+@import './../../index.scss' ; 
+
+.LoginReg{
+    
+    position: relative ;
+    padding :20px 0px;
+    width: 100%;
+    align-self:center;
+    text-align: center;
+    color: white;
+    .loginDiv{
+       // padding: 20px 0 ;
+        .mainLink ,  button {
+            @include basiclink ; 
+        }
+        button{
+            background-color:transparent;
+            border: 0px;
+        }
+        .SubMenu{
+
+            @include  DropdownMenu ; 
+
+            a , button {@include DropDownMenuLinks ; }
+           
+            @media screen and (max-width: $mediumscreen) {@include DropMenuMEdiumSize ; }
+        }   
+    }
+ 
+    &:hover  .loginDiv .SubMenu {
+        display: block;
+    }
+
+    @media screen and (max-width : $mediumscreen ) {
+        padding:10px;
+        text-align: left;
+        align-self: flex-start;
+    }
+}
+
