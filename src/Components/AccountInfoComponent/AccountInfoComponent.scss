@@ -1,0 +1,33 @@
+@import "./../../index.scss" ; 
+
+.userInfoDiv{
+    display: grid;
+    justify-content: space-around;
+    grid-template-columns: auto auto auto auto  ;
+    margin: 50px 0 ;
+    section{
+        position: relative;
+        width: 200px;
+        border: 1px solid $mainredcolor;
+        border-radius: 5px;
+        align-self: center;
+        padding: 25px;
+        margin:10px 0 ;  
+        .mainPara{
+            position:absolute ; 
+            top: -12px;
+            z-index: 2;
+            color: $mainblackcolor;
+            background-color: white;
+            padding: 0 10px;
+        }
+        .header{
+            align-self: center;
+            color:$mainblackcolor;
+        }
+    }
+    @media screen and (max-width : $mediumscreen) {
+        grid-template-columns: auto auto ;
+        
+    }
+}

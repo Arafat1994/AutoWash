@@ -13,7 +13,6 @@ export default function UseGetDataUserInLayoutHook() {
     const loggedUser = Users.filter((user) => {
         return user.userToken === UserToken;
     });
-
     const dispatch = useDispatch();
 
     useLayoutEffect(() => {
@@ -23,6 +22,7 @@ export default function UseGetDataUserInLayoutHook() {
 
     useEffect(() => {
         if (loggedUser.length > 0) {
+            console.log("loogerUser")
             dispatch(GetFetchedUser(loggedUser))
         }
     }, [dispatch, UserToken, loggedUser])
