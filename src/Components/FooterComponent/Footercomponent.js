@@ -6,7 +6,7 @@ import FormInputComponent from '../../DynmaicComponent/FormInputComponent/FormIn
 import MainButtonComponent from '../../DynmaicComponent/AppointmentButtonComponent/MainButtonComponent';
 import UseValiationHook from '../../Hooks/CustomHookValidation';
 import { useSelector } from 'react-redux';
-import { createSelector, createStructuredSelector } from 'reselect';
+
 
 /*
 const dataSelector = createSelector(

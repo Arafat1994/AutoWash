@@ -29,9 +29,9 @@ export default function RegisterComponent() {
                 {
                     inputs.map((res) => <FormInputComponent key={res.id} {...res} border="#202C45" value={Values[res.name]} onChange={handlechange} errormessage={Formerrors.RegisterErr[res.name]} />)
                 }
-                <MainButtonComponent onclick={()=>{SendData("RegisterErr")}}  child=" Register " font='#202C45' back='White' hoverfont='white' hoverback='#E81C2E' width="100%" />
+                <MainButtonComponent onclick={()=>{SendData("RegisterErr")}}  child=" Register " font='white' back='#202C45' hoverfont='white' hoverback='#E81C2E' width="100%" />
             </div>
 
-        </div>
+        </div>                                                                                    
     )
 }

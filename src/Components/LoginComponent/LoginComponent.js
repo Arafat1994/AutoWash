@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import UseValiationHook from './../../Hooks/CustomHookValidation';
 import './LoginComponent.scss'
 import MainButtonComponent from "../../DynmaicComponent/AppointmentButtonComponent/MainButtonComponent";
@@ -25,7 +25,7 @@ function LoginComponent() {
                 {
                      inputs.map((res) => <FormInputComponent key={res.id} {...res} border="#202C45" value={Values[res.name]} onChange={handlechange} errormessage={Formerrors.SigninErr[res.name]} />)
                 }
-                <MainButtonComponent onclick={LoginService} child="Sign-in" font='#202C45' back='White' hoverfont='white' hoverback='#E81C2E' width="100%" />
+                <MainButtonComponent onclick={LoginService} child="Sign-in" font='white' back='#202C45' hoverfont='white' hoverback='#E81C2E' width="100%" />
             </div>
 
         </div>
