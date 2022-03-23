@@ -12,7 +12,8 @@ export default function Layout()
 
     UseGetDataUserInLayoutHook(); 
 
-    
+
+
     /*useLayoutEffect(()=>{
         dispatch(GetData("AllData"));
         dispatch(GetUser()) ; 
@@ -40,8 +41,6 @@ export default function Layout()
 
     //to gat all the main data 
     //to get all user have inside the system 
-  
-
 
     return(
         <>

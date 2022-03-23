@@ -1,5 +1,5 @@
 import "./ContactComponent.scss";
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React, {  useLayoutEffect, useState } from "react";
 import TitleOfComponent from "../Titleofanycomponent/TitleofComponent";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import FormInputComponent from "../../DynmaicComponent/FormInputComponent/FormInputComponent";
@@ -21,19 +21,7 @@ export default function ContactComponent(props) {
 
     const sentValues = { Contactfullname: "", ContactEmail: "", ContactSubject: "", ContactMessage: "" };
     const url = "messagesRequests";
-    const { Values, Formerrors, Issubmit, setIssubmit, ErrorCatch, SendData, handlechange } = UseValiationHook(sentValues, url);
-
-
-    useLayoutEffect(() => {
-        ErrorCatch();
-        //eslint-disable-next-line
-    }, [Values.Contactfullname, Values.ContactEmail, Values.ContactSubject, Values.ContactMessage])
-
-    useEffect(() => {
-        //console.log(Formerrors.NewsErr);
-        if (Object.keys(Formerrors.ContactErr).length === 0) { setIssubmit(true) }
-        else { setIssubmit(false) }
-    })
+    const { Values, Formerrors, SendData, handlechange } = UseValiationHook(sentValues, url);
 
 
     // const returneddata = data[0].ContactData;
@@ -72,7 +60,7 @@ export default function ContactComponent(props) {
                             )
                         })
                     }
-                    <MainButtonComponent onclick={SendData} disabled={!Issubmit} child='Send Message ' font='white' back='#E81C2E' hoverfont="#E81C2E" hoverback="#202C45" width="100%" />
+                    <MainButtonComponent onclick={()=>{SendData("ContactErr")}}  child='Send Message ' font='white' back='#E81C2E' hoverfont="#E81C2E" hoverback="#202C45" width="100%" />
 
                 </div>
             </div>

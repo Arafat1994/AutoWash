@@ -22,7 +22,7 @@ export default function UseGetDataUserInLayoutHook() {
 
     useEffect(() => {
         if (loggedUser.length > 0) {
-            console.log("loogerUser")
+            //console.log("loogerUser")
             dispatch(GetFetchedUser(loggedUser))
         }
     }, [dispatch, UserToken, loggedUser])

@@ -5,6 +5,7 @@ import './LoginRegisterPage.scss';
 
 const LoginRegisterPageComponent = (props) => {
 
+    
     return (
         <div className="MainloginReg">
             <LoginRegisterComponent /> 

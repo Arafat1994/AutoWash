@@ -107,8 +107,27 @@ body
         background-color:#efefef;
     }
 }
-
 @mixin  DropMenuMEdiumSize {
     margin-top: 5px;
     z-index: 11;
+}
+
+ @mixin loginReg_form{
+    display: grid;
+    grid-template-columns: 33% ;
+    justify-content: space-around;
+    padding: 45px 10px 45px 10px;
+    text-align:$leftalign;
+    
+    .form{
+        border-radius: 5px;
+        padding: 40px 20px;
+        background-color:$WhiteColor;
+        border:2px solid $lightgray;
+
+    }
+    @media screen and (max-width :$mediumscreen ) {
+        grid-template-columns: 100% ;
+    }
+    
 }

@@ -1,14 +1,47 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { createSelector } from "reselect";
+import { GetFetchedUser } from "../Redux/Actions/Actions";
+
+
+const Users = createSelector(
+    (state) => { console.log("createselector"); return state.fetchusersreducer },
+    (fetchusersreducer) => fetchusersreducer.users
+)
+
 export default function UseValiationHook(sentValues, url) {
 
-
+  
+    const dispatch = useDispatch();
+    const users = useSelector(Users);
     const [Values, setValues] = useState(sentValues);
     const [Formerrors, setFormErrors] = useState({ ContactErr: {}, NewsErr: {}, SigninErr: {}, RegisterErr: {} });
     const [Issubmit, setIssubmit] = useState(false);
     const [lastid, setLastId] = useState();
-
     const Token = Math.floor(Math.random() * 1514000) + 1;
+    //const {EmailExist} = useCheckeEmailExistHook(); 
+    /*
+    //this is another way to get data using useselectors 
+    const { users } = useSelector(({ fetchusersreducer: { users } }) => {
+         //console.log("selector run ");
+         return ({ users })
+     }, shallowEqual);
+     */
+    const EmailExist = (InputEmail) => {
+        const val = users.find((user) => {
+            if (user.data.RegEmail === InputEmail) {
+                console.log("Email exist from func hook  ")
+                return true;
+            }
+            else {
+                console.log("Email doesnot Exist from func hook ")
+                return false;
+            }
+        })
+        console.log(val)
+        return val;
+    }
 
     const ValidationFun = (values) => {
         const errors = { ContactErr: {}, NewsErr: {}, SigninErr: {}, RegisterErr: {} };
@@ -61,8 +94,14 @@ export default function UseValiationHook(sentValues, url) {
         if (!values.RegCity) { errors.RegisterErr.RegCity = " City required " }
 
 
+        setFormErrors(errors)
         return errors;
 
+    }
+   
+    const ErrorCatch = () => {
+        //setFormErrors(ValidationFun(Values));
+        ValidationFun(Values);
     }
 
     const handlechange = (e) => {
@@ -75,29 +114,90 @@ export default function UseValiationHook(sentValues, url) {
     }
 
     useEffect(() => {
+
         FindidLastElement(url);
     })
 
-
-    const SendData = () => {
+    const SendData = (ErrorObj) => {
+        console.log(Values);
         console.log(lastid);
-        console.log(url)
-        axios({ baseURL: "https://autowash-api.herokuapp.com/", url: url, method: "post", data: { id: lastid, data: Values, userToken: Token + Number(Values.RegPhoneNumber) + lastid } })
-            .then((res) => {
-                setIssubmit(false);
-                setValues(sentValues);
-                alert("data sent successfully");
-            }).catch((err) => {
-                err = "error when data sending  ";
-                alert(" Error " + err)
+        console.log(url);
+        //console.log(ValidationFun(Values)[ErrorObj])
+        //this RegisterErr must be changable depending on Which button you click 
+        const Error = ValidationFun(Values)[ErrorObj];
+        const ErrorState = Object.keys(Error).length === 0 ? true : false;
+
+        if (ErrorState) {
+            const userInfo = EmailExist(Values.RegEmail)
+            if (!userInfo) {
+                axios({
+                    baseURL: "https://autowash-api.herokuapp.com/",
+                    url: url, method: "post",
+                    data: { id: lastid, data: Values, userToken: Token + Number(Values.RegPhoneNumber?Values.RegPhoneNumber:0) + lastid }
+                })
+                    .then((res) => {
+                        setIssubmit(false);
+                        setValues(sentValues);
+                        alert("data sent successfully");
+                    }).catch((err) => {
+                        err = "error when data sending  ";
+                        alert(" Error " + err)
+                    })
+            }
+            else {
+                alert("Email exist")
+            }
+
+        }
+
+
+
+    }
+
+    function LoginService() {
+
+        const Error = ValidationFun(Values).SigninErr;
+        const ErrorState = Object.keys(Error).length === 0 ? true : false;
+        if (ErrorState) {
+            var User = users?.filter((user,) => {
+                return user.data.RegEmail === Values.LoginEmail && user.data.RegPassword === Values.LoginPassword
             })
 
+            if (User.length !== 0) {
+                console.log(User)
+                console.log(User[0].userToken)
+                localStorage.setItem("UserToken", JSON.stringify(User[0].userToken))
+                dispatch(GetFetchedUser(User))
+                window.location.replace("/AutoWash");
+            } else {
+                alert(" The Email or paswword may have error ")
+            }
+
+        }
+
+
+        /*
+        for (let i = 0; i < Users.length; i++) {
+
+            if (Values && Users ) {
+                console.log(Users)
+                console.log(Values)
+                if (Users[i].data.RegEmail === Values.LoginEmail && Users[i].data.RegPassword === Values.LoginPassword) {
+
+                    dispatch(GetFetchedUser(Users[i].data))
+                   //SetloggedUser(Users[i].data) ;
+                    //console.log(Users[i].data)
+                }
+                else{
+                    alert("email or Password didot Exist ")
+                }
+            }
+            else {
+                console.log(" no data ")
+            }
+        }*/
+
     }
 
-    //console.log(lastid )
-    const ErrorCatch = () => {
-        setFormErrors(ValidationFun(Values));
-    }
-
-    return { Values, Formerrors, Issubmit, ErrorCatch, setFormErrors, setIssubmit, ValidationFun, SendData, handlechange }
+    return { Values, Formerrors, Issubmit, users, LoginService, ErrorCatch, setFormErrors, setIssubmit, ValidationFun, SendData, handlechange }
 }

@@ -9,11 +9,10 @@ export default function AccountInfoComponent() {
 
   const Userinfo = useSelector((state) => state.fetchusersreducer.user);
 
-  console.log(Userinfo)
+  //console.log(Userinfo)
   useEffect(() => {
     if (Userinfo.length > 0) { SetUserData(Userinfo[0].data) }
   }, [Userinfo])
-
 
   /* 
   useEffect(() => {
@@ -29,10 +28,9 @@ export default function AccountInfoComponent() {
  
    }, [data])*/
 
-
+    
   return (
     <div className='userInfoDiv'  >
-
       {
         userData ?
           <>
@@ -64,11 +62,9 @@ export default function AccountInfoComponent() {
           :
           ""
       }
+      
 
-
-
-
-
+     
     </div>
   )
 }

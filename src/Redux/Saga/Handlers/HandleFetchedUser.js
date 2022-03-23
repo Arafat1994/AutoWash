@@ -3,7 +3,7 @@ import { SetFetchedUser } from "../../Actions/Actions";
 
 
  function* HandleFetchedUser (action){
-     console.log(action)
+     //console.log(action)
     yield put(SetFetchedUser(action.user))
 }
 

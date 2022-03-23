@@ -3,15 +3,17 @@
 .userInfoDiv{
     display: grid;
     justify-content: space-around;
+    align-content: center;
+    align-items: center;
     grid-template-columns: auto auto auto auto  ;
-    margin: 50px 0 ;
+    padding: 50px 0 50px  0 ;
     section{
         position: relative;
         width: 200px;
         border: 1px solid $mainredcolor;
         border-radius: 5px;
         align-self: center;
-        padding: 25px;
+        padding:20px 0 ;
         margin:10px 0 ;  
         .mainPara{
             position:absolute ; 
@@ -24,6 +26,7 @@
         .header{
             align-self: center;
             color:$mainblackcolor;
+            text-align: center;
         }
     }
     @media screen and (max-width : $mediumscreen) {

@@ -25,9 +25,7 @@ export default function FormInputComponent(props) {
 
     const handlefocus=(e)=> { setFocused(true) }
    
-   // console.log(focused)
-
-
+   
     return (
         <div className='Formdiv'>
             {inputtype === "textbox" ?

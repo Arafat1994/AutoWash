@@ -1,4 +1,4 @@
-import React , {useEffect , useLayoutEffect} from "react";
+import React from "react";
 import './RegisterComponent.scss';
 import UseValiationHook from './../../Hooks/CustomHookValidation';
 import MainButtonComponent from "../../DynmaicComponent/AppointmentButtonComponent/MainButtonComponent";
@@ -8,7 +8,7 @@ export default function RegisterComponent() {
 
     const RegisterData = { RegFName: "", RegLName: "", RegEmail: "", RegPassword: "", RegConfirmPass: "", RegPhoneNumber: "", RegBirthday: "", RegNationality: "", RegAdress: "", RegCity: "" };
     const url = "RegisterData";
-    const { Values, Formerrors, Issubmit, setIssubmit, ErrorCatch, handlechange , SendData } = UseValiationHook(RegisterData, url);
+    const { Values, Formerrors , handlechange, SendData } = UseValiationHook(RegisterData, url);
     const inputs = [
         { id: 0, name: "RegFName", type: "text", placeholder: 'Type Your FirstName ', required: true, inputtype: "textbox" },
         { id: 1, name: "RegLName", type: "text", placeholder: 'Type your LastName  ', required: true, inputtype: "textbox" },
@@ -21,19 +21,7 @@ export default function RegisterComponent() {
         { id: 8, name: "RegAdress", type: "text", placeholder: 'Type Your Address ', required: true, inputtype: "textbox" },
         { id: 9, name: "RegCity", type: "text", placeholder: 'your  City  ', required: true, inputtype: "textbox" }
     ]
-
-    useLayoutEffect(() => {
-        ErrorCatch()
-        //eslint-disable-next-line
-    }, [Values])
-
-
-    useEffect(() => {
-        if (Object.keys(Formerrors.RegisterErr).length === 0) { setIssubmit(true) }
-        else { setIssubmit(false) }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[Formerrors.RegisterErr ])
-
+    
 
     return (
         <div className="login_form   ">
@@ -41,9 +29,8 @@ export default function RegisterComponent() {
                 {
                     inputs.map((res) => <FormInputComponent key={res.id} {...res} border="#202C45" value={Values[res.name]} onChange={handlechange} errormessage={Formerrors.RegisterErr[res.name]} />)
                 }
-                <MainButtonComponent onclick={SendData} disabled={!Issubmit} child=" Register " font='#202C45' back='White' hoverfont='white' hoverback='#E81C2E' width="100%" />
+                <MainButtonComponent onclick={()=>{SendData("RegisterErr")}}  child=" Register " font='#202C45' back='White' hoverfont='white' hoverback='#E81C2E' width="100%" />
             </div>
-
 
         </div>
     )
