@@ -1,8 +1,10 @@
 @import './../../index.scss' ; 
 
 .MainButton{
-    
+    display: inline-block;
+    width: 100%;
     .appoint{
+        //align-self: center;
         border:1px solid transparent ;
         padding: 10px 25px;
         border-radius: 30px;

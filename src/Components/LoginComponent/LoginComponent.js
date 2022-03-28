@@ -13,22 +13,27 @@ function LoginComponent() {
     ];
     const url = "RegisterData";
     const signinData = { LoginEmail: "", LoginPassword: "" }
-    const { Values, Formerrors, LoginService, handlechange } = UseValiationHook(signinData, url);
-    
+    const { Values, Formerrors, ErorrModal ,  LoginService, handlechange } = UseValiationHook(signinData, url);
 
-    
+
 
     return (
-        <div className="login_form   ">
-            <div className="form">
-                
-                {
-                     inputs.map((res) => <FormInputComponent key={res.id} {...res} border="#202C45" value={Values[res.name]} onChange={handlechange} errormessage={Formerrors.SigninErr[res.name]} />)
-                }
-                <MainButtonComponent onclick={LoginService} child="Sign-in" font='white' back='#202C45' hoverfont='white' hoverback='#E81C2E' width="100%" />
-            </div>
+        <>
+            <div className="login_form   ">
+                <div className="form">
 
-        </div>
+                    {
+                        inputs.map((res) => <FormInputComponent key={res.id} {...res} border="#202C45" value={Values[res.name]} onChange={handlechange} errormessage={Formerrors.SigninErr[res.name]} />)
+                    }
+                    <MainButtonComponent onclick={LoginService} child="Sign-in" font='white' back='#202C45' hoverfont='white' hoverback='#E81C2E' width="100%" />
+                </div>
+
+            </div>
+            {
+                ErorrModal ? ErorrModal : <></>
+            }
+        </>
+
     )
 }
 

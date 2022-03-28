@@ -6,6 +6,7 @@ import FormInputComponent from "../../DynmaicComponent/FormInputComponent/FormIn
 import MainButtonComponent from "../../DynmaicComponent/AppointmentButtonComponent/MainButtonComponent";
 import UseValiationHook from "../../Hooks/CustomHookValidation";
 import { useSelector } from "react-redux";
+import { getMainDataSelectr } from "../../Selectors/MainSelector";
 
 
 export default function ContactComponent(props) {
@@ -25,12 +26,12 @@ export default function ContactComponent(props) {
 
 
     // const returneddata = data[0].ContactData;
-    const data = useSelector((state) => state.datareducer.data.ContactData);
-    const [ContactData, SetContactData] = useState(null);
+    const {ContactData} = useSelector(getMainDataSelectr) ; 
+    const [contactData, SetContactData] = useState(null);
 
     useLayoutEffect(() => {
         SetContactData(
-            data?.map((res) => {
+            ContactData?.map((res) => {
                 const { id, icon, header, details } = res;
                 return (
                     <div key={id} className="contactelement">
@@ -42,7 +43,7 @@ export default function ContactComponent(props) {
                 )
             })
         )
-    }, [data])
+    }, [ContactData])
 
     return (
         <div className="ContactContainer">
@@ -50,7 +51,7 @@ export default function ContactComponent(props) {
             <div className="ContactDiv">
                 <div className="leftContactSide">
                     <div className="header"> <p> Quick Contact Info  </p>  </div>
-                    { ContactData }
+                    { contactData }
                 </div>
                 <div className="RightContactSide">
                     {

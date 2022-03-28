@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import DropDownComponent from '../dropDownmenuComponent/Dropdowncomponent';
 import Getwidth from '../../Hooks/GetwidthHook';
 import MainButtonComponent from './../../DynmaicComponent/AppointmentButtonComponent/MainButtonComponent';
-import UseViewFunctionHook from '../../Hooks/ViewHook';
 import data from "./../../Assets/jsonFile/data.json";
 import UseMapingdatafromJson from './../../Hooks/CustomHookmapingData';
 import UseGetUserTokenHook from '../../Hooks/UseGetUserToken';
@@ -14,11 +13,9 @@ import DropdownMenuForUser from '../DropdownMenuForUser/DropdownMenuForUser';
 
 export default function MenuNavbarcomponent(props) {
 
-    const [hoverelmet, sethoveredele] = useState(0);
-    const { view, viewfunction } = UseViewFunctionHook()
     const { Width, AvailHeight } = Getwidth();
     const navigate = useNavigate();
-    const [styleOfMainNavBar, setStyleMainNavBar] = useState({})
+    const [styleOfMainNavBar, setStyleMainNavBar] = useState({ border: "1px solid green" })
     const { viewMenu } = props;
 
     let Mainnavdata = data[0].MainNavbardata;
@@ -26,25 +23,41 @@ export default function MenuNavbarcomponent(props) {
 
     //const data = useSelector((state) => state.datareducer.data.MainNavbardata);
     const [MainNavbar, SetMainNavbar] = useState(null);
-
     const { UserName } = UseGetUserTokenHook();
 
 
+    function showmenu(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        const menuid = event.target.id;
+        console.log(menuid);
+        var element = document.getElementsByClassName("dropdowncomponentcontainer");
+        if (element[menuid]?.style.display === "none") {
+            element[menuid].style.display="block";
+        }
+        else{
+            element[menuid].style.display="none";
+        }
+       
+
+    }
     useEffect(() => {
+        dataFromJson ? 
         SetMainNavbar(
-            dataFromJson?.map((result) => {
+            dataFromJson.map((result) => {
                 const { id, to, content, linkclass, iconView, DropdownmenuElement } = result;
                 return (
-                    <div key={id}  >
-                        <Link id={id} to={{ pathname: to }} state={content} className={linkclass} onMouseEnter={gethoveredfunction} onMouseLeave={gethoveredfunction}    > {content}
-                            <FontAwesomeIcon icon="chevron-down" className="icon" style={{ display: iconView ? "inline-block" : "none" }} />
-                            <DropDownComponent dropdownele={id === Number(hoverelmet) ? DropdownmenuElement : null} />
+                    <div id={id} key={id} className="menuelement" style={{ position:'relative' }}   >
+                        <Link id={id} to={{ pathname: to }} state={content} className={linkclass}  onMouseOver={showmenu} onMouseOut={showmenu}> 
+                            {content}   
                         </Link>
+                        <FontAwesomeIcon icon="chevron-down" className="icon" style={{ display: iconView ? "inline-block" : "none" }} />
+                        <DropDownComponent id={id} dropdownele={DropdownmenuElement} />
                     </div>
                 )
             })
         )
-        // eslint-disable-next-line react-hooks/exhaustive-deps 
+        :SetMainNavbar(<div> no data to show  </div>)
     }, [])
 
     useLayoutEffect(() => {
@@ -55,23 +68,18 @@ export default function MenuNavbarcomponent(props) {
         navigate("/CarWashReq");
     }
 
-    const gethoveredfunction = (event) => {
-        if (!view) { console.log("hovered") ; viewfunction(); sethoveredele(event.target.id)     }
-        else { viewfunction(); sethoveredele(0); }
-    }
-
 
     return (
 
-        <div className='MainNavcomponent ' style={styleOfMainNavBar}  >
+        <div className='MainNavcomponent' style={styleOfMainNavBar}   >
 
-            <nav className='menunavbar '>
+            <nav className='menunavbar'>
                 {MainNavbar}
             </nav>
-            
-            <DropdownMenuForUser UserName={UserName}  />  
-            
-           
+
+            <DropdownMenuForUser UserName={UserName} />
+
+
             <div className='takeappointment '>
                 <MainButtonComponent onclick={NavigateFun} child="Get Appointment" font='#202C45' back='White' hoverfont='white' hoverback='#E81C2E'>
                 </MainButtonComponent>
@@ -84,3 +92,13 @@ export default function MenuNavbarcomponent(props) {
 
     )
 }
+
+
+/*
+const gethoveredfunction = (event) => {
+        if (!view) { console.log("hovered") ; viewfunction(); sethoveredele(event.target.id)  ; console.log(event.target.id) ; console.log(view)  }
+        else { viewfunction(); sethoveredele(0); console.log(view) }
+    }
+    
+    
+    */

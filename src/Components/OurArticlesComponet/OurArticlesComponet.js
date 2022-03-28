@@ -9,19 +9,20 @@ import image3 from './../../Assets/images/post-2.jpg';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { getMainDataSelectr } from "../../Selectors/MainSelector";
 
 
 export default function OurArticlesComponent(props) {
 
-    const [ArticlesData, SetArticlesData] = useState(null);
-    const data = useSelector((state) => state.datareducer.data.ArticlesData);
+    const [ArticlesDataDiv, SetArticlesData] = useState(null);
+    const {ArticlesData}= useSelector(getMainDataSelectr)
     //console.log(data)
-    const eleNum = props.eleNum ? props.eleNum :data.length;
+    const eleNum = props.eleNum ? props.eleNum :ArticlesData.length;
 
 
     useLayoutEffect(() => {
         SetArticlesData(
-            data?.slice(0, eleNum).map((res) => {
+            ArticlesData?.slice(0, eleNum).map((res) => {
                 const { id, srcimage, header, details, commentNum, owner, field } = res;
                 return (
                     <Link className="articleelement" to={`/BlogGrid/Blog_id=${id}`} key={id}>
@@ -39,13 +40,13 @@ export default function OurArticlesComponent(props) {
             })
         )
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [data])
+    }, [ArticlesData])
 
     return (
         <div className="articleContainer">
             <TitleOfComponent title="Our Blogs " header='Latest News & Articles' dirction='center' />
             <div className="articleDiv">
-                {ArticlesData}
+                {ArticlesDataDiv}
             </div>
         </div>
     )

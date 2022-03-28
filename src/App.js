@@ -5,8 +5,8 @@ import { Route, BrowserRouter, Routes } from 'react-router-dom';
 
 import Layout from './Layout/Layout';
 import React, { lazy } from 'react';
-import ProtectLoginRoute from './Components/ProtectLoginRoute/ProtectLoginRoute';
 import UseProtectLoginAuthHook from './Hooks/UseProtectLoginAuthHook';
+const ProtectLoginRoute  = lazy(()=> import ('./Components/ProtectLoginRoute/ProtectLoginRoute')) ; 
 const AccountInfoComponent = lazy(() => import('./Components/AccountInfoComponent/AccountInfoComponent'));
 const OurArticleDetailsComponent = lazy(() => import('./Components/OurArticleDetailsComponent/OurArticleDetailsComponent'));
 const Footercomponent = lazy(() => import('./Components/FooterComponent/Footercomponent'));

@@ -4,17 +4,18 @@ import './washingPointcomponent.scss';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CarWashRequestcomponent from "../CarWashRequestcomponent/CarWashRequestcomponent";
 import { useSelector } from "react-redux";
+import { getMainDataSelectr } from "../../Selectors/MainSelector";
 
 export default function WashingPointcomponent() {
 
 
     // const returneddata = data[0].WashingPointData;
-    const data = useSelector((state) => state.datareducer.data.WashingPointData);
+    const {WashingPointData} = useSelector(getMainDataSelectr)
     const [Washingposintdata, SetWashingPoint] = useState(null);
 
     useLayoutEffect(() => {
         SetWashingPoint(
-            data?.map((res) => {
+            WashingPointData?.map((res) => {
                 const { id, title, address, phonenumber } = res;
                 return (
                     <div className="washingpoint " key={id}>
@@ -28,7 +29,7 @@ export default function WashingPointcomponent() {
                 )
             })
         )
-    }, [data])
+    }, [WashingPointData])
 
     return (
         <div className="WashingPointComponent" >

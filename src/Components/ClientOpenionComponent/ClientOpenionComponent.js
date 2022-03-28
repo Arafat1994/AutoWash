@@ -4,16 +4,17 @@ import TitleOfComponent from '../Titleofanycomponent/TitleofComponent';
 import DynamicCarouselComponent from './../../DynmaicComponent/DynamicCarouselCom/DynamicCarouselCom';
 import { SwiperSlide } from 'swiper/react';
 import { useSelector } from 'react-redux';
+import { getMainDataSelectr } from '../../Selectors/MainSelector';
 
 export default function ClientOpenionComponent() {
 
     ///const carouselData = data[0].clientCarouseldata;
-    const data = useSelector((state) => state.datareducer.data.clientCarouseldata);
+    const {clientCarouseldata} = useSelector(getMainDataSelectr) ; 
     const [ClientOpenionData, SetClientOpenionData] = useState(null);
 
     useLayoutEffect(()=>{
         SetClientOpenionData(
-            data?.map((res) => {
+            clientCarouseldata?.map((res) => {
                 const { id , srcImage , clientName , clienTitle , clientComment} = res ; 
                 return (
                     <SwiperSlide className="swiperslide" key={id} >
@@ -30,7 +31,7 @@ export default function ClientOpenionComponent() {
             })
 
         )
-    },[data])
+    },[clientCarouseldata])
 
 
     const breakpointsview = {
@@ -45,7 +46,7 @@ export default function ClientOpenionComponent() {
         <div className='Clientopenioncontainer'>
             <TitleOfComponent title='Clients Openion ' header="What Does Our Clients Says ? " dirction="center" />
             <div className='Clientopeniondiv'>
-                <DynamicCarouselComponent data={data} breakpointsviewNum={breakpointsview} child={ClientOpenionData} />
+                <DynamicCarouselComponent data={clientCarouseldata} breakpointsviewNum={breakpointsview} child={ClientOpenionData} />
             </div>
         </div>
     )

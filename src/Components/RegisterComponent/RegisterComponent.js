@@ -3,12 +3,14 @@ import './RegisterComponent.scss';
 import UseValiationHook from './../../Hooks/CustomHookValidation';
 import MainButtonComponent from "../../DynmaicComponent/AppointmentButtonComponent/MainButtonComponent";
 import FormInputComponent from "../../DynmaicComponent/FormInputComponent/FormInputComponent";
+import DynamicModal from "../../DynmaicComponent/DynamicModal/DynamicModal";
 
 export default function RegisterComponent() {
 
+
     const RegisterData = { RegFName: "", RegLName: "", RegEmail: "", RegPassword: "", RegConfirmPass: "", RegPhoneNumber: "", RegBirthday: "", RegNationality: "", RegAdress: "", RegCity: "" };
     const url = "RegisterData";
-    const { Values, Formerrors , handlechange, SendData } = UseValiationHook(RegisterData, url);
+    const { Values, Formerrors, ErorrModal,  handlechange, SendData } = UseValiationHook(RegisterData, url);
     const inputs = [
         { id: 0, name: "RegFName", type: "text", placeholder: 'Type Your FirstName ', required: true, inputtype: "textbox" },
         { id: 1, name: "RegLName", type: "text", placeholder: 'Type your LastName  ', required: true, inputtype: "textbox" },
@@ -21,17 +23,25 @@ export default function RegisterComponent() {
         { id: 8, name: "RegAdress", type: "text", placeholder: 'Type Your Address ', required: true, inputtype: "textbox" },
         { id: 9, name: "RegCity", type: "text", placeholder: 'your  City  ', required: true, inputtype: "textbox" }
     ]
+
     
-
     return (
-        <div className="login_form   ">
-            <div className="form">
-                {
-                    inputs.map((res) => <FormInputComponent key={res.id} {...res} border="#202C45" value={Values[res.name]} onChange={handlechange} errormessage={Formerrors.RegisterErr[res.name]} />)
-                }
-                <MainButtonComponent onclick={()=>{SendData("RegisterErr")}}  child=" Register " font='white' back='#202C45' hoverfont='white' hoverback='#E81C2E' width="100%" />
-            </div>
+        <>
 
-        </div>                                                                                    
+            <div className="login_form   ">
+                <div className="form">
+                    {
+                        inputs.map((res) => <FormInputComponent key={res.id} {...res} border="#202C45" value={Values[res.name]} onChange={handlechange} errormessage={Formerrors.RegisterErr[res.name]} />)
+                    }
+                    <MainButtonComponent onclick={() => { SendData("RegisterErr") }} child=" Register " font='white' back='#202C45' hoverfont='white' hoverback='#E81C2E' width="100%" />
+                </div>
+
+            </div>
+            {
+                ErorrModal ? ErorrModal :<></>
+            }
+            
+
+        </>
     )
 }

@@ -7,6 +7,7 @@ import TitleOfComponent from '../Titleofanycomponent/TitleofComponent';
 //import image4 from './../../Assets/images/team-4.jpg';
 import SocialmedialinksComponent from '../../DynmaicComponent/SocialmediaLinksComponent/SocialmedialinksComponent';
 import { useSelector } from 'react-redux';
+import { getMainDataSelectr } from '../../Selectors/MainSelector';
 
 
 export default function WorkersComponent(props) {
@@ -15,11 +16,11 @@ export default function WorkersComponent(props) {
     //console.log(image1, image2, image3, image4);
 
     const top = '-30px';
-    const data = useSelector((state) => state.datareducer.data.workersData);
-    const [WorkerstData, SetWorkerData] = useState(null);
+    const {workersData}=useSelector(getMainDataSelectr); 
+    const [WorkerstData, SetWorkerData]=useState(null);
     useLayoutEffect(() => {
         SetWorkerData(
-            data?.map((res) => {
+            workersData?.map((res) => {
                 const { id, srcimage, socialmedialinks, name, job } = res;
                 return (
                     <div className='workerelement' key={id}>
@@ -33,7 +34,7 @@ export default function WorkersComponent(props) {
                 )
             })
         )
-    }, [data])
+    }, [workersData])
 
 
 

@@ -18,12 +18,13 @@
         display: none;
         text-align: left;
         flex-wrap: nowrap;    
-    }
-    .menunavbar{
+        }
+        .menunavbar{
         align-self: center;
         text-align: center;
         display:inline-grid;
         grid-template-columns:auto auto auto auto auto auto auto ;
+        position:relative ; 
         @media screen and (max-width: $mediumscreen) 
           {
             grid-template-columns:250px ;
@@ -44,6 +45,10 @@
             &:hover{color: $mainredcolor;}
         }
         .activelink{ color: $mainredcolor; }
+        svg{
+            @include basiclink ; 
+            margin-left: 10px;
+        }
     }
     .takeappointment{
         //border: 1px solid yellow;

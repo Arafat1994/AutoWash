@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import { getUserSelector } from '../../Selectors/userSelector';
 import './AccountInfoComponent.scss';
 
 export default function AccountInfoComponent() {
@@ -7,7 +8,7 @@ export default function AccountInfoComponent() {
   const [userData, SetUserData] = useState();
 
 
-  const Userinfo = useSelector((state) => state.fetchusersreducer.user);
+  const Userinfo = useSelector(getUserSelector);
 
   //console.log(Userinfo)
   useEffect(() => {

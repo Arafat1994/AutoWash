@@ -19,7 +19,7 @@ export default function DropdownMenuForUser({ UserName }) {
                             <button className='mainLink'> {UserName} <FontAwesomeIcon icon="chevron-down" className="icon"  /> </button>
                             <div className='SubMenu'>
                                 <Link to="/AccountInfo"> My Account  </Link>
-                                <button onClick={SignOut} style={{ cursor: 'pointer' }}> SignOut </button>
+                                <button onClick={SignOut} style={{ cursor: 'pointer' , width:"100% "}}> SignOut </button>
                             </div>
                         </>
                         :

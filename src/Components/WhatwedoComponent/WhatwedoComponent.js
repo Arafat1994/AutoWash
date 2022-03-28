@@ -13,19 +13,20 @@ import image8 from "./../../Assets/images/window-cleaning.png";
 import './WhatwedoComponent.scss'
 import WhatwedoComponentSingleelemet from "../WhatwedoComponentSingleElemet/WhatwedoComponentSingleelemet";
 import {  useSelector } from "react-redux";
+import { getMainDataSelectr } from "../../Selectors/MainSelector";
 
 
 
 export default function WhatwedoComponent() {
 
     const [Whatwedocompo, setWhatwedocomp] = useState(null);
-    const data = useSelector((state) => state.datareducer.data.WhatwedoComponent);
+    const{WhatwedoComponent} = useSelector(getMainDataSelectr)
    
 
 
     useLayoutEffect(() => {
         setWhatwedocomp(
-            data?.map((res) => {
+            WhatwedoComponent?.map((res) => {
                 const { id, imgsrc, header, somedetail } = res;
                 return (
                     <React.Fragment key={res.id}>
@@ -34,7 +35,7 @@ export default function WhatwedoComponent() {
                 )
             })
         )
-    }, [data])
+    }, [WhatwedoComponent])
 
 
     return (

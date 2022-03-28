@@ -6,29 +6,27 @@ import FormInputComponent from '../../DynmaicComponent/FormInputComponent/FormIn
 import MainButtonComponent from '../../DynmaicComponent/AppointmentButtonComponent/MainButtonComponent';
 import UseValiationHook from '../../Hooks/CustomHookValidation';
 import { useSelector } from 'react-redux';
+import { createSelector }  from "reselect"
 
 
-/*
+
 const dataSelector = createSelector(
     (state)=>state.datareducer.data ,
     (datafun)=>datafun
 ) 
-*/
+
 export default function Footercomponent(props) {
 
 
 
-    const footerdata = { NewsFullname: "", NewsEmail: "" };
+    const footerdata = { NewsFullname:"", NewsEmail:"" };
     const url = "newsletterRequests";
     const { Values, Formerrors, SendData, handlechange } = UseValiationHook(footerdata, url);
-    const top = "0"
+    //const { Values, Formerrors, SendData, handlechange } =[];
+    const top = "0"; 
 
-
-    /*const socialdata = useSelector(dataSelector) ; 
-    console.log(socialdata)*/
-    const data = useSelector((state) => state.datareducer.data.FooterData);
-    const social = useSelector((state) => state.datareducer.data.SocialmediaData);
-    const [FooterData, SetFooterData] = useState(null);
+    const {FooterData , SocialmediaData} =useSelector(dataSelector);
+    const [FooterDatadiv, SetFooterData] = useState(null);
 
     const inputs = [
         { id: 0, name: "NewsFullname", type: "text", placeholder: 'FullName', required: true, inputtype: "textbox" },
@@ -36,45 +34,43 @@ export default function Footercomponent(props) {
     ];
 
     useLayoutEffect(() => {
-        if (data && social) {
+        if (FooterData && SocialmediaData) {
             SetFooterData(
-
-                data?.map((res) => {
+                FooterData?.map((res) => {
+                    const {id , title , elements}=res ; 
                     return (
-                        <div key={res.id} className='footerelement'>
-                            <p className='headerofelement'> {res.title}   </p>
-                            {res.elements.map((result) => {
+                        <div key={id} className='footerelement'>
+                            <p className='headerofelement'> {title}   </p>
+                            {elements.map((result) => {
+                                const {id , link , icon , iconClassName , spanClassName , spantext}= result ; 
                                 return (
-                                    <a key={result.id} href={result.link} className='linkelement'>
-                                        <FontAwesomeIcon icon={result.icon} className={result.iconClassName} />
-                                        <span className={result.spanClassName}> {result.spantext} </span>
+                                    <a key={id} href={link} className='linkelement'>
+                                        <FontAwesomeIcon icon={icon} className={iconClassName} />
+                                        <span className={spanClassName}> {spantext} </span>
                                     </a>
                                 )
                             })
                             }
-                            {res.title === "Get In Touch" ? <SocialmedialinksComponent socialmediaLinks={social} top={top} /> : <> </>}
+                            {res.title === "Get In Touch" ? <SocialmedialinksComponent socialmediaLinks={SocialmediaData} top={top} /> : <> </>}
                         </div>
                     )
                 })
             )
         }
-
-    }, [data, social])
-
-    console.log("userReq");
+    }, [FooterData, SocialmediaData])
 
     return (
         <div className='footercontainer'>
-            {FooterData}
+            {FooterDatadiv}
             <div className='footerelement'>
                 <p className='headerofelement'> Newsletter  </p>
                 {
                     inputs.map((res) => {
-                        return (<FormInputComponent key={res.id} {...res} value={Values[res.name]} onChange={handlechange} errormessage={Formerrors.NewsErr[res.name]} />)
+                        return (<FormInputComponent key={res.id} {...res} value={Values[res.name]}  onChange={handlechange} errormessage={Formerrors.NewsErr[res.name]} />)
                     })
                 }
                 <MainButtonComponent onclick={() => { SendData("NewsErr") }} child='Submit' font='#202C45' back='white' hoverfont="white" hoverback="#E81C2E" width="100%" />
-
+                
             </div>
         </div>
     )

@@ -28,22 +28,7 @@ export default function UseGetDataUserInLayoutHook() {
     }, [dispatch, UserToken, loggedUser])
 
 
-    /*const SignOut = () => {
-        try {
-            if (UserToken) {
-                localStorage.removeItem("UserToken");
-               // window.location.replace("/AutoWash") ; 
-            }
-            else {
-                console.log("No user Found ");
-
-            }
-
-        } catch (err) {
-            console.log("error Find UserToken")
-        }
-
-    }*/
+    
 
     return { loggedUser, UserToken, Users }
 

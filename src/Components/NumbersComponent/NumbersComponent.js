@@ -2,14 +2,14 @@ import React, { useLayoutEffect, useState } from 'react';
 import './NumbersComponent.scss';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useSelector } from 'react-redux';
+import { getMainDataSelectr } from '../../Selectors/MainSelector';
 
 export default function NumbersComponent() {
 
 
     const [randomNum, SetrandomNum] = useState(null);
     const [customerNumDiv, SetNumberDiv] = useState(null);
-
-    const data = useSelector((state) => state.datareducer.data.CustomerNumbers);
+    const {CustomerNumbers} = useSelector(getMainDataSelectr)
 
     useLayoutEffect(() => {
         const getrandomnum = (minval, maxval) => {
@@ -39,7 +39,7 @@ export default function NumbersComponent() {
 
     useLayoutEffect(() => {
         SetNumberDiv(
-            data?.map((res) => {
+            CustomerNumbers?.map((res) => {
                 const { id, icon, number, details } = res;
                 return (
                     <div key={id} className='numberdiv'>
@@ -52,7 +52,7 @@ export default function NumbersComponent() {
                 )
             })
         )
-    }, [data, randomNum])
+    }, [CustomerNumbers, randomNum])
 
 
     return (

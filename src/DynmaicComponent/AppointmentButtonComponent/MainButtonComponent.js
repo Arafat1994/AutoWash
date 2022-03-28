@@ -3,6 +3,7 @@ import './MainButtonComponent.scss';
 import styled from 'styled-components';
 
 const MainButton = styled.button`
+
 color:${props => props.font}  ;
 width:${props => props.width ? props.width : "auto"  }  ; 
 background:linear-gradient(to right,  ${props => props.hoverback} 50% , ${props => props.back} 50%);

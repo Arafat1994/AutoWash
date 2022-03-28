@@ -2,17 +2,19 @@ import React, { useLayoutEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { FetchService, RemoveSelectedFetchedService } from '../../Redux/Actions/Actions';
+import { getServiceSelector } from '../../Selectors/seviceSelector';
 import './whatwecandodetails.scss';
 
 export default function WhatwedoComponentdetails() {
 
     const { id } = useParams();
     const dispatch = useDispatch()
-    const data = useSelector((state) => state.fetchservicereduver)
+    //const data = useSelector((state) => state.fetchservicereduver)
+    const data = useSelector(getServiceSelector) ; 
 
 
     useLayoutEffect(() => {
-        dispatch(FetchService({ id: id, keyComponent: 'WhatwedoComponent' }))
+        dispatch(FetchService({ id: id, keyComponent:'WhatwedoComponent'}))
 
         return () => { dispatch(RemoveSelectedFetchedService()) }
     }, [dispatch , id])

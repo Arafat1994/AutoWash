@@ -1,25 +1,22 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { createSelector } from "reselect";
+import DynamicModal from "../DynmaicComponent/DynamicModal/DynamicModal";
 import { GetFetchedUser } from "../Redux/Actions/Actions";
+import { getUsersSelector } from "../Selectors/userSelector";
+import { Modal } from "./Modal";
 
-
-const Users = createSelector(
-    (state) => { console.log("createselector"); return state.fetchusersreducer },
-    (fetchusersreducer) => fetchusersreducer.users
-)
 
 export default function UseValiationHook(sentValues, url) {
 
-  
     const dispatch = useDispatch();
-    const users = useSelector(Users);
+    const users = useSelector(getUsersSelector);
     const [Values, setValues] = useState(sentValues);
     const [Formerrors, setFormErrors] = useState({ ContactErr: {}, NewsErr: {}, SigninErr: {}, RegisterErr: {} });
     const [Issubmit, setIssubmit] = useState(false);
     const [lastid, setLastId] = useState();
     const Token = Math.floor(Math.random() * 1514000) + 1;
+    const [ErorrModal , setErrormModal] = useState("") ; 
     //const {EmailExist} = useCheckeEmailExistHook(); 
     /*
     //this is another way to get data using useselectors 
@@ -98,7 +95,7 @@ export default function UseValiationHook(sentValues, url) {
         return errors;
 
     }
-   
+
     const ErrorCatch = () => {
         //setFormErrors(ValidationFun(Values));
         ValidationFun(Values);
@@ -114,15 +111,18 @@ export default function UseValiationHook(sentValues, url) {
     }
 
     useEffect(() => {
+        if (url) {
+            FindidLastElement(url);
+        }
+    }, [url])
 
-        FindidLastElement(url);
-    })
-
+    function closeModal(){
+        document.body.style.overflowY="auto" ;
+        setErrormModal(null) ; 
+    }
+   
     const SendData = (ErrorObj) => {
-        console.log(Values);
-        console.log(lastid);
-        console.log(url);
-        //console.log(ValidationFun(Values)[ErrorObj])
+        
         //this RegisterErr must be changable depending on Which button you click 
         const Error = ValidationFun(Values)[ErrorObj];
         const ErrorState = Object.keys(Error).length === 0 ? true : false;
@@ -133,19 +133,19 @@ export default function UseValiationHook(sentValues, url) {
                 axios({
                     baseURL: "https://autowash-api.herokuapp.com/",
                     url: url, method: "post",
-                    data: { id: lastid, data: Values, userToken: Token + Number(Values.RegPhoneNumber?Values.RegPhoneNumber:0) + lastid }
+                    data: { id: lastid, data: Values, userToken: Token + Number(Values.RegPhoneNumber ? Values.RegPhoneNumber : 0) + lastid }
                 })
                     .then((res) => {
                         setIssubmit(false);
                         setValues(sentValues);
                         alert("data sent successfully");
                     }).catch((err) => {
-                        err = "error when data sending  ";
-                        alert(" Error " + err)
+                        setErrormModal(<DynamicModal header="Authentication Error " message={err} closeModalFun={closeModal} /> )
                     })
             }
             else {
-                alert("Email exist")
+               
+                setErrormModal(<DynamicModal header="Authentication Error " message=" the email has been reigsted before try login " closeModalFun={closeModal} /> )
             }
 
         }
@@ -170,7 +170,7 @@ export default function UseValiationHook(sentValues, url) {
                 dispatch(GetFetchedUser(User))
                 window.location.replace("/AutoWash");
             } else {
-                alert(" The Email or paswword may have error ")
+                setErrormModal(<DynamicModal header="Authentication Error " message=" The Email or Password May Have Error  " closeModalFun={closeModal} /> )
             }
 
         }
@@ -199,5 +199,5 @@ export default function UseValiationHook(sentValues, url) {
 
     }
 
-    return { Values, Formerrors, Issubmit, users, LoginService, ErrorCatch, setFormErrors, setIssubmit, ValidationFun, SendData, handlechange }
+    return { Values, Formerrors, Issubmit, users, ErorrModal , LoginService, ErrorCatch, setFormErrors, setIssubmit, ValidationFun, SendData, handlechange }
 }

@@ -1,11 +1,10 @@
 import React from 'react';
+import DynamicModal from '../../DynmaicComponent/DynamicModal/DynamicModal';
 export default function Page404Component ()
 {
     return(
         <div> 
-            <div> 
-                404 Compone t 
-                </div>
+            <DynamicModal header="Error" message=" the page you entered is here " />
         </div>
     )
 }

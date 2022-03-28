@@ -3,17 +3,18 @@ import './FirstNavbarcomponentstyle.scss';
 import AutoWashComp from '../AutoWashComponent/AutoWashComp';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useSelector } from 'react-redux';
+import { getMainDataSelectr } from '../../Selectors/MainSelector';
 
 export default function FirstNavBar() {
 
     //let Fnavdata = data[0].FNavbardata;
     //const { dataFromJson } = UseMapingdatafromJson(Fnavdata);
-    const data =useSelector((state)=>state.datareducer.data.FNavbardata)
+    const {FNavbardata} = useSelector(getMainDataSelectr) ; 
     const [ FavNavData , SetFnavdata] = useState(null)
   useEffect(()=>{
       SetFnavdata(
        
-        data?.map((result) => {
+        FNavbardata?.map((result) => {
             const { id  , mainclassname , imagesrc , headercontent , spancontent} = result ; 
             return (
                 <div key={id} className={mainclassname} >
@@ -27,9 +28,8 @@ export default function FirstNavBar() {
                 </div >
             )
         })
-
       )
-  } , [data])
+  } , [FNavbardata])
 
 
     return (

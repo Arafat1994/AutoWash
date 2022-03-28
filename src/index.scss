@@ -75,14 +75,14 @@ body
 
 @mixin basiclink {
     color:$WhiteColor;
-    text-decoration: none ; 
+    text-decoration: none ;  
     &:hover{
         color: $mainredcolor;
     }
 }
 
 
-@mixin DropdownMenu {
+@mixin DropdownMenu($display:none) {
     background-color: $WhiteColor;
             border-width: 1px;
             border-radius: 5px ;
@@ -90,8 +90,8 @@ body
             position: absolute;
             left: 0px;
             z-index:  11;;
-            margin-top: 10px;
-            display: none;
+            margin-top:0px;
+            display:$display;
 }
 @mixin  DropDownMenuLinks {
     padding: 5px 10px ;

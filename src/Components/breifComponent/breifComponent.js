@@ -5,18 +5,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useLayoutEffect } from 'react';
 import MainButtonComponent from './../../DynmaicComponent/AppointmentButtonComponent/MainButtonComponent';
 import { useSelector } from 'react-redux';
+import { getMainDataSelectr } from '../../Selectors/MainSelector';
 
 
 
 export default function BreifComponent(props) {
 
-
-    const data = useSelector((state) => state.datareducer.data.AboutBreifComponent)
+    const{AboutBreifComponent}=useSelector(getMainDataSelectr) ; 
+   
     const [divAbout, SetdivAbout] = useState();
     useLayoutEffect(() => {
 
         SetdivAbout(
-            data?.map((res) => {
+            AboutBreifComponent?.map((res) => {
 
                 const { id, imageSrc, title, header, details } = res;
                 return (
@@ -36,13 +37,13 @@ export default function BreifComponent(props) {
                                     })
                                 }
                             </div>
-                            <div><MainButtonComponent child={res.buttonchild} font='#202C45' back='#E81C2E' hoverback='#202C45' hoverfont='white' /> </div>
+                            <MainButtonComponent child={res.buttonchild} font='#202C45' back='#E81C2E' hoverback='#202C45' hoverfont='white' />
                         </div>
                     </div>
                 )
             })
         )
-    }, [data])
+    }, [AboutBreifComponent])
 
 
     return (
