@@ -7,6 +7,8 @@ import MainButtonComponent from '../../DynmaicComponent/AppointmentButtonCompone
 import UseValiationHook from '../../Hooks/CustomHookValidation';
 import { useSelector } from 'react-redux';
 import { createSelector }  from "reselect"
+import { RegisterDataClass } from '../../Services/RegisterDataToApi';
+import DynamicModal from '../../DynmaicComponent/DynamicModal/DynamicModal';
 
 
 
@@ -21,10 +23,8 @@ export default function Footercomponent(props) {
 
     const footerdata = { NewsFullname:"", NewsEmail:"" };
     const url = "newsletterRequests";
-    const { Values, Formerrors, SendData, handlechange } = UseValiationHook(footerdata, url);
-    //const { Values, Formerrors, SendData, handlechange } =[];
+    const { Values, Formerrors, ErrorCatch , handlechange , setValues } = UseValiationHook(footerdata, url);
     const top = "0"; 
-
     const {FooterData , SocialmediaData} =useSelector(dataSelector);
     const [FooterDatadiv, SetFooterData] = useState(null);
 
@@ -32,6 +32,12 @@ export default function Footercomponent(props) {
         { id: 0, name: "NewsFullname", type: "text", placeholder: 'FullName', required: true, inputtype: "textbox" },
         { id: 1, name: "NewsEmail", type: "email", placeholder: ' Email ', required: true, inputtype: "textbox" }
     ];
+
+    const [ErrorModal , SetErrorModal]=useState() ; 
+    const closeModalFun=()=>{
+        document.body.style.overflowY="auto";
+        SetErrorModal(null);
+    }
 
     useLayoutEffect(() => {
         if (FooterData && SocialmediaData) {
@@ -59,7 +65,19 @@ export default function Footercomponent(props) {
         }
     }, [FooterData, SocialmediaData])
 
+
+    function RegisterNewsLetterdataFun(){
+        const RegData = new RegisterDataClass(Values , url , ErrorCatch().NewsErr , null ) ;
+        const data = RegData.RegisterUserLetterData() ; 
+        if(data){
+            SetErrorModal(<DynamicModal header={data.Error} message={data.Message}  closeModal={closeModalFun} />)
+        }
+        setValues(footerdata)
+
+    }
+
     return (
+        <>
         <div className='footercontainer'>
             {FooterDatadiv}
             <div className='footerelement'>
@@ -69,10 +87,16 @@ export default function Footercomponent(props) {
                         return (<FormInputComponent key={res.id} {...res} value={Values[res.name]}  onChange={handlechange} errormessage={Formerrors.NewsErr[res.name]} />)
                     })
                 }
-                <MainButtonComponent onclick={() => { SendData("NewsErr") }} child='Submit' font='#202C45' back='white' hoverfont="white" hoverback="#E81C2E" width="100%" />
+                <MainButtonComponent onclick={RegisterNewsLetterdataFun} child='Submit' font='#202C45' back='white' hoverfont="white" hoverback="#E81C2E" width="100%" />
                 
             </div>
         </div>
+        {
+            ErrorModal ? ErrorModal:<></>
+        }
+
+        </>
+        
     )
 
 }

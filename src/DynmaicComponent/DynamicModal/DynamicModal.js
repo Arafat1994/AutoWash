@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import MainButtonComponent from '../AppointmentButtonComponent/MainButtonComponent';
 import './DynamicModal.scss'
 
-export default function DynamicModal({ header, message , closeModalFun }) {
+export default function DynamicModal({ header, message , closeModal  }) {
 
     useEffect(() => {
         document.body.style.overflowY = "hidden"
@@ -23,7 +23,7 @@ export default function DynamicModal({ header, message , closeModalFun }) {
                     </p>
 
                     <div className='buttons'>
-                        <MainButtonComponent onclick={closeModalFun} child="Okay" font="white" width="100px" back="#E81C2E" hoverfont="#E81C2E" hoverback="white" />   
+                        <MainButtonComponent onclick={closeModal} child="Okay" font="white" width="100px" back="#E81C2E" hoverfont="#E81C2E" hoverback="white" />   
                     </div>
                 </div>
             </div>

@@ -58,6 +58,7 @@ export default function MenuNavbarcomponent(props) {
             })
         )
         :SetMainNavbar(<div> no data to show  </div>)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     useLayoutEffect(() => {

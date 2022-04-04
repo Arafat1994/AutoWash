@@ -1,5 +1,5 @@
 import "./ContactComponent.scss";
-import React, {  useLayoutEffect, useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import TitleOfComponent from "../Titleofanycomponent/TitleofComponent";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import FormInputComponent from "../../DynmaicComponent/FormInputComponent/FormInputComponent";
@@ -7,6 +7,8 @@ import MainButtonComponent from "../../DynmaicComponent/AppointmentButtonCompone
 import UseValiationHook from "../../Hooks/CustomHookValidation";
 import { useSelector } from "react-redux";
 import { getMainDataSelectr } from "../../Selectors/MainSelector";
+import { RegisterDataClass } from "../../Services/RegisterDataToApi";
+import DynamicModal from "../../DynmaicComponent/DynamicModal/DynamicModal";
 
 
 export default function ContactComponent(props) {
@@ -22,12 +24,18 @@ export default function ContactComponent(props) {
 
     const sentValues = { Contactfullname: "", ContactEmail: "", ContactSubject: "", ContactMessage: "" };
     const url = "messagesRequests";
-    const { Values, Formerrors, SendData, handlechange } = UseValiationHook(sentValues, url);
+    const { Values, Formerrors, ErrorCatch, setValues, handlechange } = UseValiationHook(sentValues, url);
 
 
     // const returneddata = data[0].ContactData;
-    const {ContactData} = useSelector(getMainDataSelectr) ; 
+    const { ContactData } = useSelector(getMainDataSelectr);
     const [contactData, SetContactData] = useState(null);
+
+    const [ErrorModal, SetErrorModal] = useState();
+    const closeModalFun = () => {
+        document.body.style.overflowY = "auto";
+        SetErrorModal(null);
+    }
 
     useLayoutEffect(() => {
         SetContactData(
@@ -45,26 +53,42 @@ export default function ContactComponent(props) {
         )
     }, [ContactData])
 
-    return (
-        <div className="ContactContainer">
-            <TitleOfComponent dirction="center" header=" Contact For Any Query  " title="Get In Touch" />
-            <div className="ContactDiv">
-                <div className="leftContactSide">
-                    <div className="header"> <p> Quick Contact Info  </p>  </div>
-                    { contactData }
-                </div>
-                <div className="RightContactSide">
-                    {
-                        inputs.map((res) => {
-                            return (
-                                <FormInputComponent key={res.id} {...res} value={Values[res.name]} onChange={handlechange} errormessage={Formerrors.ContactErr[res.name]} border="#202C45" />
-                            )
-                        })
-                    }
-                    <MainButtonComponent onclick={()=>{SendData("ContactErr")}}  child='Send Message ' font='white' back='#E81C2E' hoverfont="#E81C2E" hoverback="#202C45" width="100%" />
 
+
+    function RegistercontacdataFun() {
+        const ConData = new RegisterDataClass(Values, url, ErrorCatch().ContactErr, null);
+        const data = ConData.RegisterContactData();
+        if(data ){
+            SetErrorModal(<DynamicModal header={data.Error} message={data.Message} closeModal={closeModalFun}/>)
+        }
+        setValues(sentValues);
+    }
+
+
+    return (
+        <>
+            <div className="ContactContainer">
+                <TitleOfComponent dirction="center" header=" Contact For Any Query  " title="Get In Touch" />
+                <div className="ContactDiv">
+                    <div className="leftContactSide">
+                        <div className="header"> <p> Quick Contact Info  </p>  </div>
+                        {contactData}
+                    </div>
+                    <div className="RightContactSide">
+                        {
+                            inputs.map((res) => {
+                                return (
+                                    <FormInputComponent key={res.id} {...res} value={Values[res.name]} onChange={handlechange} errormessage={Formerrors.ContactErr[res.name]} border="#202C45" />
+                                )
+                            })
+                        }
+                        <MainButtonComponent onclick={RegistercontacdataFun} child='Send Message ' font='white' back='#E81C2E' hoverfont="#E81C2E" hoverback="#202C45" width="100%" />
+
+                    </div>
                 </div>
             </div>
-        </div>
+            {ErrorModal ? ErrorModal :<></> }
+        </>
+
     )
 }

@@ -1,6 +1,7 @@
 import { useEffect, useLayoutEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { GetData, GetFetchedUser, GetUser } from "../Redux/Actions/Actions";
+import { getUsersSelector } from "../Selectors/userSelector";
 
 
 
@@ -8,8 +9,8 @@ import { GetData, GetFetchedUser, GetUser } from "../Redux/Actions/Actions";
 export default function UseGetDataUserInLayoutHook() {
 
 
-    const UserToken = JSON.parse(localStorage.getItem("UserToken"));
-    const Users = useSelector((state) => state.fetchusersreducer.users);
+    const UserToken = JSON.parse(localStorage.getItem("Token"));
+    const Users = useSelector( getUsersSelector );
     const loggedUser = Users.filter((user) => {
         return user.userToken === UserToken;
     });

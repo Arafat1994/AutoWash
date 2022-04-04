@@ -7,9 +7,9 @@ export default function UseSignOutHook (){
     const SignOut =()=>{
         try {
             console.log("Runnning in the begong ")
-            const UserToken = localStorage.getItem("UserToken") ; 
+            const UserToken = localStorage.getItem("Token") ; 
             if (UserToken) {
-                localStorage.removeItem("UserToken");
+                localStorage.removeItem("Token");
                 window.location.replace("/AutoWash") ; 
             }
             else {

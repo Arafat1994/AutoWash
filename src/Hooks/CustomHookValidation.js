@@ -16,7 +16,7 @@ export default function UseValiationHook(sentValues, url) {
     const [Issubmit, setIssubmit] = useState(false);
     const [lastid, setLastId] = useState();
     const Token = Math.floor(Math.random() * 1514000) + 1;
-    const [ErorrModal , setErrormModal] = useState("") ; 
+    const [ErorrModal, setErrormModal] = useState("");
     //const {EmailExist} = useCheckeEmailExistHook(); 
     /*
     //this is another way to get data using useselectors 
@@ -98,7 +98,7 @@ export default function UseValiationHook(sentValues, url) {
 
     const ErrorCatch = () => {
         //setFormErrors(ValidationFun(Values));
-        ValidationFun(Values);
+        return  ValidationFun(Values);
     }
 
     const handlechange = (e) => {
@@ -116,13 +116,16 @@ export default function UseValiationHook(sentValues, url) {
         }
     }, [url])
 
-    function closeModal(){
-        document.body.style.overflowY="auto" ;
-        setErrormModal(null) ; 
+
+    function closeModal() {
+        document.body.style.overflowY="auto";
+        setErrormModal(null);
     }
-   
+
+
+
     const SendData = (ErrorObj) => {
-        
+
         //this RegisterErr must be changable depending on Which button you click 
         const Error = ValidationFun(Values)[ErrorObj];
         const ErrorState = Object.keys(Error).length === 0 ? true : false;
@@ -133,19 +136,18 @@ export default function UseValiationHook(sentValues, url) {
                 axios({
                     baseURL: "https://autowash-api.herokuapp.com/",
                     url: url, method: "post",
-                    data: { id: lastid, data: Values, userToken: Token + Number(Values.RegPhoneNumber ? Values.RegPhoneNumber : 0) + lastid }
-                })
+                    data: { id: lastid, data: Values, userToken: Token + Number(Values.RegPhoneNumber ? Values.RegPhoneNumber : 0) + lastid }})
                     .then((res) => {
                         setIssubmit(false);
                         setValues(sentValues);
                         alert("data sent successfully");
                     }).catch((err) => {
-                        setErrormModal(<DynamicModal header="Authentication Error " message={err} closeModalFun={closeModal} /> )
+                        setErrormModal(<DynamicModal header="Authentication Error " message={err} closeModalFun={closeModal} />)
                     })
             }
             else {
-               
-                setErrormModal(<DynamicModal header="Authentication Error " message=" the email has been reigsted before try login " closeModalFun={closeModal} /> )
+
+                setErrormModal(<DynamicModal header="Authentication Error" message=" the email has been reigsted before try login " closeModalFun={closeModal} />)
             }
 
         }
@@ -159,18 +161,15 @@ export default function UseValiationHook(sentValues, url) {
         const Error = ValidationFun(Values).SigninErr;
         const ErrorState = Object.keys(Error).length === 0 ? true : false;
         if (ErrorState) {
-            var User = users?.filter((user,) => {
-                return user.data.RegEmail === Values.LoginEmail && user.data.RegPassword === Values.LoginPassword
-            })
+            var User = users?.filter((user) => {
+                return user.data.RegEmail === Values.LoginEmail && user.data.RegPassword === Values.LoginPassword })
 
             if (User.length !== 0) {
-                console.log(User)
-                console.log(User[0].userToken)
                 localStorage.setItem("UserToken", JSON.stringify(User[0].userToken))
                 dispatch(GetFetchedUser(User))
                 window.location.replace("/AutoWash");
             } else {
-                setErrormModal(<DynamicModal header="Authentication Error " message=" The Email or Password May Have Error  " closeModalFun={closeModal} /> )
+                setErrormModal(<DynamicModal header="Authentication Error " message=" The Email or Password May Have Error  " closeModalFun={closeModal} />)
             }
 
         }
@@ -199,5 +198,5 @@ export default function UseValiationHook(sentValues, url) {
 
     }
 
-    return { Values, Formerrors, Issubmit, users, ErorrModal , LoginService, ErrorCatch, setFormErrors, setIssubmit, ValidationFun, SendData, handlechange }
+    return { Values, Formerrors, Issubmit, users, ErorrModal  ,  url  , setValues ,  LoginService, ErrorCatch, setFormErrors, setIssubmit, ValidationFun, SendData, handlechange }
 }
