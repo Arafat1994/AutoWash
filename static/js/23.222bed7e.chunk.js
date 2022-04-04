@@ -1,2 +1,0 @@
-(this.webpackJsonpautowash=this.webpackJsonpautowash||[]).push([[23],{188:function(t,n,s){"use strict";s.r(n),s.d(n,"default",(function(){return e}));s(0);var a=s(4),c=s(1);function e(t){return Object(c.jsx)(c.Fragment,{children:t.IsAuth?Object(c.jsx)(a.a,{to:{pathname:"/AccountInfo"}}):Object(c.jsx)(a.b,{})})}}}]);
-//# sourceMappingURL=23.222bed7e.chunk.js.map

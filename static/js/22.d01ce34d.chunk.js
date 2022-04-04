@@ -1,0 +1,2 @@
+(this.webpackJsonpautowash=this.webpackJsonpautowash||[]).push([[22],{180:function(e,n,t){},195:function(e,n,t){"use strict";t.r(n),t.d(n,"default",(function(){return a}));t(0),t(180);var s=t(1);function a(){return Object(s.jsx)("div",{className:"footerEndContainer",children:Object(s.jsxs)("p",{children:["\xa9 ",Object(s.jsx)("span",{children:" AutoWash "}),", All Right Reserved. Designed By  ",Object(s.jsx)("span",{children:" Arafat.Ali "})]})})}}}]);
+//# sourceMappingURL=22.d01ce34d.chunk.js.map
