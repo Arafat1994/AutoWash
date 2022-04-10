@@ -23,9 +23,10 @@
     /*.forminput:invalid[focused="true"]{
         border: 1px solid red;
     }*/
-    .forminput:invalid[data-focused="false"] ~ span    
+    //this code to not show error message untill if user click om the register or login or any button hen wants 
+    /*.forminput:invalid[data-focused="false"] ~ span    
     {
         display:none;
-    }
+    }*/
     
 }

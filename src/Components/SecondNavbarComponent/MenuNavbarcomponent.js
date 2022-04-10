@@ -33,31 +33,36 @@ export default function MenuNavbarcomponent(props) {
         console.log(menuid);
         var element = document.getElementsByClassName("dropdowncomponentcontainer");
         if (element[menuid]?.style.display === "none") {
-            element[menuid].style.display="block";
+            for (let i = 0; i < element.length; i++) {
+                element[i].style.display = "none";
+            }
+            element[menuid].style.display = "block";
         }
-        else{
-            element[menuid].style.display="none";
+        else {
+            element[menuid].style.display = "none";
         }
-       
-
     }
+
     useEffect(() => {
-        dataFromJson ? 
-        SetMainNavbar(
-            dataFromJson.map((result) => {
-                const { id, to, content, linkclass, iconView, DropdownmenuElement } = result;
-                return (
-                    <div id={id} key={id} className="menuelement" style={{ position:'relative' }}   >
-                        <Link id={id} to={{ pathname: to }} state={content} className={linkclass}  onMouseOver={showmenu} onMouseOut={showmenu}> 
-                            {content}   
-                        </Link>
-                        <FontAwesomeIcon icon="chevron-down" className="icon" style={{ display: iconView ? "inline-block" : "none" }} />
-                        <DropDownComponent id={id} dropdownele={DropdownmenuElement} />
-                    </div>
-                )
-            })
-        )
-        :SetMainNavbar(<div> no data to show  </div>)
+        dataFromJson ?
+            SetMainNavbar(
+                dataFromJson.map((result) => {
+                    const { id, to, content, linkclass, iconView, DropdownmenuElement } = result;
+                    return (
+                        <div id={id} key={id} className="menuelement" style={{ position: 'relative' }}    >
+                            <Link id={id} to={{ pathname: to }} state={content} className={linkclass} >
+                                {content} 
+                            </Link>
+
+                            {iconView ? <i className='fa fa-chevron-down dropdownbutton' id={id} onMouseDown={showmenu}  /> : <></>
+                            }
+
+                            <DropDownComponent id={id} dropdownele={DropdownmenuElement} />
+                        </div>
+                    )
+                })
+            )
+            : SetMainNavbar(<div> no data to show  </div>)
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 

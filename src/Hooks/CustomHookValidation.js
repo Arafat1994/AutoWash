@@ -1,10 +1,9 @@
 import axios from "axios";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import DynamicModal from "../DynmaicComponent/DynamicModal/DynamicModal";
 import { GetFetchedUser } from "../Redux/Actions/Actions";
 import { getUsersSelector } from "../Selectors/userSelector";
-import { Modal } from "./Modal";
 
 
 export default function UseValiationHook(sentValues, url) {

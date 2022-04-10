@@ -44,6 +44,10 @@
             .icon{ margin-left: 5px;}
             &:hover{color: $mainredcolor;}
         }
+        .dropdownbutton{
+            margin-left: 5px ;
+            @extend .menunavbarlink ;
+        }
         .activelink{ color: $mainredcolor; }
         svg{
             @include basiclink ; 

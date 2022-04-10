@@ -6,8 +6,6 @@ import './AccountInfoComponent.scss';
 export default function AccountInfoComponent() {
 
   const [userData, SetUserData] = useState();
-
-
   const Userinfo = useSelector(getUserSelector);
 
   //console.log(Userinfo)
