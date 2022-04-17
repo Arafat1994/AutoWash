@@ -50,13 +50,10 @@ export default function MenuNavbarcomponent(props) {
                     const { id, to, content, linkclass, iconView, DropdownmenuElement } = result;
                     return (
                         <div id={id} key={id} className="menuelement" style={{ position: 'relative' }}    >
-                            <Link id={id} to={{ pathname: to }} state={content} className={linkclass} >
-                                {content} 
-                            </Link>
+                            <Link id={id} to={{ pathname: to }} state={content} className={linkclass} > {content} </Link>
 
-                            {iconView ? <i className='fa fa-chevron-down dropdownbutton' id={id} onMouseDown={showmenu}  /> : <></>
-                            }
-
+                             <i className={iconView?"fa fa-chevron-down dropdownbutton":"fa dropdownbutton"}  id={id} onMouseDown={showmenu}  /> 
+                        
                             <DropDownComponent id={id} dropdownele={DropdownmenuElement} />
                         </div>
                     )
