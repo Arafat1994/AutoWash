@@ -11,8 +11,8 @@ import { getMainDataSelectr } from '../../Selectors/MainSelector';
 
 export default function BreifComponent(props) {
 
-    const{AboutBreifComponent}=useSelector(getMainDataSelectr) ; 
-   
+    const { AboutBreifComponent } = useSelector(getMainDataSelectr);
+
     const [divAbout, SetdivAbout] = useState();
     useLayoutEffect(() => {
 

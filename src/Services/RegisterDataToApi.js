@@ -18,7 +18,7 @@ export class RegisterDataClass {
     destinationUrl;
     ErrorObject;
     lastId;
-    baseURL = "https://autowash-api.herokuapp.com/";
+    baseURL ="https://autowash-api.herokuapp.com/";
 
 
 
@@ -93,6 +93,19 @@ export class RegisterDataClass {
         else {
             return { Error: " Validation Error ", Message: "please enter a valid data " }
         }
+    }
+
+
+    RegisterCarWashRequest(){
+        console.log(this.destinationUrl)
+        if(!this.ErrorStateFun()){
+            axios({baseURL:this.baseURL , url:this.destinationUrl , method:'post' , data : { data : this.dataFromUser}})
+            return { Error:"" , Message : " Request Send Successfully  "}
+        }
+        else{
+            return { Error:" Validtion Error " , Message :" Please enter a valid data " }
+        }
+
     }
 
 }

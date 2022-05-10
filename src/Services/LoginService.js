@@ -17,10 +17,8 @@ export class LoginService {
         if (inputErrors) {
             var User = this.Users.filter((user) =>{ return user.data.RegEmail === this.Values.LoginEmail && user.data.RegPassword === this.Values.LoginPassword} )
             if(User.length!==0){
-                
                 localStorage.setItem("Token" , JSON.stringify(User[0].userToken));
-                return User ; 
-               
+                return User ;  
             }
             else{
                return {Error : "Error Message" , Message : "The Email or password may have Errors "}

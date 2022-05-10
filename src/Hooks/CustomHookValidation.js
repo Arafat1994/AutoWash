@@ -11,7 +11,7 @@ export default function UseValiationHook(sentValues, url) {
     const dispatch = useDispatch();
     const users = useSelector(getUsersSelector);
     const [Values, setValues] = useState(sentValues);
-    const [Formerrors, setFormErrors] = useState({ ContactErr: {}, NewsErr: {}, SigninErr: {}, RegisterErr: {} });
+    const [Formerrors, setFormErrors] = useState({ ContactErr: {}, NewsErr: {}, SigninErr: {}, RegisterErr: {}, WashRequestErr:{} });
     const [Issubmit, setIssubmit] = useState(false);
     const [lastid, setLastId] = useState();
     const Token = Math.floor(Math.random() * 1514000) + 1;
@@ -40,7 +40,7 @@ export default function UseValiationHook(sentValues, url) {
     }
 
     const ValidationFun = (values) => {
-        const errors = { ContactErr: {}, NewsErr: {}, SigninErr: {}, RegisterErr: {} };
+        const errors = { ContactErr: {}, NewsErr: {}, SigninErr: {}, RegisterErr: {} , WashRequestErr:{} };
         const fullnameRegex = new RegExp("^[A-zA-Z0-9_ ]{3,16}$");
         const subjectRegex = new RegExp("^[A-zA-Z0-9_ ]{10,40}$");
         const emailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
@@ -89,7 +89,12 @@ export default function UseValiationHook(sentValues, url) {
         if (!values.RegAdress) { errors.RegisterErr.RegAdress = " Address  required " }
         if (!values.RegCity) { errors.RegisterErr.RegCity = " City required " }
 
-
+        if(!values.ReqFullname){errors.WashRequestErr.ReqFullname="  Fullname required   "} 
+       
+        if(!values.ReqEmail){ errors.WashRequestErr.ReqEmail="Email required "}
+        else if(!emailRegex.test(values.ReqEmail)){errors.WashRequestErr.ReqEmail=" Enter a valid Email " }
+        if(!values.ReqDescription){errors.WashRequestErr.ReqDescription="  Description required "} 
+        
         setFormErrors(errors)
         return errors;
 
